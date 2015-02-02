@@ -18,8 +18,8 @@
 package org.zkoss.poi.hpsf;
 
 /**
- * <p>This exception is thrown if one of the {@link PropertySet}'s
- * convenience methods does not find a required {@link Section}.</p>
+ * <p>This exception is thrown if one of the {@link org.zkoss.poi.hpsf.PropertySet}'s
+ * convenience methods does not find a required {@link org.zkoss.poi.hpsf.Section}.</p>
  *
  * <p>The constructors of this class are analogous to those of its
  * superclass and documented there.</p>

@@ -114,16 +114,16 @@ public final class BTreeSet extends AbstractSet
         return new Iterator();
     }
 
-    public static ArrayList findProperties(int start, int end, BTreeSet.BTreeNode root)
+    public static ArrayList findProperties(int start, int end, BTreeNode root)
     {
       ArrayList results = new ArrayList();
-      BTreeSet.Entry[] entries = root.entries;
+      Entry[] entries = root.entries;
 
       for(int x = 0; x < entries.length; x++)
       {
         if(entries[x] != null)
         {
-          BTreeSet.BTreeNode child = entries[x].child;
+          BTreeNode child = entries[x].child;
           PropertyNode xNode = (PropertyNode)entries[x].element;
           if(xNode != null)
           {

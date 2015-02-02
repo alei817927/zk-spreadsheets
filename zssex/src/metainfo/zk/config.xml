@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml
+	Purpose:
+		
+	Description:
+		
+	History:
+		Fri Apr 23 15:16:37     2010, Created by henrichen
+
+Copyright (C) 2010 Potix Corporation. All Rights Reserved.
+-->
+
+<config>
+	<config-name>zssex</config-name><!-- used to resolve dependency -->
+	<depends>zss</depends>
+
+	<version>
+		<version-class>org.zkoss.zssex.Version</version-class>
+		<version-uid>3.5.0</version-uid>
+		<zk-version>7.0.1</zk-version><!-- or later -->
+	</version>
+	<listener>
+		<listener-class>org.zkoss.zssex.init.WebAppInit</listener-class>
+	</listener>
+	
+	<library-property>
+		<name>org.zkoss.zss.ui.UserActionManagerCtrl.class</name>
+		<value>org.zkoss.zssex.ui.impl.UserActionManagerCtrlImpl</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zss.ui.undoableactionmanager.class</name>
+		<value>org.zkoss.zssex.ui.impl.UndoableActionManagerImpl</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zss.ui.CellDisplayLoader.class</name>
+		<value>org.zkoss.zssex.ui.impl.CellDisplayLoaderImpl</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zss.ui.DataValidationHandler.class</name>
+		<value>org.zkoss.zssex.ui.impl.DataValidationHandlerImpl</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zss.ui.FreezeInfoLoader.class</name>
+		<value>org.zkoss.zssex.ui.impl.FreezeInfoLoaderImpl</value>
+	</library-property>
+	
+	
+	<library-property>
+		<name>org.zkoss.zss.colorPickerExUsed</name>
+		<value>true</value>
+	</library-property>
+	
+</config>

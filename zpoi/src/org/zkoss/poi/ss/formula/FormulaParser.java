@@ -216,7 +216,7 @@ public final class FormulaParser {
 	 *
 	 * @param formula	 the formula to parse
 	 * @param workbook	the parent workbook
-	 * @param formulaType the type of the formula, see {@link FormulaType}
+	 * @param formulaType the type of the formula, see {@link org.zkoss.poi.ss.formula.FormulaType}
 	 * @param sheetIndex  the 0-based index of the sheet this formula belongs to.
 	 * The sheet index is required to resolve sheet-level names. <code>-1</code> means that
 	 * the scope of the name will be ignored and  the parser will match names only by name
@@ -928,7 +928,7 @@ public final class FormulaParser {
 
 		/**
 		 * @return <code>true</code> if the two range parts can be combined in an
-		 * {@link AreaPtg} ( Note - the explicit range operator (:) may still be valid
+		 * {@link org.zkoss.poi.ss.formula.ptg.AreaPtg} ( Note - the explicit range operator (:) may still be valid
 		 * when this method returns <code>false</code> )
 		 */
 		public boolean isCompatibleForArea(SimpleRangePart part2) {
@@ -1104,7 +1104,7 @@ public final class FormulaParser {
 	 * Generates the variable function ptg for the formula.
 	 * <p>
 	 * For IF Formulas, additional PTGs are added to the tokens
-	 * @param name a {@link NamePtg} or {@link NameXPtg} or <code>null</code>
+	 * @param name a {@link org.zkoss.poi.ss.formula.ptg.NamePtg} or {@link org.zkoss.poi.ss.formula.ptg.NameXPtg} or <code>null</code>
 	 * @return Ptg a null is returned if we're in an IF formula, it needs extreme manipulation and is handled in this function
 	 */
 	private ParseNode getFunction(String name, Ptg namePtg, ParseNode[] args) {

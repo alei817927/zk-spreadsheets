@@ -32,7 +32,7 @@ import org.zkoss.poi.ss.util.CellReference;
 /**
  * Represents a sheet being used for forked evaluation.  Initially, objects of this class contain
  * only the cells from the master workbook. By calling {@link #getOrCreateUpdatableCell(int, int)},
- * the master cell object is logically replaced with a {@link ForkedEvaluationCell} instance, which
+ * the master cell object is logically replaced with a {@link org.zkoss.poi.ss.formula.eval.forked.ForkedEvaluationCell} instance, which
  * will be used in all subsequent evaluations.
  *
  * @author Josh Micich

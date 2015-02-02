@@ -27,22 +27,22 @@ import org.zkoss.poi.util.POILogFactory;
 import org.zkoss.poi.util.POILogger;
 
 /**
- * <p>A property in a {@link Section} of a {@link PropertySet}.</p>
+ * <p>A property in a {@link org.zkoss.poi.hpsf.Section} of a {@link PropertySet}.</p>
  *
  * <p>The property's <strong>ID</strong> gives the property a meaning
- * in the context of its {@link Section}. Each {@link Section} spans
+ * in the context of its {@link org.zkoss.poi.hpsf.Section}. Each {@link org.zkoss.poi.hpsf.Section} spans
  * its own name space of property IDs.</p>
  *
  * <p>The property's <strong>type</strong> determines how its
  * <strong>value </strong> is interpreted. For example, if the type is
- * {@link Variant#VT_LPSTR} (byte string), the value consists of a
+ * {@link org.zkoss.poi.hpsf.Variant#VT_LPSTR} (byte string), the value consists of a
  * DWord telling how many bytes the string contains. The bytes follow
  * immediately, including any null bytes that terminate the
- * string. The type {@link Variant#VT_I4} denotes a four-byte integer
- * value, {@link Variant#VT_FILETIME} some date and time (of a
+ * string. The type {@link org.zkoss.poi.hpsf.Variant#VT_I4} denotes a four-byte integer
+ * value, {@link org.zkoss.poi.hpsf.Variant#VT_FILETIME} some date and time (of a
  * file).</p>
  *
- * <p>Please note that not all {@link Variant} types yet. This might change
+ * <p>Please note that not all {@link org.zkoss.poi.hpsf.Variant} types yet. This might change
  * over time but largely depends on your feedback so that the POI team knows
  * which variant types are really needed. So please feel free to submit error
  * reports or patches for the types you need.</p>
@@ -54,8 +54,8 @@ import org.zkoss.poi.util.POILogger;
  * @author Rainer Klute <a
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
  * @author Drew Varner (Drew.Varner InAndAround sc.edu)
- * @see Section
- * @see Variant
+ * @see org.zkoss.poi.hpsf.Section
+ * @see org.zkoss.poi.hpsf.Variant
  */
 public class Property
 {
@@ -112,9 +112,9 @@ public class Property
      * <p>Creates a property.</p>
      *
      * @param id the property's ID.
-     * @param type the property's type, see {@link Variant}.
+     * @param type the property's type, see {@link org.zkoss.poi.hpsf.Variant}.
      * @param value the property's value. Only certain types are allowed, see
-     *        {@link Variant}.
+     *        {@link org.zkoss.poi.hpsf.Variant}.
      */
     public Property(final long id, final long type, final Object value)
     {
@@ -126,7 +126,7 @@ public class Property
 
 
     /**
-     * <p>Creates a {@link Property} instance by reading its bytes
+     * <p>Creates a {@link org.zkoss.poi.hpsf.Property} instance by reading its bytes
      * from the property set stream.</p>
      *
      * @param id The property's ID.
@@ -136,7 +136,7 @@ public class Property
      * @param length The property's type/value pair's length in bytes.
      * @param codepage The section's and thus the property's
      * codepage. It is needed only when reading string values.
-     * @exception UnsupportedEncodingException if the specified codepage is not
+     * @exception java.io.UnsupportedEncodingException if the specified codepage is not
      * supported.
      */
     public Property(final long id, final byte[] src, final long offset,
@@ -190,7 +190,7 @@ public class Property
      * @param length The dictionary contains at most this many bytes.
      * @param codepage The codepage of the string values.
      * @return The dictonary
-     * @throws UnsupportedEncodingException if the dictionary's codepage is not
+     * @throws java.io.UnsupportedEncodingException if the dictionary's codepage is not
      *         (yet) supported.
      */
     protected Map<?, ?> readDictionary(final byte[] src, final long offset,
@@ -339,7 +339,7 @@ public class Property
      * section's dictionary. Another special case are strings: Two properties
      * may have the different types Variant.VT_LPSTR and Variant.VT_LPWSTR;</p>
      *
-     * @see Object#equals(java.lang.Object)
+     * @see Object#equals(Object)
      */
     public boolean equals(final Object o)
     {

@@ -36,13 +36,13 @@ public interface DataValidation {
 
 	/**
 	 * Sets the error style for error box
-	 * @see ErrorStyle
+	 * @see org.zkoss.poi.ss.usermodel.DataValidation.ErrorStyle
 	 */
 	public abstract void setErrorStyle(int error_style);
 
 	/**o
 	 * @return the error style of error box
-	 * @see ErrorStyle
+	 * @see org.zkoss.poi.ss.usermodel.DataValidation.ErrorStyle
 	 */
 	public abstract int getErrorStyle();
 

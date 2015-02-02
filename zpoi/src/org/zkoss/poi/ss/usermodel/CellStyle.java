@@ -269,15 +269,15 @@ public interface CellStyle {
     /**
      * set the font for this style
      * @param font  a font object created or retreived from the Workbook object
-     * @see Workbook#createFont()
-     * @see Workbook#getFontAt(short)
+     * @see org.zkoss.poi.ss.usermodel.Workbook#createFont()
+     * @see org.zkoss.poi.ss.usermodel.Workbook#getFontAt(short)
      */
 
     void setFont(Font font);
 
     /**
      * gets the index of the font for this style
-     * @see Workbook#getFontAt(short)
+     * @see org.zkoss.poi.ss.usermodel.Workbook#getFontAt(short)
      */
     short getFontIndex();
 
@@ -726,16 +726,16 @@ public interface CellStyle {
     //20141007, henrichen@zkoss.org: must do it in a whole, cannot call 
     //  setBorderBottom() .. one by one or there will be half-baked <border/>
     //ZSS-787
-    public void setBorder(short left, Color leftColor, short top, Color topColor, 
-    	short right, Color rightColor, short bottom, Color bottomColor);
+    public void setBorder(short left, Color leftColor, short top, Color topColor,
+                          short right, Color rightColor, short bottom, Color bottomColor);
     
     //@since 3.9.6
-    public void setBorder(short left, Color leftColor, short top, Color topColor, 
-        	short right, Color rightColor, short bottom, Color bottomColor, 
-        	short diagonal, Color diagonalColor, 
-        	short horizontal, Color horizontalColor, 
-        	short vertical, Color verticalColor,
-        	boolean diaUp, boolean diaDown);
+    public void setBorder(short left, Color leftColor, short top, Color topColor,
+                          short right, Color rightColor, short bottom, Color bottomColor,
+                          short diagonal, Color diagonalColor,
+                          short horizontal, Color horizontalColor,
+                          short vertical, Color verticalColor,
+                          boolean diaUp, boolean diaDown);
 
     //ZSS-787
     public void setFill(Color fillColor, Color backColor, short pattern);

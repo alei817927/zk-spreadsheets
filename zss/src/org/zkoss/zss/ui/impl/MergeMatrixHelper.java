@@ -121,7 +121,7 @@ public class MergeMatrixHelper {
 	}
 	
 	/**
-	 * Returns {@link MergedRect} MergedRect by id
+	 * Returns {@link org.zkoss.zss.ui.impl.MergedRect} MergedRect by id
 	 * 
 	 * @param id
 	 * @return MergedRect

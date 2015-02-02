@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 
 /**
- * A listener to handle {@link ModelEvent}.
+ * A listener to handle {@link org.zkoss.zss.model.ModelEvent}.
  * @author dennis
  * @since 3.5.0
  */

@@ -18,7 +18,7 @@
 package org.zkoss.poi.ss.formula.eval;
 
 /**
- * Common base class for implementors of {@link RefEval}
+ * Common base class for implementors of {@link org.zkoss.poi.ss.formula.eval.RefEval}
  *
  * @author Josh Micich
  */

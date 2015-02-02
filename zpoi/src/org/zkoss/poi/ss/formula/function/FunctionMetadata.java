@@ -29,7 +29,7 @@ public final class FunctionMetadata {
 	 * from the SpreadsheetVersion enum.
 	 * Perhaps a value like 'M' should be used instead of '30' in functionMetadata.txt
 	 * to make that file more version neutral.
-	 * @see org.zkoss.poi.ss.formula.FormulaParser#validateNumArgs(int, FunctionMetadata)
+	 * @see org.zkoss.poi.ss.formula.FormulaParser#validateNumArgs(int, org.zkoss.poi.ss.formula.function.FunctionMetadata)
 	 */
 	private static final short FUNCTION_MAX_PARAMS = 30;
 

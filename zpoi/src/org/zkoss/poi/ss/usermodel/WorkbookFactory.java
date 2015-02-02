@@ -58,7 +58,7 @@ public class WorkbookFactory {
 	 * Creates the appropriate HSSFWorkbook / XSSFWorkbook from
 	 *  the given InputStream.
 	 * Your input stream MUST either support mark/reset, or
-	 *  be wrapped as a {@link PushbackInputStream}!
+	 *  be wrapped as a {@link java.io.PushbackInputStream}!
 	 */
 	public static Workbook create(InputStream inp) throws IOException, InvalidFormatException {
 		// If clearly doesn't do mark/reset, wrap up

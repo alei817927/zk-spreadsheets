@@ -169,7 +169,7 @@ public class CellFormatPart {
 
     interface PartHandler {
         String handlePart(Matcher m, String part, CellFormatType type,
-                StringBuffer desc);
+                          StringBuffer desc);
     }
 
     /**

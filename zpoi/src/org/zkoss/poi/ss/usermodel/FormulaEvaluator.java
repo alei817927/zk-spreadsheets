@@ -94,7 +94,7 @@ public interface FormulaEvaluator {
      * </pre>
      * Be aware that your cell will hold both the formula,
      *  and the result. If you want the cell replaced with
-     *  the result of the formula, use {@link #evaluateInCell(Cell)}
+     *  the result of the formula, use {@link #evaluateInCell(org.zkoss.poi.ss.usermodel.Cell)}
      * @param cell The cell to evaluate
      * @return The type of the formula result (the cell's type remains as Cell.CELL_TYPE_FORMULA however)
      */
@@ -113,7 +113,7 @@ public interface FormulaEvaluator {
      * </pre>
      * Be aware that your cell value will be changed to hold the
      *  result of the formula. If you simply want the formula
-     *  value computed for you, use {@link #evaluateFormulaCell(Cell)}
+     *  value computed for you, use {@link #evaluateFormulaCell(org.zkoss.poi.ss.usermodel.Cell)}
      * @param cell
      */
     Cell evaluateInCell(Cell cell);

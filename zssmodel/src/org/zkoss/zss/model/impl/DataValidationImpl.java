@@ -626,6 +626,17 @@ public class DataValidationImpl extends AbstractDataValidationAdv {
 	void copyFrom(AbstractDataValidationAdv src) {
 		Validations.argInstance(src, DataValidationImpl.class);
 		DataValidationImpl srcImpl = (DataValidationImpl)src;
+		////////////
+		_errorStyle = srcImpl._errorStyle;
+		_emptyCellAllowed = srcImpl._emptyCellAllowed;
+		_showDropDownArrow = srcImpl._showDropDownArrow;
+		_showPromptBox = srcImpl._showPromptBox;
+		_showErrorBox = srcImpl._showErrorBox;
+		_promptBoxTitle = srcImpl._promptBoxTitle;
+		_promptBoxText = srcImpl._promptBoxText;
+		_errorBoxTitle = srcImpl._errorBoxTitle;
+		_errorBoxText = srcImpl._errorBoxText;
+		////////////
 		_alertStyle = srcImpl._alertStyle;
 		_ignoreBlank = srcImpl._ignoreBlank;
 		_showInCellDropdown = srcImpl._showInCellDropdown;
@@ -955,4 +966,111 @@ public class DataValidationImpl extends AbstractDataValidationAdv {
 	public String getEscapedFormula2() {
 		return _formula2Expr == null ? null : _formula2Expr.getFormulaString();
 	}
+
+	/////////////
+
+	private ErrorStyle _errorStyle = ErrorStyle.STOP;//default stop
+	private boolean _emptyCellAllowed = true;//default true
+	private boolean _showDropDownArrow;
+	private boolean _showPromptBox;
+	private boolean _showErrorBox;
+	private String _promptBoxTitle;
+	private String _promptBoxText;
+	private String _errorBoxTitle;
+	private String _errorBoxText;
+	private CellRegion _region;
+	@Override
+	public ErrorStyle getErrorStyle() {
+		return _errorStyle;
+	}
+
+	@Override
+	public void setErrorStyle(ErrorStyle errorStyle) {
+		Validations.argNotNull(errorStyle);
+		this._errorStyle = errorStyle;
+	}
+
+	@Override
+	public void setEmptyCellAllowed(boolean allowed) {
+		this._emptyCellAllowed = allowed;
+	}
+
+	@Override
+	public boolean isEmptyCellAllowed() {
+		return _emptyCellAllowed;
+	}
+
+	@Override
+	public void setShowDropDownArrow(boolean show) {
+		_showDropDownArrow = show;
+	}
+
+	@Override
+	public boolean isShowDropDownArrow() {
+		return _showDropDownArrow;
+	}
+
+	@Override
+	public void setShowPromptBox(boolean show) {
+		_showPromptBox = show;
+	}
+
+	@Override
+	public boolean isShowPromptBox() {
+		return _showPromptBox;
+	}
+
+	@Override
+	public void setShowErrorBox(boolean show) {
+		_showErrorBox = show;
+	}
+
+	@Override
+	public boolean isShowErrorBox() {
+		return _showErrorBox;
+	}
+
+	@Override
+	public void setPromptBox(String title, String text) {
+		_promptBoxTitle = title;
+		_promptBoxText = text;
+	}
+
+	@Override
+	public String getPromptBoxTitle() {
+		return _promptBoxTitle;
+	}
+
+	@Override
+	public String getPromptBoxText() {
+		return _promptBoxText;
+	}
+
+	@Override
+	public void setErrorBox(String title, String text) {
+		_errorBoxTitle = title;
+		_errorBoxText = text;
+	}
+
+	@Override
+	public String getErrorBoxTitle() {
+		return _errorBoxTitle;
+	}
+
+	@Override
+	public String getErrorBoxText() {
+		return _errorBoxText;
+	}
+
+	@Override
+	public CellRegion getRegion() {
+		return _region;
+	}
+
+	@Override
+	public void setRegion(CellRegion region){
+		Validations.argNotNull(region);
+		this._region = region;
+	}
+
 }

@@ -86,7 +86,7 @@ public interface AreaEval extends TwoDEval {
     ValueEval getRelativeValue(int relativeRowIndex, int relativeColumnIndex);
 
     /**
-     * Creates an {@link AreaEval} offset by a relative amount from from the upper left cell
+     * Creates an {@link org.zkoss.poi.ss.formula.eval.AreaEval} offset by a relative amount from from the upper left cell
      * of this area
      */
     AreaEval offset(int relFirstRowIx, int relLastRowIx, int relFirstColIx, int relLastColIx);

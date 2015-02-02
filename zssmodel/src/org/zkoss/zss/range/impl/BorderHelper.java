@@ -286,14 +286,14 @@ public class BorderHelper extends RangeHelperBase {
 		SCellStyle style = cell.getCellStyle();
 		BorderType bType = style.getBorderTop();
 		String bColor = style.getBorderTopColor().getHtmlColor();
-		if(SCellStyle.BorderType.NONE.equals(bType)){
+		if(BorderType.NONE.equals(bType)){
 			return false;
 		}
 		//same border
 		if(borderType.equals(bType) && borderColor.equals(bColor)){
 			return false;
 		}
-		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, SCellStyle.BorderType.NONE,StyleUtil.BORDER_EDGE_TOP);
+		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, BorderType.NONE,StyleUtil.BORDER_EDGE_TOP);
 		return true;
 	}
 	private boolean resetBorderBottom(SSheet sheet,int r, int c,BorderType borderType,String borderColor){
@@ -308,7 +308,7 @@ public class BorderHelper extends RangeHelperBase {
 		SCellStyle style = cell.getCellStyle();
 		BorderType bType = style.getBorderBottom();
 		String bColor = style.getBorderBottomColor().getHtmlColor();
-		if(SCellStyle.BorderType.NONE.equals(bType)){
+		if(BorderType.NONE.equals(bType)){
 			return false;
 		}
 		//same border
@@ -316,7 +316,7 @@ public class BorderHelper extends RangeHelperBase {
 			return false;
 		}
 		
-		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, SCellStyle.BorderType.NONE,StyleUtil.BORDER_EDGE_BOTTOM);
+		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, BorderType.NONE,StyleUtil.BORDER_EDGE_BOTTOM);
 		
 		return true;
 	}
@@ -332,14 +332,14 @@ public class BorderHelper extends RangeHelperBase {
 		SCellStyle style = cell.getCellStyle();
 		BorderType bType = style.getBorderLeft();
 		String bColor = style.getBorderLeftColor().getHtmlColor();
-		if(SCellStyle.BorderType.NONE.equals(bType)){
+		if(BorderType.NONE.equals(bType)){
 			return false;
 		}
 		//same border
 		if(borderType.equals(bType) && borderColor.equals(bColor)){
 			return false;
 		}
-		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, SCellStyle.BorderType.NONE,StyleUtil.BORDER_EDGE_LEFT);
+		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, BorderType.NONE,StyleUtil.BORDER_EDGE_LEFT);
 		return true;
 	}
 	private boolean resetBorderRight(SSheet sheet,int r, int c,BorderType borderType,String borderColor){
@@ -354,14 +354,14 @@ public class BorderHelper extends RangeHelperBase {
 		SCellStyle style = cell.getCellStyle();
 		BorderType bType = style.getBorderRight();
 		String bColor = style.getBorderRightColor().getHtmlColor();
-		if(SCellStyle.BorderType.NONE.equals(bType)){
+		if(BorderType.NONE.equals(bType)){
 			return false;
 		}
 		//same border
 		if(borderType.equals(bType) && borderColor.equals(bColor)){
 			return false;
 		}
-		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, SCellStyle.BorderType.NONE,StyleUtil.BORDER_EDGE_RIGHT);
+		StyleUtil.setBorder(_book, sheet.getCell(r, c),BLACK, BorderType.NONE,StyleUtil.BORDER_EDGE_RIGHT);
 		return true;
 	}
 }

@@ -217,7 +217,7 @@ public interface ClientAnchor {
      * @see #MOVE_DONT_RESIZE
      * @see #DONT_MOVE_AND_RESIZE
      */
-    public void setAnchorType( int anchorType );
+    public void setAnchorType(int anchorType);
 
     /**
      * Gets the anchor type

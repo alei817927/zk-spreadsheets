@@ -484,7 +484,7 @@ public final class Countif extends Fixed2ArgFunction {
 
 	/**
 	 *
-	 * @return the de-referenced criteria arg (possibly {@link ErrorEval})
+	 * @return the de-referenced criteria arg (possibly {@link org.zkoss.poi.ss.formula.eval.ErrorEval})
 	 */
 	private static ValueEval evaluateCriteriaArg(ValueEval arg, int srcRowIndex, int srcColumnIndex) {
 		try {

@@ -20,7 +20,7 @@ package org.zkoss.poi.hpsf;
 import org.zkoss.poi.util.LittleEndian;
 /**
  * <p>Class to manipulate data in the Clipboard Variant ({@link
- * Variant#VT_CF VT_CF}) format.</p>
+ * org.zkoss.poi.hpsf.Variant#VT_CF VT_CF}) format.</p>
  *
  * @author Drew Varner (Drew.Varner inOrAround sc.edu)
  * @see SummaryInformation#getThumbnail()
@@ -125,7 +125,7 @@ public final class Thumbnail {
 
     /**
      * <p>A <code>byte[]</code> to hold a thumbnail image in ({@link
-     * Variant#VT_CF VT_CF}) format.</p>
+     * org.zkoss.poi.hpsf.Variant#VT_CF VT_CF}) format.</p>
      */
     private byte[] _thumbnailData = null;
 
@@ -160,7 +160,7 @@ public final class Thumbnail {
 
     /**
      * <p>Returns the thumbnail as a <code>byte[]</code> in {@link
-     * Variant#VT_CF VT_CF} format.</p>
+     * org.zkoss.poi.hpsf.Variant#VT_CF VT_CF} format.</p>
      *
      * @return The thumbnail value
      * @see SummaryInformation#getThumbnail()
@@ -174,7 +174,7 @@ public final class Thumbnail {
 
     /**
      * <p>Sets the Thumbnail's underlying <code>byte[]</code> in
-     * {@link Variant#VT_CF VT_CF} format.</p>
+     * {@link org.zkoss.poi.hpsf.Variant#VT_CF VT_CF} format.</p>
      *
      * @param thumbnail The new thumbnail value
      * @see SummaryInformation#getThumbnail()
@@ -214,7 +214,7 @@ public final class Thumbnail {
      * Format</p>
      *
      * <p>Will throw an exception if the Thumbnail's Clipboard Format
-     * Tag is not {@link Thumbnail#CFTAG_WINDOWS CFTAG_WINDOWS}.</p>
+     * Tag is not {@link org.zkoss.poi.hpsf.Thumbnail#CFTAG_WINDOWS CFTAG_WINDOWS}.</p>
      *
      * <p>Possible return values are:</p>
      *

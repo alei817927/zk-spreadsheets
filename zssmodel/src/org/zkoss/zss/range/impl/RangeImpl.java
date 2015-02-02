@@ -526,7 +526,7 @@ public class RangeImpl implements SRange {
 		return cell.setupHyperlink(type, address, label);
 	}
 	
-	private SHyperlink.HyperlinkType getHyperlinkType(String address) {
+	private HyperlinkType getHyperlinkType(String address) {
 		if (address != null) {
 			final String addr = address.toLowerCase(); // ZSS-288: support more scheme according to POI code, see  org.zkoss.poi.ss.formula.functions.Hyperlink
 			if (addr.startsWith("http://") || addr.startsWith("https://")

@@ -20,7 +20,7 @@ package org.zkoss.poi.ss.formula;
 import org.zkoss.poi.ss.formula.eval.ValueEval;
 
 /**
- * Tests can implement this class to track the internal working of the {@link WorkbookEvaluator}.<br/>
+ * Tests can implement this class to track the internal working of the {@link org.zkoss.poi.ss.formula.WorkbookEvaluator}.<br/>
  *
  * For POI internal testing use only
  *
@@ -43,12 +43,12 @@ interface IEvaluationListener {
 	void onClearWholeCache();
 	void onClearCachedValue(ICacheEntry entry);
 	/**
-	 * Internally, formula {@link ICacheEntry}s are stored in sets which may change ordering due
+	 * Internally, formula {@link org.zkoss.poi.ss.formula.IEvaluationListener.ICacheEntry}s are stored in sets which may change ordering due
 	 * to seemingly trivial changes.  This method is provided to make the order of call-backs to
-	 * {@link #onClearDependentCachedValue(ICacheEntry, int)} more deterministic.
+	 * {@link #onClearDependentCachedValue(org.zkoss.poi.ss.formula.IEvaluationListener.ICacheEntry, int)} more deterministic.
 	 */
 	void sortDependentCachedValues(ICacheEntry[] formulaCells);
 	void onClearDependentCachedValue(ICacheEntry formulaCell, int depth);
 	void onChangeFromBlankValue(int sheetIndex, int rowIndex, int columnIndex,
-			EvaluationCell cell, ICacheEntry entry);
+								EvaluationCell cell, ICacheEntry entry);
 }

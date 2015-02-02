@@ -41,7 +41,7 @@ import org.zkoss.poi.ss.formula.ptg.Ptg;
 public class FormulaRenderer {
 
     /**
-     * Static method to convert an array of {@link Ptg}s in RPN order
+     * Static method to convert an array of {@link org.zkoss.poi.ss.formula.ptg.Ptg}s in RPN order
      * to a human readable string format in infix mode.
      * @param book  used for defined names and 3D references
      * @param ptgs  must not be <code>null</code>
@@ -140,7 +140,7 @@ public class FormulaRenderer {
     //20120117, henrichen@zkoss.org: generate formula string to be stored in file
     //ZSS-81 Cannot input formula with proper external book name
     /**
-     * Static method to convert an array of {@link Ptg}s in RPN order
+     * Static method to convert an array of {@link org.zkoss.poi.ss.formula.ptg.Ptg}s in RPN order
      * to internal string format for storing into file.
      * @param book  used for defined names and 3D references
      * @param ptgs  must not be <code>null</code>

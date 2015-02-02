@@ -69,7 +69,7 @@ public final class Hlookup extends Var3or4ArgFunction  {
 	 *
 	 * @param rowIndex assumed to be non-negative
 	 *
-	 * @throws EvaluationException (#REF!) if colIndex is too high
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException (#REF!) if colIndex is too high
 	 */
 	private ValueVector createResultColumnVector(TwoDEval tableArray, int rowIndex) throws EvaluationException {
 		if(rowIndex >= tableArray.getHeight()) {

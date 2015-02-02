@@ -22,7 +22,7 @@ import java.util.Map;
 public class MiRepository implements BookRepository {
     private static Map<String, BookInfo> templateBooks;
     private final static String userId = "alei";
-    private final static String bookId = "1";
+    private final static String bookId = "4";
 
     public MiRepository() {
     }

@@ -29,7 +29,7 @@ import org.zkoss.poi.hssf.usermodel.HSSFCell;
 
 /**
  * Instances of this class keep track of multiple dependent cell evaluations due
- * to recursive calls to {@link WorkbookEvaluator#evaluate(EvaluationCell)}}
+ * to recursive calls to {@link WorkbookEvaluator#evaluate(org.zkoss.poi.ss.formula.EvaluationCell)}}
  * The main purpose of this class is to detect an attempt to evaluate a cell
  * that is already being evaluated. In other words, it detects circular
  * references in spreadsheet formulas.

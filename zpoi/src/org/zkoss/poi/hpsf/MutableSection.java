@@ -33,10 +33,10 @@ import org.zkoss.poi.hpsf.wellknown.PropertyIDMap;
 import org.zkoss.poi.util.LittleEndian;
 
 /**
- * <p>Adds writing capability to the {@link Section} class.</p>
+ * <p>Adds writing capability to the {@link org.zkoss.poi.hpsf.Section} class.</p>
  *
  * <p>Please be aware that this class' functionality will be merged into the
- * {@link Section} class at a later time, so the API will change.</p>
+ * {@link org.zkoss.poi.hpsf.Section} class at a later time, so the API will change.</p>
  */
 public class MutableSection extends Section
 {
@@ -106,7 +106,7 @@ public class MutableSection extends Section
      * @param formatID The section's format ID
      *
      * @see #setFormatID(byte[])
-     * @see Section#getFormatID
+     * @see org.zkoss.poi.hpsf.Section#getFormatID
      */
     public void setFormatID(final ClassID formatID)
     {
@@ -121,8 +121,8 @@ public class MutableSection extends Section
      * @param formatID The section's format ID as a byte array. It components
      * are in big-endian format.
      *
-     * @see #setFormatID(ClassID)
-     * @see Section#getFormatID
+     * @see #setFormatID(org.zkoss.poi.hpsf.ClassID)
+     * @see org.zkoss.poi.hpsf.Section#getFormatID
      */
     public void setFormatID(final byte[] formatID)
     {
@@ -235,7 +235,7 @@ public class MutableSection extends Section
      *
      * @see #setProperty(int, String)
      * @see #getProperty
-     * @see Variant
+     * @see org.zkoss.poi.hpsf.Variant
      */
     public void setProperty(final int id, final long variantType,
                             final Object value)
@@ -257,7 +257,7 @@ public class MutableSection extends Section
      *
      * @see #setProperty(int, long, Object)
      * @see #getProperty
-     * @see Variant
+     * @see org.zkoss.poi.hpsf.Variant
      */
     public void setProperty(final Property p)
     {
@@ -296,7 +296,7 @@ public class MutableSection extends Section
      *
      * @see #setProperty(int, long, Object)
      * @see #getProperty
-     * @see Variant
+     * @see org.zkoss.poi.hpsf.Variant
      */
     protected void setPropertyBooleanValue(final int id, final boolean value)
     {
@@ -340,7 +340,7 @@ public class MutableSection extends Section
      *
      * @return the section's length in bytes.
      * @throws WritingNotSupportedException
-     * @throws IOException
+     * @throws java.io.IOException
      */
     private int calcSize() throws WritingNotSupportedException, IOException
     {
@@ -366,7 +366,7 @@ public class MutableSection extends Section
      * @param out The stream to write into.
      *
      * @return The number of bytes written, i.e. the section's size.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @exception WritingNotSupportedException if HPSF does not yet support
      * writing a property's variant type.
      */
@@ -497,7 +497,7 @@ public class MutableSection extends Section
      * @param dictionary The dictionary.
      * @param codepage The codepage to be used to write the dictionary items.
      * @return The number of bytes written
-     * @exception IOException if an I/O exception occurs.
+     * @exception java.io.IOException if an I/O exception occurs.
      */
     private static int writeDictionary(final OutputStream out,
                                        final Map<Long,String> dictionary, final int codepage)
@@ -601,8 +601,8 @@ public class MutableSection extends Section
 
     /**
      * <p>Sets the section's dictionary. All keys in the dictionary must be
-     * {@link java.lang.Long} instances, all values must be
-     * {@link java.lang.String}s. This method overwrites the properties with IDs
+     * {@link Long} instances, all values must be
+     * {@link String}s. This method overwrites the properties with IDs
      * 0 and 1 since they are reserved for the dictionary and the dictionary's
      * codepage. Setting these properties explicitly might have surprising
      * effects. An application should never do this but always use this
@@ -613,7 +613,7 @@ public class MutableSection extends Section
      * @exception IllegalPropertySetDataException if the dictionary's key and
      * value types are not correct.
      *
-     * @see Section#getDictionary()
+     * @see org.zkoss.poi.hpsf.Section#getDictionary()
      */
     public void setDictionary(final Map<Long,String> dictionary)
         throws IllegalPropertySetDataException

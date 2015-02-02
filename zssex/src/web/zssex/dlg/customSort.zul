@@ -1,0 +1,30 @@
+<zk>
+<window title="${labels.zssex.dlg.sort.custom}" border="normal" mode="modal" width="630px" height="400px" 
+	apply="org.zkoss.zssex.ui.dialog.CustomSortCtrl" >
+	<vlayout style="margin:7px" hflex="1" vflex="1" spacing="5px">
+		<hlayout spacing="0.4em">
+			<button id="addBtn" image="~./zssex/image/plus.png" mold="trendy"></button>
+			<button id="delBtn" image="~./zssex/image/minus.png" mold="trendy"></button>
+			<button id="upBtn" image="~./zssex/image/arrow-up.png" mold="trendy"></button>
+			<button id="downBtn" image="~./zssex/image/arrow-down.png" mold="trendy"></button>
+			<checkbox id="caseSensitiveBox" label="${labels.zssex.dlg.sort.caseSensitive}"></checkbox>
+			<checkbox id="hasHeaderBox" label="${labels.zssex.dlg.sort.hasHeader}"></checkbox>
+			<combobox id="sortOrientationBox" mold="rounded" readonly="true">
+				<comboitem label="${labels.zssex.dlg.sort.orientation.column}"/>
+				<comboitem label="${labels.zssex.dlg.sort.orientation.row}"/>
+			</combobox>
+		</hlayout>
+		<listbox id="sortRuleBox" vflex="1" hflex="1">
+			<listhead>
+				<listheader width="70px"></listheader>
+				<listheader ></listheader>
+				<listheader ></listheader>
+			</listhead>
+		</listbox>
+		<hbox hflex="1" pack="center" align="center" style="padding-top:5px;">
+			<button id="okBtn" label="${labels.zssex.dlg.btn.OK}"/>
+			<button id="cancelBtn" label="${labels.zssex.dlg.btn.Cancel}"/>
+		</hbox>
+	</vlayout>
+</window>
+</zk>

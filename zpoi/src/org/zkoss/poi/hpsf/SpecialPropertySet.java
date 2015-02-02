@@ -37,17 +37,17 @@ import org.zkoss.poi.poifs.filesystem.DirectoryEntry;
  * java.io.InputStream}) we want to read and process each byte only
  * once. Since we don't know in advance which kind of property set we
  * have, we can expect only the most general {@link
- * PropertySet}. Creating a special subclass should be as easy as
+ * org.zkoss.poi.hpsf.PropertySet}. Creating a special subclass should be as easy as
  * calling the special subclass' constructor and pass the general
- * {@link PropertySet} in. To make things easy internally, the special
- * class just holds a reference to the general {@link PropertySet} and
+ * {@link org.zkoss.poi.hpsf.PropertySet} in. To make things easy internally, the special
+ * class just holds a reference to the general {@link org.zkoss.poi.hpsf.PropertySet} and
  * delegates all method calls to it.</p>
  *
  * <p>A cleaner implementation would have been like this: The {@link
- * PropertySetFactory} parses the stream data into some internal
+ * org.zkoss.poi.hpsf.PropertySetFactory} parses the stream data into some internal
  * object first.  Then it finds out whether the stream is a {@link
  * SummaryInformation}, a {@link DocumentSummaryInformation} or a
- * general {@link PropertySet}.  However, the current implementation
+ * general {@link org.zkoss.poi.hpsf.PropertySet}.  However, the current implementation
  * went the other way round historically: the convenience classes came
  * only late to my mind.</p>
  *
@@ -97,7 +97,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getByteOrder
+     * @see org.zkoss.poi.hpsf.PropertySet#getByteOrder
      */
     public int getByteOrder()
     {
@@ -107,7 +107,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getFormat
+     * @see org.zkoss.poi.hpsf.PropertySet#getFormat
      */
     public int getFormat()
     {
@@ -117,7 +117,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getOSVersion
+     * @see org.zkoss.poi.hpsf.PropertySet#getOSVersion
      */
     public int getOSVersion()
     {
@@ -127,7 +127,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getClassID
+     * @see org.zkoss.poi.hpsf.PropertySet#getClassID
      */
     public ClassID getClassID()
     {
@@ -137,7 +137,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getSectionCount
+     * @see org.zkoss.poi.hpsf.PropertySet#getSectionCount
      */
     public int getSectionCount()
     {
@@ -147,7 +147,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getSections
+     * @see org.zkoss.poi.hpsf.PropertySet#getSections
      */
     public List getSections()
     {
@@ -157,7 +157,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#isSummaryInformation
+     * @see org.zkoss.poi.hpsf.PropertySet#isSummaryInformation
      */
     public boolean isSummaryInformation()
     {
@@ -167,7 +167,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#isDocumentSummaryInformation
+     * @see org.zkoss.poi.hpsf.PropertySet#isDocumentSummaryInformation
      */
     public boolean isDocumentSummaryInformation()
     {
@@ -177,7 +177,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see PropertySet#getSingleSection
+     * @see org.zkoss.poi.hpsf.PropertySet#getSingleSection
      */
     public Section getFirstSection()
     {
@@ -186,7 +186,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#addSection(org.zkoss.poi.hpsf.Section)
+     * @see MutablePropertySet#addSection(Section)
      */
     public void addSection(final Section section)
     {
@@ -196,7 +196,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#clearSections()
+     * @see MutablePropertySet#clearSections()
      */
     public void clearSections()
     {
@@ -206,7 +206,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#setByteOrder(int)
+     * @see MutablePropertySet#setByteOrder(int)
      */
     public void setByteOrder(final int byteOrder)
     {
@@ -216,7 +216,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#setClassID(org.zkoss.poi.hpsf.ClassID)
+     * @see MutablePropertySet#setClassID(ClassID)
      */
     public void setClassID(final ClassID classID)
     {
@@ -226,7 +226,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#setFormat(int)
+     * @see MutablePropertySet#setFormat(int)
      */
     public void setFormat(final int format)
     {
@@ -236,7 +236,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#setOSVersion(int)
+     * @see MutablePropertySet#setOSVersion(int)
      */
     public void setOSVersion(final int osVersion)
     {
@@ -246,7 +246,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#toInputStream()
+     * @see MutablePropertySet#toInputStream()
      */
     public InputStream toInputStream() throws IOException, WritingNotSupportedException
     {
@@ -256,7 +256,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#write(org.zkoss.poi.poifs.filesystem.DirectoryEntry, java.lang.String)
+     * @see MutablePropertySet#write(org.zkoss.poi.poifs.filesystem.DirectoryEntry, String)
      */
     public void write(final DirectoryEntry dir, final String name) throws WritingNotSupportedException, IOException
     {
@@ -266,7 +266,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.MutablePropertySet#write(java.io.OutputStream)
+     * @see MutablePropertySet#write(java.io.OutputStream)
      */
     public void write(final OutputStream out) throws WritingNotSupportedException, IOException
     {
@@ -276,7 +276,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#equals(java.lang.Object)
+     * @see PropertySet#equals(Object)
      */
     public boolean equals(final Object o)
     {
@@ -286,7 +286,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#getProperties()
+     * @see PropertySet#getProperties()
      */
     public Property[] getProperties() throws NoSingleSectionException
     {
@@ -296,7 +296,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#getProperty(int)
+     * @see PropertySet#getProperty(int)
      */
     protected Object getProperty(final int id) throws NoSingleSectionException
     {
@@ -306,7 +306,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#getPropertyBooleanValue(int)
+     * @see PropertySet#getPropertyBooleanValue(int)
      */
     protected boolean getPropertyBooleanValue(final int id) throws NoSingleSectionException
     {
@@ -316,7 +316,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#getPropertyIntValue(int)
+     * @see PropertySet#getPropertyIntValue(int)
      */
     protected int getPropertyIntValue(final int id) throws NoSingleSectionException
     {
@@ -326,7 +326,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#hashCode()
+     * @see PropertySet#hashCode()
      */
     public int hashCode()
     {
@@ -336,7 +336,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#toString()
+     * @see PropertySet#toString()
      */
     public String toString()
     {
@@ -346,7 +346,7 @@ public abstract class SpecialPropertySet extends MutablePropertySet
 
 
     /**
-     * @see org.zkoss.poi.hpsf.PropertySet#wasNull()
+     * @see PropertySet#wasNull()
      */
     public boolean wasNull() throws NoSingleSectionException
     {

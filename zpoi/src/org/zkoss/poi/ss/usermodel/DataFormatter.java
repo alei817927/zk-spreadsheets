@@ -50,8 +50,8 @@ import org.zkoss.poi.ss.formula.eval.NotImplementedException;
  * include currency, SSN, percentages, decimals, dates, phone numbers, zip
  * codes, etc.
  * <p>
- * Internally, formats will be implemented using subclasses of {@link Format}
- * such as {@link DecimalFormat} and {@link SimpleDateFormat}. Therefore the
+ * Internally, formats will be implemented using subclasses of {@link java.text.Format}
+ * such as {@link java.text.DecimalFormat} and {@link java.text.SimpleDateFormat}. Therefore the
  * formats used by this class must obey the same pattern rules as these Format
  * subclasses. This means that only legal number pattern characters ("0", "#",
  * ".", "," etc.) may appear in number formats. Other characters can be
@@ -63,7 +63,7 @@ import org.zkoss.poi.ss.formula.eval.NotImplementedException;
  * </code> will be correctly formatted as "$1,000.00 USD" or "($1,000.00 USD)".
  * However the pattern <code>"00-00-00"</code> is incorrectly formatted by
  * DecimalFormat as "000000--". For Excel formats that are not compatible with
- * DecimalFormat, you can provide your own custom {@link Format} implementation
+ * DecimalFormat, you can provide your own custom {@link java.text.Format} implementation
  * via <code>DataFormatter.addFormat(String,Format)</code>. The following
  * custom formats are already provided by this class:
  * </p>
@@ -171,14 +171,14 @@ public class DataFormatter {
     private Locale locale = Locale.getDefault();
 
     /**
-     * Creates a formatter using the {@link Locale#getDefault() default locale}.
+     * Creates a formatter using the {@link java.util.Locale#getDefault() default locale}.
      */
     public DataFormatter() {
         this(false);
     }
 
     /**
-     * Creates a formatter using the {@link Locale#getDefault() default locale}.
+     * Creates a formatter using the {@link java.util.Locale#getDefault() default locale}.
      *
      * @param  emulateCsv whether to emulate CSV output.
      */
@@ -725,7 +725,7 @@ public class DataFormatter {
     /**
      * Formats the given raw cell value, based on the supplied
      *  format index and string, according to excel style rules.
-     * @see #formatCellValue(Cell)
+     * @see #formatCellValue(org.zkoss.poi.ss.usermodel.Cell)
      */
     public String formatRawCellContents(double value, int formatIndex, String formatString) {
        return formatRawCellContents(value, formatIndex, formatString, false);
@@ -733,7 +733,7 @@ public class DataFormatter {
     /**
      * Formats the given raw cell value, based on the supplied
      *  format index and string, according to excel style rules.
-     * @see #formatCellValue(Cell)
+     * @see #formatCellValue(org.zkoss.poi.ss.usermodel.Cell)
      */
     public String formatRawCellContents(double value, int formatIndex, String formatString, boolean use1904Windowing) {
         // Is it a date?
@@ -1148,7 +1148,7 @@ public class DataFormatter {
      * This format is used to simulate Excel's handling of a format string
      * of all # when the value is 0. Excel will output "", Java will output "0".
      *
-     * @see DataFormatter#createFormat(double, int, String)
+     * @see org.zkoss.poi.ss.usermodel.DataFormatter#createFormat(double, int, String)
      */
     @SuppressWarnings("serial")
    private static final class ConstantStringFormat extends Format {

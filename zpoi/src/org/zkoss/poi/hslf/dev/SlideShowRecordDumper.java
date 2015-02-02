@@ -97,7 +97,7 @@ public final class SlideShowRecordDumper {
    * and dumps out the contents
    *
    * @param fileName The name of the file to read.
-   * @throws IOException if there is a problem while parsing the document.
+   * @throws java.io.IOException if there is a problem while parsing the document.
    */
   public SlideShowRecordDumper(String fileName, boolean verbose, boolean escher) throws IOException
   {

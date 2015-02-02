@@ -31,7 +31,7 @@ import org.zkoss.poi.hpsf.wellknown.SectionIDMap;
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
  * @author Drew Varner (Drew.Varner closeTo sc.edu)
  * @author robert_flaherty@hyperion.com
- * @see SummaryInformation
+ * @see org.zkoss.poi.hpsf.SummaryInformation
  */
 public class DocumentSummaryInformation extends SpecialPropertySet
 {
@@ -49,8 +49,8 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
 
     /**
-     * <p>Creates a {@link DocumentSummaryInformation} from a given
-     * {@link PropertySet}.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.DocumentSummaryInformation} from a given
+     * {@link org.zkoss.poi.hpsf.PropertySet}.</p>
      *
      * @param ps A property set which should be created from a
      * document summary information stream.
@@ -135,7 +135,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the byte count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a byte count.</p>
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a byte count.</p>
      *
      * @return The byteCount value
      */
@@ -168,7 +168,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the line count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a line count.</p>
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a line count.</p>
      *
      * @return The line count value
      */
@@ -201,7 +201,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the par count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a par count.</p>
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a par count.</p>
      *
      * @return The par count value
      */
@@ -234,7 +234,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the slide count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a slide count.</p>
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a slide count.</p>
      *
      * @return The slide count value
      */
@@ -267,7 +267,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the note count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a note count.</p>
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a note count.</p>
      *
      * @return The note count value
      */
@@ -300,7 +300,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the hidden count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a hidden
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a hidden
      * count.</p>
      *
      * @return The hidden count value
@@ -334,7 +334,7 @@ public class DocumentSummaryInformation extends SpecialPropertySet
 
     /**
      * <p>Returns the mmclip count or 0 if the {@link
-     * DocumentSummaryInformation} does not contain a mmclip
+     * org.zkoss.poi.hpsf.DocumentSummaryInformation} does not contain a mmclip
      * count.</p>
      *
      * @return The mmclip count value

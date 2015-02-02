@@ -36,7 +36,7 @@ public class HPSFRuntimeException extends RuntimeException
 
 
     /**
-     * <p>Creates a new {@link HPSFRuntimeException}.</p>
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.HPSFRuntimeException}.</p>
      */
     public HPSFRuntimeException()
     {
@@ -46,7 +46,7 @@ public class HPSFRuntimeException extends RuntimeException
 
 
     /**
-     * <p>Creates a new {@link HPSFRuntimeException} with a message
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.HPSFRuntimeException} with a message
      * string.</p>
      *
      * @param msg The message string.
@@ -59,7 +59,7 @@ public class HPSFRuntimeException extends RuntimeException
 
 
     /**
-     * <p>Creates a new {@link HPSFRuntimeException} with a
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.HPSFRuntimeException} with a
      * reason.</p>
      *
      * @param reason The reason, i.e. a throwable that indirectly
@@ -74,7 +74,7 @@ public class HPSFRuntimeException extends RuntimeException
 
 
     /**
-     * <p>Creates a new {@link HPSFRuntimeException} with a message
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.HPSFRuntimeException} with a message
      * string and a reason.</p>
      *
      * @param msg The message string.

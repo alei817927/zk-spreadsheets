@@ -17,8 +17,8 @@
 package org.zkoss.poi.ss.usermodel;
 
 /**
- * Common interface for {@link org.zkoss.poi.ss.usermodel.Header} and
- *  {@link org.zkoss.poi.ss.usermodel.Footer}.
+ * Common interface for {@link Header} and
+ *  {@link Footer}.
  */
 public interface HeaderFooter {
     /**

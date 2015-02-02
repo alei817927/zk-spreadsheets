@@ -20,7 +20,7 @@ import org.zkoss.zss.ui.event.CellSelectionEvent;
 import org.zkoss.zss.ui.event.CellSelectionUpdateEvent;
 
 /**
- * Cell selection type about {@link CellSelectionEvent} and {@link CellSelectionUpdateEvent}
+ * Cell selection type about {@link org.zkoss.zss.ui.event.CellSelectionEvent} and {@link org.zkoss.zss.ui.event.CellSelectionUpdateEvent}
  * @author dennis
  * @since 3.0.0
  */

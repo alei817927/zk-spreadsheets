@@ -34,7 +34,7 @@ public interface Exporter {
 	 * Export book
 	 * @param book the book to export
 	 * @param fos the output stream to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public void export(Book book, OutputStream fos) throws IOException;
 	
@@ -42,7 +42,7 @@ public interface Exporter {
 	 * Export book
 	 * @param book the book to export
 	 * @param fos the output file to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public void export(Book book, File file) throws IOException;
 	
@@ -53,7 +53,7 @@ public interface Exporter {
 	 * Note : Not all exporter supports this api.
 	 * @param sheet the sheet to export
 	 * @param fos the output stream to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 * 
 	 * @deprecated since 3.5.0
 	 */
@@ -66,12 +66,12 @@ public interface Exporter {
 	 * @param sheet the sheet to export
 	 * @param selection the selection to export
 	 * @param fos the output stream to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 * 
 	 * @deprecated since 3.5.0
 	 */
 	@Deprecated
-	public void export(Sheet sheet,AreaRef selection,OutputStream fos) throws IOException;
+	public void export(Sheet sheet, AreaRef selection, OutputStream fos) throws IOException;
 
 //  even html exporter doesn't support to disable heading yet
 //	hide this before there has any implementation

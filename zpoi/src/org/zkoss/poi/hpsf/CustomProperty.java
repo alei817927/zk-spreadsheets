@@ -32,7 +32,7 @@ public class CustomProperty extends MutableProperty
     private String name;
 
     /**
-     * <p>Creates an empty {@link CustomProperty}. The set methods must be
+     * <p>Creates an empty {@link org.zkoss.poi.hpsf.CustomProperty}. The set methods must be
      * called to make it usable.</p>
      */
     public CustomProperty()
@@ -41,8 +41,8 @@ public class CustomProperty extends MutableProperty
     }
 
     /**
-     * <p>Creates a {@link CustomProperty} without a name by copying the
-     * underlying {@link Property}' attributes.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.CustomProperty} without a name by copying the
+     * underlying {@link org.zkoss.poi.hpsf.Property}' attributes.</p>
      * 
      * @param property the property to copy
      */
@@ -52,7 +52,7 @@ public class CustomProperty extends MutableProperty
     }
 
     /**
-     * <p>Creates a {@link CustomProperty} with a name.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.CustomProperty} with a name.</p>
      * 
      * @param property This property's attributes are copied to the new custom
      *        property.
@@ -94,7 +94,7 @@ public class CustomProperty extends MutableProperty
      * @return <code>true</code> if both custom properties are equal, else
      *         <code>false</code>.
      * 
-     * @see java.util.AbstractSet#equals(java.lang.Object)
+     * @see java.util.AbstractSet#equals(Object)
      */
     public boolean equalsContents(final Object o)
     {

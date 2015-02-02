@@ -45,7 +45,7 @@ public final class RangeEval extends Fixed2ArgFunction {
 	}
 
 	/**
-	 * @return simple rectangular {@link AreaEval} which fully encloses both areas
+	 * @return simple rectangular {@link org.zkoss.poi.ss.formula.eval.AreaEval} which fully encloses both areas
 	 * <tt>aeA</tt> and <tt>aeB</tt>
 	 */
 	private static AreaEval resolveRange(AreaEval aeA, AreaEval aeB) {

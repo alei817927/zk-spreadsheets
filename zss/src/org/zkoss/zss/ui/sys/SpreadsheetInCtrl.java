@@ -37,7 +37,7 @@ public interface SpreadsheetInCtrl {
 	 * @param id a unique id of this customized column size
 	 * @param hidden whether this column is hidden
 	 */
-	public void setColumnSize(String sheetId,int column,int newsize,int id, boolean hidden);
+	public void setColumnSize(String sheetId, int column, int newsize, int id, boolean hidden);
 	
 	/**
 	 * Indicate user set the size of a row
@@ -48,17 +48,17 @@ public interface SpreadsheetInCtrl {
 	 * @param hidden whether this row is hidden
 	 * @param isCustom whether the size is custom (set by users) or not (determined by the component automatically)
 	 */
-	public void setRowSize(String sheetId,int row,int newsize,int id, boolean hidden, boolean isCustom);
+	public void setRowSize(String sheetId, int row, int newsize, int id, boolean hidden, boolean isCustom);
 	
 	/**
 	 * Indicate user change selection rectangle
 	 */
-	public void setSelectionRect(int left,int top,int right,int bottom);
+	public void setSelectionRect(int left, int top, int right, int bottom);
 	
 	/**
 	 * Indicate user change focus rectangle
 	 */
-	public void setFocusRect(int left,int top,int right,int bottom);
+	public void setFocusRect(int left, int top, int right, int bottom);
 	
 	/**
 	 * Indicate user do some scroll, and change loaded rectangle.
@@ -73,15 +73,15 @@ public interface SpreadsheetInCtrl {
 	 * @param right
 	 * @param bottom
 	 */
-	public void setVisibleRect(int left, int top,int right, int bottom);
+	public void setVisibleRect(int left, int top, int right, int bottom);
 	
 	
 	/**
 	 * 
 	 */
 	//20130507, Dennis, move to internal controller api
-	public void setSelectedSheetDirectly(String name, boolean cacheInClient, int row, int col, 
-			int left, int top, int right, int bottom,
-			int highlightLeft, int highlightTop, int highlightRight, int highlightBottom,
-			int rowfreeze, int colfreeze);
+	public void setSelectedSheetDirectly(String name, boolean cacheInClient, int row, int col,
+										 int left, int top, int right, int bottom,
+										 int highlightLeft, int highlightTop, int highlightRight, int highlightBottom,
+										 int rowfreeze, int colfreeze);
 }

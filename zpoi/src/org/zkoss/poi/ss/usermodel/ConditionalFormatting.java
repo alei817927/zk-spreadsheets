@@ -44,7 +44,7 @@ import org.zkoss.poi.ss.util.CellRangeAddress;
  *  </LI>
  *  </UL>
  *
- * Use {@link org.zkoss.poi.ss.usermodel.Sheet#getSheetConditionalFormatting()}
+ * Use {@link Sheet#getSheetConditionalFormatting()}
  * to get access to an instance of this class.
  * <P>
  * To create a new Conditional Formatting set use the following approach:

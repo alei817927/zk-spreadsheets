@@ -22,7 +22,7 @@ import org.zkoss.zss.model.chart.*;
 import org.zkoss.zss.range.SRange;
 
 /**
- * Fill {@link SChartData} with series according to a selection. One series could be determined by row or column. 
+ * Fill {@link org.zkoss.zss.model.chart.SChartData} with series according to a selection. One series could be determined by row or column.
  * @author Hawk
  * @since 3.5.0
  */

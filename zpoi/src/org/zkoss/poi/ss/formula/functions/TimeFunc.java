@@ -29,7 +29,7 @@ import org.zkoss.poi.ss.formula.eval.ValueEval;
  *
  * @author Steven Butler (sebutler @ gmail dot com)
  *
- * Based on POI {@link DateFunc}
+ * Based on POI {@link org.zkoss.poi.ss.formula.functions.DateFunc}
  */
 public final class TimeFunc extends Fixed3ArgFunction {
 

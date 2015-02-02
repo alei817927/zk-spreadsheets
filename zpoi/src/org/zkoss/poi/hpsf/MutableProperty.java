@@ -21,10 +21,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * <p>Adds writing capability to the {@link Property} class.</p>
+ * <p>Adds writing capability to the {@link org.zkoss.poi.hpsf.Property} class.</p>
  *
  * <p>Please be aware that this class' functionality will be merged into the
- * {@link Property} class at a later time, so the API will change.</p>
+ * {@link org.zkoss.poi.hpsf.Property} class at a later time, so the API will change.</p>
  *
  * @author Rainer Klute <a
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
@@ -98,7 +98,7 @@ public class MutableProperty extends Property
      * @param codepage The codepage to use for writing non-wide strings
      * @return the number of bytes written to the stream
      *
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @exception WritingNotSupportedException if a variant type is to be
      * written that is not yet supported
      */

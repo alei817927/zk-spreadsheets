@@ -270,7 +270,7 @@ public class DateUtil {
 
     /**
      * Get EXCEL date as Java Calendar with given time zone.
-     * @see #getJavaDate(double, TimeZone)
+     * @see #getJavaDate(double, java.util.TimeZone)
      * @return Java representation of the date, or null if date is not a valid Excel date
      */
     public static Calendar getJavaCalendar(double date, boolean use1904windowing, TimeZone timeZone) {
@@ -396,7 +396,7 @@ public class DateUtil {
     /**
      * Given a format ID this will check whether the format represents
      *  an internal excel date format or not.
-     * @see #isADateFormat(int, java.lang.String)
+     * @see #isADateFormat(int, String)
      */
     public static boolean isInternalDateFormat(int format) {
             switch(format) {

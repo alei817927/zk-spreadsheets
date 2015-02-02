@@ -48,7 +48,7 @@ import org.zkoss.zss.model.SPicture.Format;
  */
 public class PoiEnumConversion {
 	
-	public static int toPoiHyperlinkType(SHyperlink.HyperlinkType type) {
+	public static int toPoiHyperlinkType(HyperlinkType type) {
 		switch(type) {
 		case DOCUMENT:
 			return Hyperlink.LINK_DOCUMENT;
@@ -62,7 +62,7 @@ public class PoiEnumConversion {
 		}
 	}
 	
-	public static SHyperlink.HyperlinkType toHyperlinkType(int type) {
+	public static HyperlinkType toHyperlinkType(int type) {
 		switch (type) {
 		case Hyperlink.LINK_DOCUMENT:
 			return HyperlinkType.DOCUMENT;
@@ -544,16 +544,16 @@ public class PoiEnumConversion {
 	public static Underline toUnderline(byte underline) {
 		switch (underline) {
 		case Font.U_SINGLE:
-			return SFont.Underline.SINGLE;
+			return Underline.SINGLE;
 		case Font.U_DOUBLE:
-			return SFont.Underline.DOUBLE;
+			return Underline.DOUBLE;
 		case Font.U_SINGLE_ACCOUNTING:
-			return SFont.Underline.SINGLE_ACCOUNTING;
+			return Underline.SINGLE_ACCOUNTING;
 		case Font.U_DOUBLE_ACCOUNTING:
-			return SFont.Underline.DOUBLE_ACCOUNTING;
+			return Underline.DOUBLE_ACCOUNTING;
 		case Font.U_NONE:
 		default:
-			return SFont.Underline.NONE;
+			return Underline.NONE;
 		}
 	}
 
@@ -587,21 +587,21 @@ public class PoiEnumConversion {
 		}
 	}
 
-	public static org.zkoss.zss.model.SChart.ChartGrouping 
+	public static ChartGrouping
 		toChartGrouping(org.zkoss.poi.ss.usermodel.charts.ChartGrouping grouping){
 		if (grouping == null) {
-			return org.zkoss.zss.model.SChart.ChartGrouping.STANDARD;
+			return ChartGrouping.STANDARD;
 		}
 		switch(grouping){
 		case STACKED:
-			return org.zkoss.zss.model.SChart.ChartGrouping.STACKED;
+			return ChartGrouping.STACKED;
 		case PERCENT_STACKED:
-			return org.zkoss.zss.model.SChart.ChartGrouping.PERCENT_STACKED;
+			return ChartGrouping.PERCENT_STACKED;
 		case CLUSTERED:
-			return org.zkoss.zss.model.SChart.ChartGrouping.CLUSTERED;
+			return ChartGrouping.CLUSTERED;
 		case STANDARD:
 		default:
-			return org.zkoss.zss.model.SChart.ChartGrouping.STANDARD;
+			return ChartGrouping.STANDARD;
 		}
 	}
 

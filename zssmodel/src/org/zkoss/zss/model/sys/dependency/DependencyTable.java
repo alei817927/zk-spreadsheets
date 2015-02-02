@@ -22,8 +22,8 @@ import java.util.Set;
  * 
  * NodeA --- depends on ---> NodeB.
  * A is B's dependent, B is A's precedent.
- * When B changes , should call {@link #getDependents(Ref)} of B to create notification of A
- * When A been clear or deleted, should call {@link #clearDependents(Ref)} of A to clear tracking data
+ * When B changes , should call {@link #getDependents(org.zkoss.zss.model.sys.dependency.Ref)} of B to create notification of A
+ * When A been clear or deleted, should call {@link #clearDependents(org.zkoss.zss.model.sys.dependency.Ref)} of A to clear tracking data
  * 
  * @author dennis
  * @since 3.5.0

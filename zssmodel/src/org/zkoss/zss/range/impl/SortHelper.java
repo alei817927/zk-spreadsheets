@@ -255,7 +255,7 @@ public class SortHelper extends RangeHelperBase {
 	private void  repositionColumns(List<SortKey> sortKeys) {
 		int cellCount = sortingRegion.getRowCount();
 		int columnBufferIndex = 0;
-		List<SortResult> sortResults = new ArrayList<SortHelper.SortResult>(sortKeys.size());
+		List<SortResult> sortResults = new ArrayList<SortResult>(sortKeys.size());
 		//copy original columns in a buffer
 		for(Iterator<SortKey> it = sortKeys.iterator(); it.hasNext();columnBufferIndex++) {
 			SortKey sortKey = it.next();
@@ -296,7 +296,7 @@ public class SortHelper extends RangeHelperBase {
 	private void repositionRows(List<SortKey> sortKeys) {
 		int cellCount = sortingRegion.getColumnCount();
 		int rowBufferIndex = 0;
-		List<SortResult> sortResults = new ArrayList<SortHelper.SortResult>(sortKeys.size());
+		List<SortResult> sortResults = new ArrayList<SortResult>(sortKeys.size());
 		//copy original rows in a buffer
 		for(Iterator<SortKey> it = sortKeys.iterator(); it.hasNext();rowBufferIndex++) {
 			SortKey sortKey = it.next();

@@ -26,7 +26,7 @@ import org.zkoss.poi.util.LittleEndian;
  * existing group.  The first level of shape records use a EscherClientAnchor record instead.
  *
  * @author Glen Stampoultzis
- * @see EscherChildAnchorRecord
+ * @see org.zkoss.poi.ddf.EscherChildAnchorRecord
  */
 public class EscherChildAnchorRecord
         extends EscherRecord

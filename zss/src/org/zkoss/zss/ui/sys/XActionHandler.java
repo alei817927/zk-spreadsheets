@@ -1,4 +1,4 @@
-///* ToolbarActionHandler.java
+package org.zkoss.zss.ui.sys;///* ToolbarActionHandler.java
 //
 //{{IS_NOTE
 //	Purpose:

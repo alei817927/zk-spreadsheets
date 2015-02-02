@@ -23,15 +23,15 @@ package org.zkoss.poi.ss.formula;
  * The term <b>final</b> is introduced here to denote immutability or 'having constant definition'.
  * This classification refers to potential actions (on the evaluated workbook) by the evaluating
  * application.  It does not refer to operations performed by the evaluator ({@link 
- * WorkbookEvaluator}).<br/>
+ * org.zkoss.poi.ss.formula.WorkbookEvaluator}).<br/>
  * <br/>
  * <b>General guidelines</b>:
  * <ul>
  * <li>a plain value cell can be marked as 'final' if it will not be changed after the first call
- * to {@link WorkbookEvaluator#evaluate(EvaluationCell)}.
+ * to {@link org.zkoss.poi.ss.formula.WorkbookEvaluator#evaluate(org.zkoss.poi.ss.formula.EvaluationCell)}.
  * </li>
  * <li>a formula cell can be marked as 'final' if its formula will not be changed after the first
- * call to {@link WorkbookEvaluator#evaluate(EvaluationCell)}.  This remains true even if changes 
+ * call to {@link org.zkoss.poi.ss.formula.WorkbookEvaluator#evaluate(org.zkoss.poi.ss.formula.EvaluationCell)}.  This remains true even if changes
  * in dependent values may cause the evaluated value to change.</li>
  * <li>plain value cells should be marked as 'not final' if their plain value value may change.
  * </li>  

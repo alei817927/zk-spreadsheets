@@ -19,7 +19,7 @@ package org.zkoss.poi.ss.formula.ptg;
 
 
 /**
- * Common superclass of all {@link Ptg}s that represent simple constant values.
+ * Common superclass of all {@link org.zkoss.poi.ss.formula.ptg.Ptg}s that represent simple constant values.
  *
  * @author Josh Micich
  */

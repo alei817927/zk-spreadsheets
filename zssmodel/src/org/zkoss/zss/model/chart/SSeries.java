@@ -47,9 +47,9 @@ public interface SSeries extends FormulaContent{
 	
 	public int getNumOfZValue();
 	public Object getZValue(int index);
-	public void setFormula(String nameExpr,String valuesExpr);
-	public void setXYFormula(String nameExpr,String xValuesExpr,String yValuesExpr);
-	public void setXYZFormula(String nameExpr,String xValuesExpr,String yValuesExpr,String zValuesExpr);
+	public void setFormula(String nameExpr, String valuesExpr);
+	public void setXYFormula(String nameExpr, String xValuesExpr, String yValuesExpr);
+	public void setXYZFormula(String nameExpr, String xValuesExpr, String yValuesExpr, String zValuesExpr);
 	public String getNameFormula();
 	public String getValuesFormula();
 	/**

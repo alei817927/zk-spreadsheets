@@ -21,7 +21,7 @@ import java.util.Map;
 
 
 /**
- * A collection of factory method that help you create {@link ModelEvent}.
+ * A collection of factory method that help you create {@link org.zkoss.zss.model.ModelEvent}.
  * @author dennis
  * @since 3.5.0
  */
@@ -109,7 +109,7 @@ public class ModelEvents {
 	
 	/**
 	 * Create a model event.
-	 * @param name event name, can be one constant of {@link ModelEvents}
+	 * @param name event name, can be one constant of {@link org.zkoss.zss.model.ModelEvents}
 	 * @param book the book where the event happens
 	 * @param data event-related data
 	 * @return a model event
@@ -119,28 +119,28 @@ public class ModelEvents {
 	}
 	
 	/**
-	 * @see #createModelEvent(String, SBook, Map) 
+	 * @see #createModelEvent(String, org.zkoss.zss.model.SBook, java.util.Map)
 	 */
 	public static ModelEvent createModelEvent(String name, SSheet sheet){
 		return createModelEvent0(name,sheet.getBook(),sheet,null,null);
 	}
 	
 	/**
-	 * @see #createModelEvent(String, SBook, Map) 
+	 * @see #createModelEvent(String, org.zkoss.zss.model.SBook, java.util.Map)
 	 */
 	public static ModelEvent createModelEvent(String name, SSheet sheet,Map data){
 		return createModelEvent0(name,sheet.getBook(),sheet,null,data);
 	}
 	
 	/**
-	 * @see #createModelEvent(String, SBook, Map) 
+	 * @see #createModelEvent(String, org.zkoss.zss.model.SBook, java.util.Map)
 	 */
 	public static ModelEvent createModelEvent(String name, SSheet sheet,CellRegion region){
 		return createModelEvent0(name,sheet.getBook(),sheet,region,null);
 	}
 	
 	/**
-	 * @see #createModelEvent(String, SBook, Map) 
+	 * @see #createModelEvent(String, org.zkoss.zss.model.SBook, java.util.Map)
 	 */
 	public static ModelEvent createModelEvent(String name, SSheet sheet,CellRegion region,Map data){
 		return createModelEvent0(name,sheet.getBook(),sheet,region,data);

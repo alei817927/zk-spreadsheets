@@ -134,7 +134,7 @@ public final class WordDocument {
    * Spits out the document text
    *
    * @param out The Writer to write the text to.
-   * @throws IOException if there is a problem while reading from the file or
+   * @throws java.io.IOException if there is a problem while reading from the file or
    *         writing out the text.
    */
   public void writeAllText(Writer out) throws IOException
@@ -174,7 +174,7 @@ public final class WordDocument {
    * all the important stuff into data structures.
    *
    * @param fileName The name of the file to read.
-   * @throws IOException if there is a problem while parsing the document.
+   * @throws java.io.IOException if there is a problem while parsing the document.
    */
   public WordDocument(String fileName) throws IOException
   {
@@ -213,7 +213,7 @@ public final class WordDocument {
    * Extracts the main document stream from the POI file then hands off to other
    * functions that parse other areas.
    *
-   * @throws IOException
+   * @throws java.io.IOException
    */
   private void readFIB() throws IOException
   {
@@ -254,7 +254,7 @@ public final class WordDocument {
    * @param parTable offset in table stream of paragraph property bin table.
    * @param parPlcSize size of paragraph property bin table.
    * @return boolean indocating success of
-   * @throws IOException
+   * @throws java.io.IOException
    */
   private void processComplexFile(boolean useTable1, int charTable,
                                      int charPlcSize, int parTable, int parPlcSize) throws IOException
@@ -297,7 +297,7 @@ public final class WordDocument {
    *
    * @param tableStream buffer containing the main table stream.
    * @param beginning of the complex data.
-   * @throws IOException
+   * @throws java.io.IOException
    */
   private void findText(byte[] tableStream, int complexOffset) throws IOException
   {

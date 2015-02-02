@@ -17,7 +17,7 @@ import org.zkoss.zk.ui.event.Event;
 /**
  * The event to notify a sheet's deleted
  * @author henrichen
- * @see Events#ON_SHEET_DELETE
+ * @see org.zkoss.zss.ui.event.Events#ON_SHEET_DELETE
  *
  */
 public class SheetDeleteEvent extends Event{

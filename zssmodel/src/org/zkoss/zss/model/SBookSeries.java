@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 
 /**
- * It contains multiple {@link SBook} objects so that formulas in them can reference to cells of another book.
+ * It contains multiple {@link org.zkoss.zss.model.SBook} objects so that formulas in them can reference to cells of another book.
  * @author dennis
  * @since 3.5.0
  */
@@ -59,7 +59,7 @@ public interface SBookSeries {
 	 * @param name name the attribute name
 	 * @param value the attribute value
 	 */
-	public Object setAttribute(String name,Object value);
+	public Object setAttribute(String name, Object value);
 	
 	/**
 	 * Get the unmodifiable runtime attributes map

@@ -24,7 +24,7 @@ import java.net.URL;
 import org.zkoss.zss.api.model.Book;
 
 /**
- * Importer that loads an Excel file and returns a {@link Book}.
+ * Importer that loads an Excel file and returns a {@link org.zkoss.zss.api.model.Book}.
  * @author dennis
  * @since 3.0.0
  */
@@ -35,7 +35,7 @@ public interface Importer {
 	 * @param is the input stream
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public Book imports(InputStream is, String bookName) throws IOException;
 	
@@ -44,7 +44,7 @@ public interface Importer {
 	 * @param file the file
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public Book imports(File file, String bookName) throws IOException;
 	
@@ -53,7 +53,7 @@ public interface Importer {
 	 * @param url the url
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public Book imports(URL url, String bookName) throws IOException;
 	

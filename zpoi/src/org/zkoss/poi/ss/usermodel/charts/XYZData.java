@@ -30,10 +30,10 @@ public interface XYZData extends ChartData {
 	 * @param zs axis data source to be used for xyz data serie
 	 * @return a new xyz serie
 	 */
-	XYZDataSerie addSerie(ChartTextSource title, 
-			ChartDataSource<? extends Number> xs, 
-			ChartDataSource<? extends Number> ys, 
-			ChartDataSource<? extends Number> zs);
+	XYZDataSerie addSerie(ChartTextSource title,
+                          ChartDataSource<? extends Number> xs,
+                          ChartDataSource<? extends Number> ys,
+                          ChartDataSource<? extends Number> zs);
 
 	/**
 	 * @return list of all series

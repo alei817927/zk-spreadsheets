@@ -17,9 +17,9 @@ Copyright (C) 2013 Potix Corporation. All Rights Reserved.
 package org.zkoss.zss.api;
 
 /**
- * The visitor to help you to visit cells of a {@link Range}.
+ * The visitor to help you to visit cells of a {@link org.zkoss.zss.api.Range}.
  * @author dennis
- * @see Range#visit(CellVisitor)
+ * @see org.zkoss.zss.api.Range#visit(org.zkoss.zss.api.CellVisitor)
  * @since 3.0.0
  */
 public interface CellVisitor {

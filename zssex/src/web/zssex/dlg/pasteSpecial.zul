@@ -1,0 +1,83 @@
+<zk>
+	<window id="_pasteSpecialDialog" title="${labels.zssex.dlg.pasteSpecial}"
+		border="normal" mode="modal"
+		vflex="min" width="580px" 
+		apply="org.zkoss.zssex.ui.dialog.PasteSpecialCtrl">
+		<vlayout style="padding: 5px">
+		<div style="margin-bottom: 5px;">${labels.zssex.dlg.paste.$}</div>
+		<radiogroup id="pasteTypeRadiogroup">
+			<grid>
+				<rows>
+					<row>
+						<radio id="all" label="${labels.zssex.dlg.paste.all}" value="all" checked="true"/>
+						<radio id="allExcpetBorder" value="allExcpetBorder"
+							label="${labels.zssex.dlg.paste.allExcpetBorder}" />
+					</row>
+					<row>
+						<radio id="colWidth" value="columnWidth"
+							label="${labels.zssex.dlg.paste.columnWidth}" />
+						<radio id="fmt" value="format" label="${labels.zssex.dlg.paste.format}" />
+					</row>
+					<row>
+						<radio id="formula" value="formula"
+							label="${labels.zssex.dlg.paste.formula}" />
+						<radio id="formulaWithNum" value="formulaWithNumFmt"
+							label="${labels.zssex.dlg.paste.formulaWithNumFmt}" />
+					</row>
+					<row>
+						<radio id="value" value="value" label="${labels.zssex.dlg.paste.value}" />
+						<radio id="valueWithNumFmt" value="valueWithNumFmt"
+							label="${labels.zssex.dlg.paste.valueWithNumFmt}" />
+					</row>
+					<row>
+						<radio id="comment" value="comment"
+							label="${labels.zssex.dlg.paste.comment}" />
+						<radio id="validation" value="validation"
+							label="${labels.zssex.dlg.paste.validation}" />
+					</row>
+				</rows>
+			</grid>
+		</radiogroup>
+		<!-- not implement yet
+		<div style="margin: 5px 5px 5px 0;">${labels.zssex.dlg.paste.operation}</div>
+		<radiogroup id="operationRadiogroup" >
+			<grid>
+				<rows>
+					<row>
+						<radio id="opNone" value="none"
+							label="${labels.zssex.dlg.pasteop.none}" checked="true" />
+						<radio id="opMul" value="mul" label="${labels.zssex.dlg.pasteop.mul}" />
+					</row>
+					<row>
+						<radio id="opAdd" value="add" label="${labels.zssex.dlg.pasteop.add}" />
+						<radio id="opDiv" value="divide"
+							label="${labels.zssex.dlg.pasteop.divide}" />
+					</row>
+					<row>
+						<radio id="opSub" value="sub" label="${labels.zssex.dlg.pasteop.sub}" />
+					</row>
+				</rows>
+			</grid>
+		</radiogroup>
+		 -->
+		<div height="15px" style="margin: 5px 5px 5px 0;"></div>
+		<grid>
+			<rows>
+				<row>
+					<checkbox id="skipBlankBox"
+						label="${labels.zssex.dlg.paste.skipBlank}" />
+					<checkbox id="transposeBox"
+						label="${labels.zssex.dlg.paste.transpose}" />
+				</row>
+			</rows>
+		</grid>
+		<!-- To do
+			<button label="Paste Link"></button>
+		-->
+		<hbox hflex="1" pack="center" align="center" style="padding-top:5px;">
+			<button id="okBtn" label="${labels.zssex.dlg.btn.OK}"/>
+			<button id="cancelBtn" label="${labels.zssex.dlg.btn.Cancel}"/>
+		</hbox>
+		</vlayout>
+	</window>
+</zk>

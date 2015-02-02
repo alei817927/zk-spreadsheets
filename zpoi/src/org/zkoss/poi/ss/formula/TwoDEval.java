@@ -21,7 +21,7 @@ import org.zkoss.poi.ss.formula.eval.AreaEval;
 import org.zkoss.poi.ss.formula.eval.ValueEval;
 
 /**
- * Common interface of {@link AreaEval} and {@link org.zkoss.poi.hssf.record.formula.eval.AreaEvalBase}
+ * Common interface of {@link org.zkoss.poi.ss.formula.eval.AreaEval} and {@link org.zkoss.poi.hssf.record.formula.eval.AreaEvalBase}
  *
  * @author Josh Micich
  */
@@ -51,12 +51,12 @@ public interface TwoDEval extends ValueEval {
 
 	/**
 	 * @param rowIndex relative row index (zero based)
-	 * @return a single row {@link TwoDEval}
+	 * @return a single row {@link org.zkoss.poi.ss.formula.TwoDEval}
 	 */
 	TwoDEval getRow(int rowIndex);
 	/**
 	 * @param columnIndex relative column index (zero based)
-	 * @return a single column {@link TwoDEval}
+	 * @return a single column {@link org.zkoss.poi.ss.formula.TwoDEval}
 	 */
 	TwoDEval getColumn(int columnIndex);
 

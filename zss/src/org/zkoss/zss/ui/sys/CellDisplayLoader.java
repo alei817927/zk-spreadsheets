@@ -28,5 +28,5 @@ public interface CellDisplayLoader {
 	 * return the html text for this cell
 	 * @return the html text or null if the cell is not support to show it.
 	 */
-	public String getCellHtmlText(SSheet sheet,int row, int column);
+	public String getCellHtmlText(SSheet sheet, int row, int column);
 }

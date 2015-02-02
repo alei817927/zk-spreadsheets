@@ -88,7 +88,7 @@ public final class SlideShowDumper {
    * and dumps out the contents
    *
    * @param fileName The name of the file to read.
-   * @throws IOException if there is a problem while parsing the document.
+   * @throws java.io.IOException if there is a problem while parsing the document.
    */
   public SlideShowDumper(String fileName) throws IOException
   {
@@ -100,7 +100,7 @@ public final class SlideShowDumper {
    * document and dumps out the contents
    *
    * @param inputStream the source of the data
-   * @throws IOException if there is a problem while parsing the document.
+   * @throws java.io.IOException if there is a problem while parsing the document.
    */
   public SlideShowDumper(InputStream inputStream) throws IOException
   {
@@ -114,7 +114,7 @@ public final class SlideShowDumper {
    * document and dumps out the contents
    *
    * @param filesystem the POIFS FileSystem to read from
-   * @throws IOException if there is a problem while parsing the document.
+   * @throws java.io.IOException if there is a problem while parsing the document.
    */
   public SlideShowDumper(POIFSFileSystem filesystem) throws IOException
   {
@@ -149,7 +149,7 @@ public final class SlideShowDumper {
   /**
    * Shuts things down. Closes underlying streams etc
    *
-   * @throws IOException
+   * @throws java.io.IOException
    */
   public void close() throws IOException
   {

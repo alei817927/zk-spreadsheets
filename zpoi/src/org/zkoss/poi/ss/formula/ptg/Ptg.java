@@ -170,7 +170,7 @@ public abstract class Ptg implements Serializable{
 		return result;
 	}
 	/**
-	 * This method will return the same result as {@link #getEncodedSizeWithoutArrayData(Ptg[])}
+	 * This method will return the same result as {@link #getEncodedSizeWithoutArrayData(org.zkoss.poi.ss.formula.ptg.Ptg[])}
 	 * if there are no array tokens present.
 	 * @return the full size taken to encode the specified <tt>Ptg</tt>s
 	 */

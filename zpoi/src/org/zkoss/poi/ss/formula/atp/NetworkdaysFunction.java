@@ -45,7 +45,7 @@ final class NetworkdaysFunction implements FreeRefFunction {
     /**
      * Constructor.
      * 
-     * @param anEvaluator an injected {@link ArgumentsEvaluator}.
+     * @param anEvaluator an injected {@link org.zkoss.poi.ss.formula.atp.ArgumentsEvaluator}.
      */
     private NetworkdaysFunction(ArgumentsEvaluator anEvaluator) {
         // enforces singleton

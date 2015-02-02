@@ -124,7 +124,7 @@ public interface Workbook {
      * allow you to show the data of one sheet when another is seen "selected"
      * in the tabs (at the bottom).
      *
-     * @see Sheet#setSelected(boolean)
+     * @see org.zkoss.poi.ss.usermodel.Sheet#setSelected(boolean)
      * @param index the index of the sheet to select (0 based)
      */
     void setSelectedTab(int index);
@@ -287,8 +287,8 @@ public interface Workbook {
      * @param startRow      0 based start of repeating rows.
      * @param endRow        0 based end of repeating rows.
      * 
-     * @deprecated use {@link Sheet#setRepeatingRows(CellRangeAddress)}
-     *        or {@link Sheet#setRepeatingColumns(CellRangeAddress)}
+     * @deprecated use {@link org.zkoss.poi.ss.usermodel.Sheet#setRepeatingRows(org.zkoss.poi.ss.util.CellRangeAddress)}
+     *        or {@link org.zkoss.poi.ss.usermodel.Sheet#setRepeatingColumns(org.zkoss.poi.ss.util.CellRangeAddress)}
      */
     void setRepeatingRowsAndColumns(int sheetIndex, int startColumn, int endColumn, int startRow, int endRow);
 
@@ -347,7 +347,7 @@ public interface Workbook {
      * Write out this workbook to an Outputstream.
      *
      * @param stream - the java OutputStream you wish to write to
-     * @exception IOException if anything can't be written.
+     * @exception java.io.IOException if anything can't be written.
      */
     void write(OutputStream stream) throws IOException;
 
@@ -440,7 +440,7 @@ public interface Workbook {
 	 *  getting missing or blank cells from a row.
      * <p>
 	 * The default is to return blank and null cells.
-	 *  {@link MissingCellPolicy}
+	 *  {@link org.zkoss.poi.ss.usermodel.Row.MissingCellPolicy}
      * </p>
 	 */
 	MissingCellPolicy getMissingCellPolicy();
@@ -450,8 +450,8 @@ public interface Workbook {
 	 *  getting missing or blank cells from a row.
      *
 	 * This will then apply to all calls to
-	 *  {@link Row#getCell(int)} }. See
-	 *  {@link MissingCellPolicy}
+	 *  {@link org.zkoss.poi.ss.usermodel.Row#getCell(int)} }. See
+	 *  {@link org.zkoss.poi.ss.usermodel.Row.MissingCellPolicy}
 	 */
 	void setMissingCellPolicy(MissingCellPolicy missingCellPolicy);
 

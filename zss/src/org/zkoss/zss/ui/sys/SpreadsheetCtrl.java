@@ -80,7 +80,7 @@ public interface SpreadsheetCtrl {
 	public JSONObject getRangeAttrs(SSheet sheet, Header containsHeader, CellAttribute type, int left, int top, int right, int bottom);
 	
 	/**
-	 * Add widget to the {@link WidgetHandler} of this spreadsheet, 
+	 * Add widget to the {@link org.zkoss.zss.ui.sys.WidgetHandler} of this spreadsheet,
 	 * 
 	 * @param widget a widget
 	 * @return true if success to add a widget
@@ -88,7 +88,7 @@ public interface SpreadsheetCtrl {
 	public boolean addWidget(Widget widget);
 	
 	/**
-	 * Remove widget from the {@link WidgetHandler} of this spreadsheet, 
+	 * Remove widget from the {@link org.zkoss.zss.ui.sys.WidgetHandler} of this spreadsheet,
 	 * @param widget
 	 * @return true if success to remove a widget
 	 */

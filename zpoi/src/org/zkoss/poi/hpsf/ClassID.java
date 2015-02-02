@@ -21,7 +21,7 @@ import org.zkoss.poi.util.HexDump;
 
 /**
  *  <p>Represents a class ID (16 bytes). Unlike other little-endian
- *  type the {@link ClassID} is not just 16 bytes stored in the wrong
+ *  type the {@link org.zkoss.poi.hpsf.ClassID} is not just 16 bytes stored in the wrong
  *  order. Instead, it is a double word (4 bytes) followed by two
  *  words (2 bytes each) followed by 8 bytes.</p>
  *
@@ -40,7 +40,7 @@ public class ClassID
 
 
     /**
-     *  <p>Creates a {@link ClassID} and reads its value from a byte
+     *  <p>Creates a {@link org.zkoss.poi.hpsf.ClassID} and reads its value from a byte
      *  array.</p>
      *
      * @param src The byte array to read from.
@@ -53,7 +53,7 @@ public class ClassID
 
 
     /**
-     *  <p>Creates a {@link ClassID} and initializes its value with
+     *  <p>Creates a {@link org.zkoss.poi.hpsf.ClassID} and initializes its value with
      *  0x00 bytes.</p>
      */
     public ClassID()

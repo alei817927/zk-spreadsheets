@@ -91,7 +91,7 @@ public interface ConditionalFormattingRule {
      * The comparison function used when the type of conditional formatting is set to
      * {@link #CONDITION_TYPE_CELL_VALUE_IS}
      * <p>
-     *     MUST be a constant from {@link ComparisonOperator}
+     *     MUST be a constant from {@link org.zkoss.poi.ss.usermodel.ComparisonOperator}
      * </p>
      *
      * @return the conditional format operator
@@ -117,7 +117,7 @@ public interface ConditionalFormattingRule {
     /**
      * The formula used to evaluate the second operand of the comparison when
      * comparison type is  {@link #CONDITION_TYPE_CELL_VALUE_IS} and operator
-     * is either {@link ComparisonOperator#BETWEEN} or {@link ComparisonOperator#NOT_BETWEEN}
+     * is either {@link org.zkoss.poi.ss.usermodel.ComparisonOperator#BETWEEN} or {@link org.zkoss.poi.ss.usermodel.ComparisonOperator#NOT_BETWEEN}
      *
      * @return  the second formula
      */

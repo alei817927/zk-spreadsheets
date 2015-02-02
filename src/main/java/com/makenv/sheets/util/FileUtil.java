@@ -184,10 +184,14 @@ public class FileUtil {
         return _file.exists();
     }
 
+    public static void initWebRootPath(String rootPath) {
+        WEB_ROOT_PATH = rootPath;
+    }
+
     public static String getWebRootPath() {
-        if (StringUtil.isEmpty(WEB_ROOT_PATH)) {
-            WEB_ROOT_PATH = new File(FileUtil.class.getResource("/").getPath()).getParentFile().getParent();
-        }
+//        if (StringUtil.isEmpty(WEB_ROOT_PATH)) {
+//            WEB_ROOT_PATH = new File(FileUtil.class.getResource("/").getPath()).getParentFile().getParent();
+//        }
         return WEB_ROOT_PATH;
     }
 
@@ -204,7 +208,7 @@ public class FileUtil {
     }
 
     public static String getBookUserFilePath(String userId, String bookId) {
-        return String.format("%s%s%s%s%s.xlsx", FileUtil.getBookUserPath(), File.separator, userId, File.separator,  bookId);
+        return String.format("%s%s%s%s%s.xlsx", FileUtil.getBookUserPath(), File.separator, userId, File.separator, bookId);
     }
 
     public static void checkAndCreateDir(String userId) {

@@ -132,7 +132,7 @@ public abstract class BooleanFunction implements Function {
 			return BoolEval.TRUE;
 		}
 	};
-	public static final Function NOT = new BooleanFunction.OneArg() {
+	public static final Function NOT = new OneArg() {
 		public ValueEval evaluate(int srcRowIndex, int srcColumnIndex, ValueEval arg0) {
 			boolean boolArgVal;
 			try {

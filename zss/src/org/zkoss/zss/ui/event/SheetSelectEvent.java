@@ -6,7 +6,7 @@ import org.zkoss.zss.api.model.Sheet;
 /**
  * The event to notify a sheet's updated
  * @author dennis
- * @see Events#ON_SHEET_SELECT
+ * @see org.zkoss.zss.ui.event.Events#ON_SHEET_SELECT
  */
 public class SheetSelectEvent extends SheetEvent{
 	private static final long serialVersionUID = 1L;

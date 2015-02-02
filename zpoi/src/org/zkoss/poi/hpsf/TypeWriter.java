@@ -37,7 +37,7 @@ public class TypeWriter
      * @param out The stream to write to.
      * @param n The value to write.
      * @return The number of bytes that have been written.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      */
     public static int writeToStream( final OutputStream out, final short n )
             throws IOException
@@ -51,7 +51,7 @@ public class TypeWriter
      *
      * @param out The stream to write to.
      * @param n The value to write.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @return The number of bytes written to the output stream. 
      */
     public static int writeToStream( final OutputStream out, final int n )
@@ -66,7 +66,7 @@ public class TypeWriter
      *
      * @param out The stream to write to.
      * @param n The value to write.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @return The number of bytes written to the output stream.
      */
     public static int writeToStream( final OutputStream out, final long n )
@@ -81,7 +81,7 @@ public class TypeWriter
      *
      * @param out The stream to write to
      * @param n The value to write
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      */
     public static void writeUShortToStream( final OutputStream out, final int n )
             throws IOException
@@ -99,7 +99,7 @@ public class TypeWriter
      * @param out The stream to write to.
      * @param n The value to write.
      * @return The number of bytes that have been written to the output stream.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      */
     public static int writeUIntToStream( final OutputStream out, final long n )
             throws IOException
@@ -113,12 +113,12 @@ public class TypeWriter
     }
 
     /**
-     * <p>Writes a 16-byte {@link ClassID} to an output stream.</p>
+     * <p>Writes a 16-byte {@link org.zkoss.poi.hpsf.ClassID} to an output stream.</p>
      *
      * @param out The stream to write to
      * @param n The value to write
      * @return The number of bytes written
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      */
     public static int writeToStream(final OutputStream out, final ClassID n)
         throws IOException
@@ -132,13 +132,13 @@ public class TypeWriter
 
 
     /**
-     * <p>Writes an array of {@link Property} instances to an output stream
+     * <p>Writes an array of {@link org.zkoss.poi.hpsf.Property} instances to an output stream
      * according to the Horrible Property Stream Format.</p>
      * 
      * @param out The stream to write to
      * @param properties The array to write to the stream
      * @param codepage The codepage number to use for writing strings
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @throws UnsupportedVariantTypeException if HPSF does not support some
      *         variant type.
      */
@@ -177,7 +177,7 @@ public class TypeWriter
      *
      * @param out The stream to write to.
      * @param n The value to write.
-     * @exception IOException if an I/O error occurs
+     * @exception java.io.IOException if an I/O error occurs
      * @return The number of bytes written to the output stream. 
      */
     public static int writeToStream( final OutputStream out, final double n )

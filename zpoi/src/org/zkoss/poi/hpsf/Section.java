@@ -53,7 +53,7 @@ public class Section
     /**
      * <p>Returns the format ID. The format ID is the "type" of the
      * section. For example, if the format ID of the first {@link
-     * Section} contains the bytes specified by
+     * org.zkoss.poi.hpsf.Section} contains the bytes specified by
      * <code>org.zkoss.poi.hpsf.wellknown.SectionIDMap.SUMMARY_INFORMATION_ID</code>
      * the section (and thus the property set) is a SummaryInformation.</p>
      *
@@ -133,7 +133,7 @@ public class Section
 
 
     /**
-     * <p>Creates an empty and uninitialized {@link Section}.
+     * <p>Creates an empty and uninitialized {@link org.zkoss.poi.hpsf.Section}.
      */
     protected Section()
     { }
@@ -141,13 +141,13 @@ public class Section
 
 
     /**
-     * <p>Creates a {@link Section} instance from a byte array.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.Section} instance from a byte array.</p>
      *
      * @param src Contains the complete property set stream.
      * @param offset The position in the stream that points to the
      * section's format ID.
      *
-     * @exception UnsupportedEncodingException if the section's codepage is not
+     * @exception java.io.UnsupportedEncodingException if the section's codepage is not
      * supported.
      */
     public Section(final byte[] src, final int offset)
@@ -301,11 +301,11 @@ public class Section
         int length;
 
         /**
-         * <p>Compares this {@link PropertyListEntry} with another one by their
-         * offsets. A {@link PropertyListEntry} is "smaller" than another one if
+         * <p>Compares this {@link org.zkoss.poi.hpsf.Section.PropertyListEntry} with another one by their
+         * offsets. A {@link org.zkoss.poi.hpsf.Section.PropertyListEntry} is "smaller" than another one if
          * its offset from the section's begin is smaller.</p>
          *
-         * @see Comparable#compareTo(java.lang.Object)
+         * @see Comparable#compareTo(Object)
          */
         public int compareTo(final PropertyListEntry o)
         {
@@ -436,9 +436,9 @@ public class Section
 
     /**
      * <p>Returns the PID string associated with a property ID. The ID
-     * is first looked up in the {@link Section}'s private
+     * is first looked up in the {@link org.zkoss.poi.hpsf.Section}'s private
      * dictionary. If it is not found there, the method calls {@link
-     * SectionIDMap#getPIDString}.</p>
+     * org.zkoss.poi.hpsf.wellknown.SectionIDMap#getPIDString}.</p>
      *
      * @param pid The property ID
      *
@@ -464,14 +464,14 @@ public class Section
      *
      * <ul>
      *
-     * <li><p>The other object is not a {@link Section}.</p></li>
+     * <li><p>The other object is not a {@link org.zkoss.poi.hpsf.Section}.</p></li>
      *
      * <li><p>The format IDs of the two sections are not equal.</p></li>
      *
      * <li><p>The sections have a different number of properties. However,
      * properties with ID 1 (codepage) are not counted.</p></li>
      *
-     * <li><p>The other object is not a {@link Section}.</p></li>
+     * <li><p>The other object is not a {@link org.zkoss.poi.hpsf.Section}.</p></li>
      *
      * <li><p>The properties have different values. The order of the properties
      * is irrelevant.</p></li>

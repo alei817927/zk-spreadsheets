@@ -139,7 +139,7 @@ public interface SBook {
 	/**
 	 *Create a cell style
 	 * @param inStyleTable if true, the new created style will be stored inside this book, 
-	 * then you can use {@link #searchCellStyle(CellStyleMatcher)} to search and reuse this style.
+	 * then you can use {@link #searchCellStyle(org.zkoss.zss.model.util.CellStyleMatcher)} to search and reuse this style.
 	 * @return 
 	 */
 	public SCellStyle createCellStyle(boolean inStyleTable);
@@ -148,10 +148,10 @@ public interface SBook {
 	 * Create a cell style and copy the style from the src style.
 	 * @param src the source style to copy from.
 	 * @param inStyleTable if true, the new created style will be stored inside this book, 
-	 * then you can use {@link #searchCellStyle(CellStyleMatcher)} to search and reuse this style.
+	 * then you can use {@link #searchCellStyle(org.zkoss.zss.model.util.CellStyleMatcher)} to search and reuse this style.
 	 * @return 
 	 */
-	public SCellStyle createCellStyle(SCellStyle src,boolean inStyleTable);
+	public SCellStyle createCellStyle(SCellStyle src, boolean inStyleTable);
 	
 	/**
 	 * Search the style table and return the first matched style. 
@@ -165,7 +165,7 @@ public interface SBook {
 
 	public SFont createFont(boolean inFontTable);
 	
-	public SFont createFont(SFont src,boolean inFontTable);
+	public SFont createFont(SFont src, boolean inFontTable);
 	
 	public SFont searchFont(FontMatcher matcher);
 	
@@ -217,7 +217,7 @@ public interface SBook {
 	 * @param name name the attribute name
 	 * @param value the attribute value
 	 */
-	public Object setAttribute(String name,Object value);
+	public Object setAttribute(String name, Object value);
 	
 	/**
 	 * Get the unmodifiable runtime attributes map
@@ -229,11 +229,11 @@ public interface SBook {
 	 * Create a defined name on specified sheet 
 	 * @return created defined name 
 	 */
-	public SName createName(String name,String applyToSheetName);
+	public SName createName(String name, String applyToSheetName);
 	public SName createName(String name);
 	
-	public void setNameName(SName name,String newname, String applyToSheetName);
-	public void setNameName(SName name,String newname);
+	public void setNameName(SName name, String newname, String applyToSheetName);
+	public void setNameName(SName name, String newname);
 	
 	/**
 	 * Delete a defined name 

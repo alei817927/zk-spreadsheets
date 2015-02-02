@@ -37,7 +37,7 @@ public interface BookRepository {
 	 * Loads a book
 	 * @param info the BookInfo
 	 * @return book or null if no such book.
-	 * @throws IOException 
+	 * @throws java.io.IOException
 	 */
 	Book load(BookInfo info) throws IOException;
 	
@@ -46,24 +46,24 @@ public interface BookRepository {
 	 * @param info the BookInfo
 	 * @param book the book to be saved
 	 * @return the updated BookInfo, or null if not saved.
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
-	BookInfo save(BookInfo info,Book book) throws IOException;
+	BookInfo save(BookInfo info, Book book) throws IOException;
 	
 	/**
 	 * Saves a book with a new name, 
 	 * @param name the new name
 	 * @param book the book to be saved
 	 * @return the new BookInfo, or null if not saved.
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
-	BookInfo saveAs(String name,Book book) throws IOException;
+	BookInfo saveAs(String name, Book book) throws IOException;
 	
 	/**
 	 * Deletes a book
 	 * @param info the BookInfo
 	 * @return true if deleted, or false if not
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	boolean delete(BookInfo info) throws IOException;
 }

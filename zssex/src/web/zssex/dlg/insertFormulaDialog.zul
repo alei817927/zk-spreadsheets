@@ -1,0 +1,49 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="_insertFormulaDialog" title="${labels.zssex.dlg.insert_function.title}" border="normal" width="480px"
+		mode="modal" closable="true" position="center"
+		apply="org.zkoss.zssex.ui.dialog.InsertFormulaCtrl">
+		<div id="findArea">
+			<div height="5px"></div>
+			<hlayout width="100%" height="25px">
+				<label value="${labels.zssex.dlg.insert_function.search}"/>
+				<textbox id="searchTextbox" cols="20" />
+				<div width="30px" vflex="1"></div>
+				<label value="${labels.zssex.dlg.insert_function.category}" />
+				<combobox id="categoryCombobox"></combobox>
+			</hlayout>
+			<div height="5px"></div>
+			<vlayout height="325px">
+				<label value="${labels.zssex.dlg.insert_function.select}" />
+				<listbox id="functionListbox" rows="6"></listbox>
+				<div height="5px"></div>
+				<label id="expression" />
+				<label id="description" multiline="true" />
+			</vlayout>
+			<div height="25px" style="margin: 0 0 10px 5px;">
+				<button id="selectButton" style="float:right" image="~./zssex/image/arrow-curve.png"
+					mold="trendy" disabled="true">
+				</button>
+			</div>
+		</div>
+		<window id="_composeFormulaDialog" visible="false" hflex="1"
+			position="center" apply="org.zkoss.zssex.ui.dialog.ComposeFormulaCtrl">
+			<div height="5px"></div>
+			<vlayout spacing="0.4em">
+				<hlayout spacing="0">
+					<label id="formulaStart"/>
+					<textbox id="composeFormulaTextbox" cols="50" />
+					<label id="formulaEnd" value=")"/>
+				</hlayout>
+				<div height="5px"></div>
+				<listbox id="argsListbox" rows="5"></listbox>
+				<label id="description" />
+			</vlayout>
+			<div height="25px" style="margin: 0 0 5px 5px;">
+				<button id="insertBtn" image="~./zssex/image/check.png" mold="trendy"
+					style="float:right">
+				</button>
+			</div>
+		</window>
+	</window>
+</zk>

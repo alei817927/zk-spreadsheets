@@ -85,7 +85,7 @@ public abstract class AggregateFunction extends MultiOperandNumericFunction {
     }
 
     /**
-     * Create an instance to use in the {@link Subtotal} function.
+     * Create an instance to use in the {@link org.zkoss.poi.ss.formula.functions.Subtotal} function.
      *
      * <p>
      *     If there are other subtotals within argument refs (or nested subtotals),

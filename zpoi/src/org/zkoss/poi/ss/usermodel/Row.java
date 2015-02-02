@@ -87,9 +87,9 @@ public interface Row extends Iterable<Cell> {
      *
      * @return the cell at the given (0 based) index
      * @throws IllegalArgumentException if cellnum < 0 or the specified MissingCellPolicy is invalid
-     * @see Row#RETURN_NULL_AND_BLANK
-     * @see Row#RETURN_BLANK_AS_NULL
-     * @see Row#CREATE_NULL_AS_BLANK
+     * @see org.zkoss.poi.ss.usermodel.Row#RETURN_NULL_AND_BLANK
+     * @see org.zkoss.poi.ss.usermodel.Row#RETURN_BLANK_AS_NULL
+     * @see org.zkoss.poi.ss.usermodel.Row#CREATE_NULL_AS_BLANK
      */
     Cell getCell(int cellnum, MissingCellPolicy policy);
 

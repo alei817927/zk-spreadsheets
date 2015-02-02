@@ -76,7 +76,7 @@ public final class Sumifs implements FreeRefFunction {
      * Verify that each <code>criteriaRanges</code> argument contains the same number of rows and columns
      * as the <code>sumRange</code> argument
      *
-     * @throws EvaluationException if
+     * @throws org.zkoss.poi.ss.formula.eval.EvaluationException if
      */
     private void validateCriteriaRanges(AreaEval[] criteriaRanges, AreaEval sumRange) throws EvaluationException {
         for(AreaEval r : criteriaRanges){

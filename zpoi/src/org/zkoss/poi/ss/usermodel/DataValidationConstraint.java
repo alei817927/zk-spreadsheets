@@ -21,19 +21,19 @@ public interface DataValidationConstraint {
 
 	/**
 	 * @return data validation type of this constraint
-	 * @see ValidationType
+	 * @see org.zkoss.poi.ss.usermodel.DataValidationConstraint.ValidationType
 	 */
 	public abstract int getValidationType();
 
 	/**
 	 * @return the operator used for this constraint
-	 * @see OperatorType
+	 * @see org.zkoss.poi.ss.usermodel.DataValidationConstraint.OperatorType
 	 */
 	public abstract int getOperator();
 
 	/**
 	 * Sets the comparison operator for this constraint
-	 * @see OperatorType
+	 * @see org.zkoss.poi.ss.usermodel.DataValidationConstraint.OperatorType
 	 */
 	public abstract void setOperator(int operator);
 

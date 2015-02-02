@@ -29,7 +29,7 @@ import java.io.ByteArrayOutputStream;
  * shapes.  Shapes contained in groups are bound using the EscherChildAnchorRecords.
  *
  * @author Glen Stampoultzis
- * @see EscherChildAnchorRecord
+ * @see org.zkoss.poi.ddf.EscherChildAnchorRecord
  */
 public class EscherClientAnchorRecord
         extends EscherRecord

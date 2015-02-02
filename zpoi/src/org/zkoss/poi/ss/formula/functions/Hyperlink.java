@@ -39,7 +39,7 @@ import org.zkoss.poi.ss.formula.eval.ValueEval;
  * <b>link_location</b> The URL of the hyperlink <br/>
  * <b>friendly_name</b> (optional) the value to display<p/>
  *
- *  Returns last argument.  Leaves type unchanged (does not convert to {@link StringEval}).
+ *  Returns last argument.  Leaves type unchanged (does not convert to {@link org.zkoss.poi.ss.formula.eval.StringEval}).
  *
  * @author Wayne Clingingsmith
  * @author henrichen@zkoss.org: Have to associate a Hyperlink data model so UI knows that is a hyperlink. 

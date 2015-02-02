@@ -385,7 +385,7 @@ public class EscherBlipWMFRecord
      * Compress the contents of the provided array
      *
      * @param data An uncompressed byte array
-     * @see DeflaterOutputStream#write(int b)
+     * @see java.util.zip.DeflaterOutputStream#write(int b)
      */
     public static byte[] compress( byte[] data )
     {
@@ -411,7 +411,7 @@ public class EscherBlipWMFRecord
      * @param pos    The starting position into the byte array
      * @param length The number of compressed bytes to decompress
      * @return An uncompressed byte array
-     * @see InflaterInputStream#read
+     * @see java.util.zip.InflaterInputStream#read
      */
     public static byte[] decompress( byte[] data, int pos, int length )
     {

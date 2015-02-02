@@ -29,7 +29,7 @@ import org.zkoss.poi.ss.usermodel.FormulaEvaluator;
 
 
 /**
- * Manages a collection of {@link WorkbookEvaluator}s, in order to support evaluation of formulas
+ * Manages a collection of {@link org.zkoss.poi.ss.formula.WorkbookEvaluator}s, in order to support evaluation of formulas
  * across spreadsheets.<p/>
  *
  * For POI internal use only

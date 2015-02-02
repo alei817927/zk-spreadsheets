@@ -255,7 +255,7 @@ public interface SRange {
 	 * @param sortByRows true to sort by rows(change columns orders); false to sort by columns(change row orders). 
 	 */
 	public void sort(SRange key1, boolean descending1, SortDataOption dataOption1, SRange key2, boolean descending2, SortDataOption dataOption2, SRange key3, boolean descending3, SortDataOption dataOption3,
-			int hasHeader, boolean matchCase, boolean sortByRows);
+					 int hasHeader, boolean matchCase, boolean sortByRows);
 
 	/**
 	 * Merge cells of this range into a merged cell.
@@ -275,8 +275,8 @@ public interface SRange {
 
 	/**
 	 * Adds/Remove border of all cells within this range upon the specified border type.
-	 * @param borderIndex one of {@link ApplyBorderType}
- 	 * @param lineStyle border line style, one of {@link SCellStyle.BorderStyle} 
+	 * @param borderIndex one of {@link org.zkoss.zss.range.SRange.ApplyBorderType}
+ 	 * @param lineStyle border line style, one of {@link org.zkoss.zss.model.SCellStyle.BorderStyle}
 	 * @param color color in HTML format; i.e., #rrggbb.
 	 */
 	public void setBorders(ApplyBorderType borderIndex, SCellStyle.BorderType lineStyle, String color);
@@ -307,18 +307,18 @@ public interface SRange {
 	 * @param custom mark it as custom value
 	 * @see #toColumnRange()
 	 */
-	public void setColumnWidth(int widthPx,boolean custom);
+	public void setColumnWidth(int widthPx, boolean custom);
 	/**
 	 * Sets the height(in pixel) of row in this range, it effect to whole row.
 	 * @param widthPx width in pixel
 	 * @param custom mark it as custom value
 	 * @see #toRowRange()
 	 */
-	public void setRowHeight(int heightPx,boolean custom);
+	public void setRowHeight(int heightPx, boolean custom);
 	
 	/**
-	 * Returns associate {@link SSheet} of this range.
-	 * @return associate {@link SSheet} of this range.
+	 * Returns associate {@link org.zkoss.zss.model.SSheet} of this range.
+	 * @return associate {@link org.zkoss.zss.model.SSheet} of this range.
 	 */
 	public SSheet getSheet();
 	
@@ -460,14 +460,14 @@ public interface SRange {
 //	public XAreas getAreas();
 	
 	/**
-	 * Returns a {@link SRange} that represent columns of the 1st selected area of this Range. Note that only the 1st selected area is considered if this Range is a multiple-selected Range. 
-	 * @return a {@link SRange} that represent columns of this Range and contains all rows of the column.
+	 * Returns a {@link org.zkoss.zss.range.SRange} that represent columns of the 1st selected area of this Range. Note that only the 1st selected area is considered if this Range is a multiple-selected Range.
+	 * @return a {@link org.zkoss.zss.range.SRange} that represent columns of this Range and contains all rows of the column.
 	 */
 	public SRange getColumns();
 	
 	/**
-	 * Returns a {@link SRange} that represent rows of the 1st selected area of this Range. Note that only the 1st selected area is considered if this Range is a multiple-selected Range. 
-	 * @return a {@link SRange} that represent rows of this Range and contains all columns of the rows.
+	 * Returns a {@link org.zkoss.zss.range.SRange} that represent rows of the 1st selected area of this Range. Note that only the 1st selected area is considered if this Range is a multiple-selected Range.
+	 * @return a {@link org.zkoss.zss.range.SRange} that represent rows of this Range and contains all columns of the rows.
 	 */
 	public SRange getRows();
 
@@ -546,10 +546,10 @@ public interface SRange {
 	public Object getValue();
 	
 	/**
-	 * Returns a {@link SRange} that represents a range that offset from this Range. 
+	 * Returns a {@link org.zkoss.zss.range.SRange} that represents a range that offset from this Range.
 	 * @param rowOffset positive means downward; 0 means don't change row; negative means upward.
 	 * @param colOffset positive means rightward; 0 means don't change column; negative means leftward.
-	 * @return a {@link SRange} that represents a range that offset from this Range.
+	 * @return a {@link org.zkoss.zss.range.SRange} that represents a range that offset from this Range.
 	 */
 	public SRange getOffset(int rowOffset, int colOffset);
 	
@@ -643,12 +643,12 @@ public interface SRange {
 //	public void notifyDeleteFriendFocus(Object token);
 	
 	/**
-	 * Send a custom model event to all book's listener, the event name must not conflict with that in {@link ModelEvents} 
+	 * Send a custom model event to all book's listener, the event name must not conflict with that in {@link org.zkoss.zss.model.ModelEvents}
 	 * @param customEventName the event custom event
 	 * @param data the data
 	 * @param writeLock use write lock when notify , set true if the synchronized book listener will modify the book.
 	 */
-	public void notifyCustomEvent(String customEventName,Object data,boolean writeLock);
+	public void notifyCustomEvent(String customEventName, Object data, boolean writeLock);
 	
 	/**
 	 * Delete sheet of this Range.
@@ -756,8 +756,8 @@ public interface SRange {
 	public void clearAll();
 	
 	/**
-	 * Create a {@link SName} that refer to this range.
-	 * @param nameName name of the {@link SName} that you can refer in formulas.
+	 * Create a {@link org.zkoss.zss.model.SName} that refer to this range.
+	 * @param nameName name of the {@link org.zkoss.zss.model.SName} that you can refer in formulas.
 	 */
 	public void createName(String nameName);
 
@@ -780,13 +780,13 @@ public interface SRange {
 	 * @param drawingObjects true to protect objects; default to false.
 	 * @param scenarios true to protect scenarios; default to true.
 	 */
-	public void protectSheet(String password,  
-			boolean allowSelectingLockedCells, boolean allowSelectingUnlockedCells,  
-			boolean allowFormattingCells, boolean allowFormattingColumns, boolean allowFormattingRows, 
-			boolean allowInsertColumns, boolean allowInsertRows, boolean allowInsertingHyperlinks,
-			boolean allowDeletingColumns, boolean allowDeletingRows, 
-			boolean allowSorting, boolean allowFiltering, boolean allowUsingPivotTables, 
-			boolean drawingObjects, boolean scenarios);
+	public void protectSheet(String password,
+							 boolean allowSelectingLockedCells, boolean allowSelectingUnlockedCells,
+							 boolean allowFormattingCells, boolean allowFormattingColumns, boolean allowFormattingRows,
+							 boolean allowInsertColumns, boolean allowInsertRows, boolean allowInsertingHyperlinks,
+							 boolean allowDeletingColumns, boolean allowDeletingRows,
+							 boolean allowSorting, boolean allowFiltering, boolean allowUsingPivotTables,
+							 boolean drawingObjects, boolean scenarios);
 	
 	/**
 	 * Removes protection from a sheet. This method has no effect if the sheet 
@@ -799,7 +799,7 @@ public interface SRange {
 	public boolean unprotectSheet(String password);
 	
 	/**
-	 * Gets {@link SSheetProtection} protection options that tells what are 
+	 * Gets {@link org.zkoss.zss.model.SSheetProtection} protection options that tells what are
 	 * allowed operations for the protected sheet of the first region of this 
 	 * range.
 	 * @return
@@ -807,7 +807,7 @@ public interface SRange {
 	public SSheetProtection getSheetProtection();
 
 	/**
-	 * Add if not exist or modify an existing {@link SDataValidation} to this range.
+	 * Add if not exist or modify an existing {@link org.zkoss.zss.model.SDataValidation} to this range.
 	 * @param validationType the type of this validation  
 	 * @param ignoreBlank true if blank values are permitted. 
 	 * @param operatorType the operator for this validation
@@ -831,11 +831,11 @@ public interface SRange {
 			boolean inCellDropDown,
 			String formula1,
 			String formula2,
-			
+
 			boolean showInput,
 			String inputTitle,
 			String inputMessage,
-			
+
 			boolean showError,
 			AlertStyle alertStyle,
 			String errorTitle,
@@ -843,15 +843,15 @@ public interface SRange {
 	
 	
 	/**
-	 * Gets {@link SDataValidation}s associated with this range; if more than 
+	 * Gets {@link org.zkoss.zss.model.SDataValidation}s associated with this range; if more than
 	 * one validation is present, will return at most two.
 	 * 
-	 * @see #setValidation(ValidationType, boolean, OperatorType, boolean, String, String, boolean, String, String, boolean, AlertStyle, String, String)
+	 * @see #setValidation(org.zkoss.zss.model.SDataValidation.ValidationType, boolean, org.zkoss.zss.model.SDataValidation.OperatorType, boolean, String, String, boolean, String, String, boolean, org.zkoss.zss.model.SDataValidation.AlertStyle, String, String)
 	 */
 	public List<SDataValidation> getValidations();
 	
 	/**
-	 * Delete the {@link SDataValidation} associated in the specified range. 
+	 * Delete the {@link org.zkoss.zss.model.SDataValidation} associated in the specified range.
 	 */
 	public void deleteValidation();
 	
@@ -863,8 +863,8 @@ public interface SRange {
 	 * @since 3.6.0
 	 */
 	public SFont getOrCreateFont(SFont.Boldweight boldweight, String htmlColor,
-			int fontHeight, String fontName, boolean italic, boolean strikeout,
-			SFont.TypeOffset typeOffset, SFont.Underline underline);
+								 int fontHeight, String fontName, boolean italic, boolean strikeout,
+								 SFont.TypeOffset typeOffset, SFont.Underline underline);
 
 	/**
 	 * Evaluate(if not cached), update data model, and refresh UI of this range 
@@ -907,7 +907,7 @@ public interface SRange {
 	 *  <li>VERY_HIDDEN: the sheet is hidden but can be unhidden only via this API.</li>
 	 * </ul>
 	 * @since 3.7.0
-	 * @see SheetVisible
+	 * @see org.zkoss.zss.range.SRange.SheetVisible
 	 */
 	public void setSheetVisible(SheetVisible visible);
 	

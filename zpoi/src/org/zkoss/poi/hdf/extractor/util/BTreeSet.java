@@ -98,7 +98,7 @@ public final class BTreeSet extends AbstractSet implements Set {
         size = 0;
     }
 
-    public java.util.Iterator iterator() {
+    public Iterator iterator() {
         return new BTIterator();
     }
 
@@ -125,7 +125,7 @@ public final class BTreeSet extends AbstractSet implements Set {
      * chance of receiving a NullPointerException. The Iterator.delete method is supported.
     */
 
-    private final class BTIterator implements java.util.Iterator {
+    private final class BTIterator implements Iterator {
         private int index = 0;
         Stack parentIndex = new Stack(); // Contains all parentIndicies for currentNode
         private Object lastReturned = null;

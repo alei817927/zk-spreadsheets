@@ -1,5 +1,6 @@
 package com.makenv.sheets.http;
 
+import com.makenv.sheets.util.FileUtil;
 import org.zkoss.zk.ui.http.DHtmlLayoutServlet;
 
 import java.io.IOException;
@@ -14,9 +15,11 @@ public class MiServlet extends DHtmlLayoutServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+        FileUtil.initWebRootPath(getServletContext().getRealPath("/"));
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.print(String.format("doGet...%s",request.getParameter("d")));
+        String userId = request.getParameter("userId");
+        String date = request.getParameter("date");
         super.doGet(request,response);
     }
 }

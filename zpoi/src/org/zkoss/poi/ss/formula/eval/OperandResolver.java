@@ -205,14 +205,14 @@ public final class OperandResolver {
 
 	/**
 	 * Applies some conversion rules if the supplied value is not already a number.
-	 * Note - <tt>BlankEval</tt> is converted to {@link NumberEval#ZERO}.
-	 * @param ev must be a {@link NumberEval}, {@link StringEval}, {@link BoolEval} or
-	 * {@link BlankEval}
+	 * Note - <tt>BlankEval</tt> is converted to {@link org.zkoss.poi.ss.formula.eval.NumberEval#ZERO}.
+	 * @param ev must be a {@link org.zkoss.poi.ss.formula.eval.NumberEval}, {@link org.zkoss.poi.ss.formula.eval.StringEval}, {@link org.zkoss.poi.ss.formula.eval.BoolEval} or
+	 * {@link org.zkoss.poi.ss.formula.eval.BlankEval}
 	 * @return actual, parsed or interpreted double value (respectively).
 	 * @throws EvaluationException(#VALUE!) only if a StringEval is supplied and cannot be parsed
 	 * as a double (See <tt>parseDouble()</tt> for allowable formats).
-	 * @throws RuntimeException if the supplied parameter is not {@link NumberEval},
-	 * {@link StringEval}, {@link BoolEval} or {@link BlankEval}
+	 * @throws RuntimeException if the supplied parameter is not {@link org.zkoss.poi.ss.formula.eval.NumberEval},
+	 * {@link org.zkoss.poi.ss.formula.eval.StringEval}, {@link org.zkoss.poi.ss.formula.eval.BoolEval} or {@link org.zkoss.poi.ss.formula.eval.BlankEval}
 	 */
 	public static double coerceValueToDouble(ValueEval ev) throws EvaluationException {
 

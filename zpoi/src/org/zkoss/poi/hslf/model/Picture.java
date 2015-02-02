@@ -156,14 +156,14 @@ public class Picture extends SimpleShape {
 
             if(img != null) {
                 // Valid image, set anchor from it
-                setAnchor(new java.awt.Rectangle(0, 0, img.getWidth()*POINT_DPI/PIXEL_DPI, img.getHeight()*POINT_DPI/PIXEL_DPI));
+                setAnchor(new Rectangle(0, 0, img.getWidth()*POINT_DPI/PIXEL_DPI, img.getHeight()*POINT_DPI/PIXEL_DPI));
             } else {
                 // Invalid image, go with the default metafile size
-                setAnchor(new java.awt.Rectangle(0, 0, 200, 200));
+                setAnchor(new Rectangle(0, 0, 200, 200));
             }
         } else {
             //default size of a metafile picture is 200x200
-            setAnchor(new java.awt.Rectangle(50, 50, 200, 200));
+            setAnchor(new Rectangle(50, 50, 200, 200));
         }
     }
 
@@ -254,8 +254,8 @@ public class Picture extends SimpleShape {
         EscherBSERecord bse = getEscherBSERecord();
         bse.setRef(bse.getRef() + 1);
 
-        java.awt.Rectangle anchor = getAnchor();
-        if (anchor.equals(new java.awt.Rectangle())){
+        Rectangle anchor = getAnchor();
+        if (anchor.equals(new Rectangle())){
             setDefaultSize();
         }
     }

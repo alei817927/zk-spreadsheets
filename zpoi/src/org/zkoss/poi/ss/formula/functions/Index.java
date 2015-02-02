@@ -151,7 +151,7 @@ public final class Index implements Function2Arg, Function3Arg, Function4Arg {
 	/**
 	 * @param arg a 1-based index.
 	 * @return the resolved 1-based index. Zero if the arg was missing or blank
-	 * @throws EvaluationException if the arg is an error value evaluates to a negative numeric value
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException if the arg is an error value evaluates to a negative numeric value
 	 */
 	private static int resolveIndexArg(ValueEval arg, int srcCellRow, int srcCellCol) throws EvaluationException {
 

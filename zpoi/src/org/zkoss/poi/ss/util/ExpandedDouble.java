@@ -25,7 +25,7 @@ import static org.zkoss.poi.ss.util.IEEEDouble.*;
  * Represents a 64 bit IEEE double quantity expressed with both decimal and binary exponents
  * Does not handle negative numbers or zero
  * <p/>
- * The value of a {@link ExpandedDouble} is given by<br/>
+ * The value of a {@link org.zkoss.poi.ss.util.ExpandedDouble} is given by<br/>
  * <tt> a &times; 2<sup>b</sup></tt>
  * <br/>
  * where:<br/>

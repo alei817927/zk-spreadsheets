@@ -598,7 +598,7 @@ public abstract class TextShape extends SimpleShape {
      * @param linkId    id of the hyperlink, @see org.zkoss.poi.hslf.usermodel.SlideShow#addHyperlink(Hyperlink)
      * @param      beginIndex   the beginning index, inclusive.
      * @param      endIndex     the ending index, exclusive.
-     * @see org.zkoss.poi.hslf.usermodel.SlideShow#addHyperlink(Hyperlink)
+     * @see org.zkoss.poi.hslf.usermodel.SlideShow#addHyperlink(org.zkoss.poi.hslf.model.Hyperlink)
      */
     public void setHyperlink(int linkId, int beginIndex, int endIndex){
         //TODO validate beginIndex and endIndex and throw IllegalArgumentException

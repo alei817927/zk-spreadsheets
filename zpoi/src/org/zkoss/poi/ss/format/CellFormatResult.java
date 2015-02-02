@@ -23,8 +23,8 @@ import java.awt.*;
  * to a value.
  *
  * @author Ken Arnold, Industrious Media LLC
- * @see CellFormatPart#apply(Object)
- * @see CellFormat#apply(Object)
+ * @see org.zkoss.poi.ss.format.CellFormatPart#apply(Object)
+ * @see org.zkoss.poi.ss.format.CellFormat#apply(Object)
  */
 public class CellFormatResult {
     /**

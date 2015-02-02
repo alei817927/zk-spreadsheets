@@ -84,7 +84,7 @@ public class SectionIDMap extends HashMap {
 
     /**
      * <p>Returns the singleton instance of the default {@link
-     * SectionIDMap}.</p>
+     * org.zkoss.poi.hpsf.wellknown.SectionIDMap}.</p>
      *
      * @return The instance value
      */

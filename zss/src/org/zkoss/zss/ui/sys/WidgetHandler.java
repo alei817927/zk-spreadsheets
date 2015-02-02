@@ -65,7 +65,7 @@ public interface WidgetHandler{
 	 * handler should take care this method and load corresponding widgets, which in the block , to client side.
 	 * this method will be invoked by spreadsheet, you should not call this method directly.
 	 */
-	public void onLoadOnDemand(SSheet sheet,int left,int top,int right,int bottom);
+	public void onLoadOnDemand(SSheet sheet, int left, int top, int right, int bottom);
 	
 	/**
 	 * invalidate this handle, which means all widget in client side will be remove, and need to re-drew.

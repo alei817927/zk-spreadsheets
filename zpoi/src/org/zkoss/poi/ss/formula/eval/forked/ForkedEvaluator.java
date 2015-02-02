@@ -38,7 +38,7 @@ import org.zkoss.poi.ss.usermodel.Workbook;
  * concurrently and independently evaluated many times.  With standard formula evaluation, around
  * 90% of memory consumption is due to loading of the {@link HSSFWorkbook} or {@link org.zkoss.poi.xssf.usermodel.XSSFWorkbook}.
  * This class enables a 'master workbook' to be loaded just once and shared between many evaluation
- * clients.  Each evaluation client creates its own {@link ForkedEvaluator} and can set cell values
+ * clients.  Each evaluation client creates its own {@link org.zkoss.poi.ss.formula.eval.forked.ForkedEvaluator} and can set cell values
  * that will be used for local evaluations (and don't disturb evaluations on other evaluators).
  *
  * @author Josh Micich
@@ -63,7 +63,7 @@ public final class ForkedEvaluator {
 		throw new IllegalArgumentException("Unexpected workbook type (" + wb.getClass().getName() + ")");
 	}
 	/**
-	 * @deprecated (Sep 2009) (reduce overloading) use {@link #create(Workbook, IStabilityClassifier, UDFFinder)}
+	 * @deprecated (Sep 2009) (reduce overloading) use {@link #create(Workbook, IStabilityClassifier, org.zkoss.poi.ss.formula.udf.UDFFinder)}
 	 */
 	public static ForkedEvaluator create(Workbook wb, IStabilityClassifier stabilityClassifier) {
 		return create(wb, stabilityClassifier, null);

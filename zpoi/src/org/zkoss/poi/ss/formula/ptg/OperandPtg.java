@@ -23,7 +23,7 @@ package org.zkoss.poi.ss.formula.ptg;
 public abstract class OperandPtg extends Ptg implements Cloneable {
 
 	/**
-	 * All Operand {@link Ptg}s are classified ('relative', 'value', 'array')
+	 * All Operand {@link org.zkoss.poi.ss.formula.ptg.Ptg}s are classified ('relative', 'value', 'array')
 	 */
 	public final boolean isBaseToken() {
 		return false;

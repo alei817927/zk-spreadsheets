@@ -98,8 +98,8 @@ public class Days360 extends Var2or3ArgFunction {
 
     private static boolean isLastDayOfMonth(Calendar date) {
         Calendar clone = (Calendar) date.clone();
-        clone.add(java.util.Calendar.MONTH, 1);
-        clone.add(java.util.Calendar.DAY_OF_MONTH, -1);
+        clone.add(Calendar.MONTH, 1);
+        clone.add(Calendar.DAY_OF_MONTH, -1);
         int lastDayOfMonth = clone.get(Calendar.DAY_OF_MONTH);
         return date.get(Calendar.DAY_OF_MONTH) == lastDayOfMonth;
     }

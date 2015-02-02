@@ -140,7 +140,7 @@ public class WholeStyleUtil {
 	}
 
 	public static void setTextHAlign(final SRange wholeRange,
-			final org.zkoss.zss.model.SCellStyle.Alignment hAlignment) {
+			final SCellStyle.Alignment hAlignment) {
 		setWholeStyle(wholeRange,new StyleApplyer(){
 			@Override
 			public void applyStyle(CellStyleHolder holder) {
@@ -149,7 +149,7 @@ public class WholeStyleUtil {
 	}
 
 	public static void setTextVAlign(final SRange wholeRange, 
-			final org.zkoss.zss.model.SCellStyle.VerticalAlignment vAlignment) {
+			final SCellStyle.VerticalAlignment vAlignment) {
 		setWholeStyle(wholeRange,new StyleApplyer(){
 			@Override
 			public void applyStyle(CellStyleHolder holder) {

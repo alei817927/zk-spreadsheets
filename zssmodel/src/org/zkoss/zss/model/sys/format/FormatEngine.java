@@ -29,10 +29,10 @@ public interface FormatEngine {
 	/**
 	 * Get the editText of cell
 	 */
-	String getEditText(SCell cell,FormatContext ctx);
+	String getEditText(SCell cell, FormatContext ctx);
 	/**
 	 * Get the format of the cell, if {@link SCellStyle#isDirectDataFormat()} if false, the return value will be localized 
-	 * @see FormatEngine#getLocalizedFormat(String, FormatContext)
+	 * @see org.zkoss.zss.model.sys.format.FormatEngine#getLocalizedFormat(String, FormatContext)
 	 */
 	String getFormat(SCell cell, FormatContext ctx);
 	/**

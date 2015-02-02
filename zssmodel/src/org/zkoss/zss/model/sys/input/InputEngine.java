@@ -25,5 +25,5 @@ package org.zkoss.zss.model.sys.input;
  */
 public interface InputEngine {
 
-	public InputResult parseInput(String editText,String format, InputParseContext context);
+	public InputResult parseInput(String editText, String format, InputParseContext context);
 }

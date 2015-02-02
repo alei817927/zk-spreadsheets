@@ -27,7 +27,7 @@ import org.zkoss.poi.util.HexDump;
  *
  * @author Glen Stampoultzis
  * @see EscherSimpleProperty
- * @see EscherProperty
+ * @see org.zkoss.poi.ddf.EscherProperty
  */
 public class EscherBoolProperty
         extends EscherSimpleProperty

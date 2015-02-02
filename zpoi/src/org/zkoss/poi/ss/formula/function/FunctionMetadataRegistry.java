@@ -20,7 +20,7 @@ package org.zkoss.poi.ss.formula.function;
 import java.util.Map;
 import java.util.Set;
 /**
- * Allows clients to get {@link FunctionMetadata} instances for any built-in function of Excel.
+ * Allows clients to get {@link org.zkoss.poi.ss.formula.function.FunctionMetadata} instances for any built-in function of Excel.
  *
  * @author Josh Micich
  */

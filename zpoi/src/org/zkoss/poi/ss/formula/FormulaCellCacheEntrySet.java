@@ -20,7 +20,7 @@ package org.zkoss.poi.ss.formula;
 /**
  * A custom implementation of {@link java.util.HashSet} in order to reduce memory consumption.
  *
- * Profiling tests (Oct 2008) have shown that each element {@link FormulaCellCacheEntry} takes
+ * Profiling tests (Oct 2008) have shown that each element {@link org.zkoss.poi.ss.formula.FormulaCellCacheEntry} takes
  * around 32 bytes to store in a HashSet, but around 6 bytes to store here.  For Spreadsheets with
  * thousands of formula cells with multiple interdependencies, the savings can be very significant.
  *

@@ -155,12 +155,12 @@ public class CellFormat {
             Collections.synchronizedMap(new WeakHashMap<Object, CellFormat>());
 
     /**
-     * Returns a {@link CellFormat} that applies the given format.  Two calls
+     * Returns a {@link org.zkoss.poi.ss.format.CellFormat} that applies the given format.  Two calls
      * with the same format may or may not return the same object.
      *
      * @param format The format.
      *
-     * @return A {@link CellFormat} that applies the given format.
+     * @return A {@link org.zkoss.poi.ss.format.CellFormat} that applies the given format.
      */
     public static CellFormat getInstance(String format, Locale locale) { //20111229, henrichen@zkoss.org: ZSS-68
     	final Pair<String, Locale> key = new Pair<String, Locale>(format, locale);
@@ -262,7 +262,7 @@ public class CellFormat {
             } else {
                 return getApplicableFormatPart(val).apply(val);
             }
-        } else if (value instanceof java.util.Date) {
+        } else if (value instanceof Date) {
             // Don't know (and can't get) the workbook date windowing (1900 or 1904)
             // so assume 1900 date windowing
             Double numericValue = DateUtil.getExcelDate((Date) value);
@@ -483,7 +483,7 @@ public class CellFormat {
     }
 
     /**
-     * Returns <tt>true</tt> if the other object is a {@link CellFormat} object
+     * Returns <tt>true</tt> if the other object is a {@link org.zkoss.poi.ss.format.CellFormat} object
      * with the same format.
      *
      * @param obj The other object.

@@ -37,7 +37,7 @@ public class HPSFException extends Exception
 
 
     /**
-     * <p>Creates an {@link HPSFException}.</p>
+     * <p>Creates an {@link org.zkoss.poi.hpsf.HPSFException}.</p>
      */
     public HPSFException()
     {
@@ -47,7 +47,7 @@ public class HPSFException extends Exception
 
 
     /**
-     * <p>Creates an {@link HPSFException} with a message string.</p>
+     * <p>Creates an {@link org.zkoss.poi.hpsf.HPSFException} with a message string.</p>
      *
      * @param msg The message string.
      */
@@ -59,7 +59,7 @@ public class HPSFException extends Exception
 
 
     /**
-     * <p>Creates a new {@link HPSFException} with a reason.</p>
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.HPSFException} with a reason.</p>
      *
      * @param reason The reason, i.e. a throwable that indirectly
      * caused this exception.
@@ -73,7 +73,7 @@ public class HPSFException extends Exception
 
 
     /**
-     * <p>Creates an {@link HPSFException} with a message string and a
+     * <p>Creates an {@link org.zkoss.poi.hpsf.HPSFException} with a message string and a
      * reason.</p>
      *
      * @param msg The message string.

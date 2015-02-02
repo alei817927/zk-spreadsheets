@@ -106,7 +106,7 @@ public interface PivotTable {
 	public void setFirstData(int row, int col);
 	
 	/**
-	 * Returns the first data {@link CellReference}
+	 * Returns the first data {@link org.zkoss.poi.ss.util.CellReference}
 	 * 
 	 * @return
 	 */
@@ -127,14 +127,14 @@ public interface PivotTable {
 	public AreaReference getLocationRef();
 	
 	/**
-	 * Returns the {@link PivotCache} of the PivotTable.
+	 * Returns the {@link org.zkoss.poi.ss.usermodel.PivotCache} of the PivotTable.
 	 * 
 	 * @return
 	 */
 	public PivotCache getPivotCache();
 
 	/**
-	 * Returns the {@link PivotField}.
+	 * Returns the {@link org.zkoss.poi.ss.usermodel.PivotField}.
 	 * 
 	 * @param name
 	 * @return

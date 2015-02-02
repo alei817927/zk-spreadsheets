@@ -139,7 +139,7 @@ public final class HDFObjectFactory {
     /**
      * Initializes the table stream
      *
-     * @throws IOException
+     * @throws java.io.IOException
      */
     private void initTableStream() throws IOException
     {
@@ -164,7 +164,7 @@ public final class HDFObjectFactory {
      * Initializes the text pieces. Text is divided into pieces because some
      * "pieces" may only contain unicode characters.
      *
-     * @throws IOException
+     * @throws java.io.IOException
      */
     private void initTextPieces() throws IOException
     {

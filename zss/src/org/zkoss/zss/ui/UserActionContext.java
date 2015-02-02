@@ -64,7 +64,7 @@ public interface UserActionContext {
 	
 	public void clearClipboard();
 	
-	public void setClipboard(Sheet sheet,AreaRef selection,boolean cutMode,Object info);
+	public void setClipboard(Sheet sheet, AreaRef selection, boolean cutMode, Object info);
 
 	
 	

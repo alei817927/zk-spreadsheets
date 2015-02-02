@@ -43,8 +43,8 @@ public final class SummaryInformation extends SpecialPropertySet {
 
 
     /**
-     * <p>Creates a {@link SummaryInformation} from a given {@link
-     * PropertySet}.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.SummaryInformation} from a given {@link
+     * org.zkoss.poi.hpsf.PropertySet}.</p>
      *
      * @param ps A property set which should be created from a summary
      *        information stream.
@@ -355,7 +355,7 @@ public final class SummaryInformation extends SpecialPropertySet {
      * <code>0</code>).</p>
      *
      * @return The total time spent in editing the document or 0 if the {@link
-     *         SummaryInformation} does not contain this information.
+     *         org.zkoss.poi.hpsf.SummaryInformation} does not contain this information.
      */
     public long getEditTime()
     {
@@ -506,10 +506,10 @@ public final class SummaryInformation extends SpecialPropertySet {
 
 
     /**
-     * <p>Returns the page count or 0 if the {@link SummaryInformation} does
+     * <p>Returns the page count or 0 if the {@link org.zkoss.poi.hpsf.SummaryInformation} does
      * not contain a page count.</p>
      *
-     * @return The page count or 0 if the {@link SummaryInformation} does not
+     * @return The page count or 0 if the {@link org.zkoss.poi.hpsf.SummaryInformation} does not
      *         contain a page count.
      */
     public int getPageCount()
@@ -544,7 +544,7 @@ public final class SummaryInformation extends SpecialPropertySet {
 
 
     /**
-     * <p>Returns the word count or 0 if the {@link SummaryInformation} does
+     * <p>Returns the word count or 0 if the {@link org.zkoss.poi.hpsf.SummaryInformation} does
      * not contain a word count.</p>
      *
      * @return The word count or <code>null</code>
@@ -581,7 +581,7 @@ public final class SummaryInformation extends SpecialPropertySet {
 
 
     /**
-     * <p>Returns the character count or 0 if the {@link SummaryInformation}
+     * <p>Returns the character count or 0 if the {@link org.zkoss.poi.hpsf.SummaryInformation}
      * does not contain a char count.</p>
      *
      * @return The character count or <code>null</code>
@@ -702,9 +702,9 @@ public final class SummaryInformation extends SpecialPropertySet {
      *
      * <ul>
      *
-     * <li><p>0 if the {@link SummaryInformation} does not contain a
+     * <li><p>0 if the {@link org.zkoss.poi.hpsf.SummaryInformation} does not contain a
      * security field or if there is no security on the document. Use
-     * {@link PropertySet#wasNull()} to distinguish between the two
+     * {@link org.zkoss.poi.hpsf.PropertySet#wasNull()} to distinguish between the two
      * cases!</p></li>
      *
      * <li><p>1 if the document is password protected</p></li>

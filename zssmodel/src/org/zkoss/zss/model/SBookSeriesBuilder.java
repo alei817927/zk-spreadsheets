@@ -71,7 +71,7 @@ public abstract class SBookSeriesBuilder {
 	abstract public void buildBookSeries(Set<SBook> books);
 	
 	/**
-	 * @see #buildBookSeries(Set) 
+	 * @see #buildBookSeries(java.util.Set)
 	 */
 	abstract public void buildBookSeries(SBook... books);
 }

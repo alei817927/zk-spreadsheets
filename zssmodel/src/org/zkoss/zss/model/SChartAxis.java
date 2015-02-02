@@ -13,7 +13,7 @@
 package org.zkoss.zss.model;
 
 /**
- * Represent an axis in {@link SChart}.
+ * Represent an axis in {@link org.zkoss.zss.model.SChart}.
  * @author henri
  */
 public interface SChartAxis {

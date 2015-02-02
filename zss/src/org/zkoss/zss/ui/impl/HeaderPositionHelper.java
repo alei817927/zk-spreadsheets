@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * 
  * A utility class for calculating position of header.
- * Each non-default size of a row or column header is stored as a {@link HeaderPositionInfo} in this helper.  
+ * Each non-default size of a row or column header is stored as a {@link org.zkoss.zss.ui.impl.HeaderPositionHelper.HeaderPositionInfo} in this helper.
  * @author Dennis.Chen
  * 
  */

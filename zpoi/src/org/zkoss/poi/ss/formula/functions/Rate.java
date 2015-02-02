@@ -109,7 +109,7 @@ public class Rate implements Function {
    /**
     * Excel does not support infinities and NaNs, rather, it gives a #NUM! error in these cases
     * 
-    * @throws EvaluationException (#NUM!) if <tt>result</tt> is <tt>NaN</> or <tt>Infinity</tt>
+    * @throws org.zkoss.poi.ss.formula.eval.EvaluationException (#NUM!) if <tt>result</tt> is <tt>NaN</> or <tt>Infinity</tt>
     */
    static final void checkValue(double result) throws EvaluationException {
       if (Double.isNaN(result) || Double.isInfinite(result)) {

@@ -17,10 +17,10 @@ Copyright (C) 2013 Potix Corporation. All Rights Reserved.
 package org.zkoss.zss.api;
 
 /**
- * The runner to help you run multiple {@link Range} APIs in synchronization. 
+ * The runner to help you run multiple {@link org.zkoss.zss.api.Range} APIs in synchronization.
  * @author dennis
- * @see Range#sync(RangeRunner)
- * @see Range#setSyncLevel(org.zkoss.zss.api.Range.SyncLevel)
+ * @see org.zkoss.zss.api.Range#sync(org.zkoss.zss.api.RangeRunner)
+ * @see org.zkoss.zss.api.Range#setSyncLevel(org.zkoss.zss.api.Range.SyncLevel)
  * @since 3.0.0
  */
 public interface RangeRunner {

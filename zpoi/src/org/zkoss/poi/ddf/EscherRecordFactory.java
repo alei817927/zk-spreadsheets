@@ -28,5 +28,5 @@ public interface EscherRecordFactory {
      * Create a new escher record from the data provided.  Does not attempt
      * to fill the contents of the record however.
      */
-    EscherRecord createRecord( byte[] data, int offset );
+    EscherRecord createRecord(byte[] data, int offset);
 }

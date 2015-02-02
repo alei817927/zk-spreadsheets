@@ -259,7 +259,7 @@ public abstract class TextFunction implements Function {
 		}
 	};
 
-	public static final Function EXACT = new TextFunction.TwoArgs() {
+	public static final Function EXACT = new TwoArgs() {
 
 		public ValueEval evaluate(int srcRowIndex, int srcColumnIndex, ValueEval arg0,
 				ValueEval arg1) {
@@ -285,7 +285,7 @@ public abstract class TextFunction implements Function {
 	 *
 	 * <b>Syntax<b>:<br/> <b>TEXT</b>(<b>value</b>, <b>format_text</b>)<br/>
 	 */
-	public static final Function TEXT = new TextFunction.TwoArgs() {
+	public static final Function TEXT = new TwoArgs() {
 
 		public ValueEval evaluate(int srcRowIndex, int srcColumnIndex, ValueEval arg0, ValueEval arg1) {
 			double s0;

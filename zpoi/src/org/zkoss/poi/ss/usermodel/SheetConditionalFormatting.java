@@ -86,11 +86,11 @@ public interface SheetConditionalFormatting {
      * <p>
      * The created conditional formatting rule compares a cell value
      * to a formula calculated result, using the specified operator.
-     * The type  of the created condition is {@link ConditionalFormattingRule#CONDITION_TYPE_CELL_VALUE_IS}
+     * The type  of the created condition is {@link org.zkoss.poi.ss.usermodel.ConditionalFormattingRule#CONDITION_TYPE_CELL_VALUE_IS}
      * </p>
      *
      * @param comparisonOperation - MUST be a constant value from
-     *		 <tt>{@link ComparisonOperator}</tt>: <p>
+     *		 <tt>{@link org.zkoss.poi.ss.usermodel.ComparisonOperator}</tt>: <p>
      * <ul>
      *		 <li>BETWEEN</li>
      *		 <li>NOT_BETWEEN</li>
@@ -104,7 +104,7 @@ public interface SheetConditionalFormatting {
      * </p>
      * @param formula1 - formula for the valued, compared with the cell
      * @param formula2 - second formula (only used with
-     * {@link ComparisonOperator#BETWEEN}) and {@link ComparisonOperator#NOT_BETWEEN} operations)
+     * {@link org.zkoss.poi.ss.usermodel.ComparisonOperator#BETWEEN}) and {@link org.zkoss.poi.ss.usermodel.ComparisonOperator#NOT_BETWEEN} operations)
      */
     ConditionalFormattingRule createConditionalFormattingRule(
             byte comparisonOperation,
@@ -115,11 +115,11 @@ public interface SheetConditionalFormatting {
      * Create a conditional formatting rule that compares a cell value
      * to a formula calculated result, using an operator     *
      * <p>
-      * The type  of the created condition is {@link ConditionalFormattingRule#CONDITION_TYPE_CELL_VALUE_IS}
+      * The type  of the created condition is {@link org.zkoss.poi.ss.usermodel.ConditionalFormattingRule#CONDITION_TYPE_CELL_VALUE_IS}
      * </p>
      *
      * @param comparisonOperation  MUST be a constant value from
-     *		 <tt>{@link ComparisonOperator}</tt> except  BETWEEN and NOT_BETWEEN
+     *		 <tt>{@link org.zkoss.poi.ss.usermodel.ComparisonOperator}</tt> except  BETWEEN and NOT_BETWEEN
      *
      * @param formula  the formula to determine if the conditional formatting is applied
      */
@@ -132,7 +132,7 @@ public interface SheetConditionalFormatting {
      *  When the formula result is true, the cell is highlighted.
      *
      * <p>
-     *  The type of the created format condition is  {@link ConditionalFormattingRule#CONDITION_TYPE_FORMULA}
+     *  The type of the created format condition is  {@link org.zkoss.poi.ss.usermodel.ConditionalFormattingRule#CONDITION_TYPE_FORMULA}
      * </p>
      * @param formula   the formula to evaluate. MUST be a Boolean function.
      */

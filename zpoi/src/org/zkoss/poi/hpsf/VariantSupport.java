@@ -108,7 +108,7 @@ public class VariantSupport extends Variant
 
 
     /**
-     * <p>HPSF is able to read these {@link Variant} types.</p>
+     * <p>HPSF is able to read these {@link org.zkoss.poi.hpsf.Variant} types.</p>
      */
     final static public int[] SUPPORTED_TYPES = { Variant.VT_EMPTY,
             Variant.VT_I2, Variant.VT_I4, Variant.VT_I8, Variant.VT_R8,
@@ -122,7 +122,7 @@ public class VariantSupport extends Variant
      * types should be implemented included in the {@link #SUPPORTED_TYPES}
      * array.</p>
      *
-     * @see Variant
+     * @see org.zkoss.poi.hpsf.Variant
      * @param variantType the variant type to check
      * @return <code>true</code> if HPFS supports this type, else
      *         <code>false</code>
@@ -150,9 +150,9 @@ public class VariantSupport extends Variant
      *         {@link String}.
      * @exception ReadingNotSupportedException if a property is to be written
      *            who's variant type HPSF does not yet support
-     * @exception UnsupportedEncodingException if the specified codepage is not
+     * @exception java.io.UnsupportedEncodingException if the specified codepage is not
      *            supported.
-     * @see Variant
+     * @see org.zkoss.poi.hpsf.Variant
      */
     public static Object read( final byte[] src, final int offset,
             final int length, final long type, final int codepage )
@@ -269,7 +269,7 @@ public class VariantSupport extends Variant
      * "cp" followed by the number, e.g. if the codepage number is 1252 the
      * returned character encoding name will be "cp1252".
      *
-     * @exception UnsupportedEncodingException if the specified codepage is
+     * @exception java.io.UnsupportedEncodingException if the specified codepage is
      * less than zero.
      */
     public static String codepageToEncoding(final int codepage)
@@ -394,8 +394,8 @@ public class VariantSupport extends Variant
      * always a multiple of 4 bytes is written.</p>
      *
      * <p>If the codepage is UTF-16, which is encouraged, strings
-     * <strong>must</strong> always be written as {@link Variant#VT_LPWSTR}
-     * strings, not as {@link Variant#VT_LPSTR} strings. This method ensure this
+     * <strong>must</strong> always be written as {@link org.zkoss.poi.hpsf.Variant#VT_LPWSTR}
+     * strings, not as {@link org.zkoss.poi.hpsf.Variant#VT_LPSTR} strings. This method ensure this
      * by converting strings appropriately, if needed.</p>
      *
      * @param out The stream to write the value to.
@@ -404,7 +404,7 @@ public class VariantSupport extends Variant
      * @param codepage The codepage to use to write non-wide strings
      * @return The number of entities that have been written. In many cases an
      * "entity" is a byte but this is not always the case.
-     * @exception IOException if an I/O exceptions occurs
+     * @exception java.io.IOException if an I/O exceptions occurs
      * @exception WritingNotSupportedException if a property is to be written
      * who's variant type HPSF does not yet support
      */

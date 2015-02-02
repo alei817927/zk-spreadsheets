@@ -165,7 +165,7 @@ public final class OperationEvaluationContext {
 	 * @param isA1Style specifies the format for <tt>refStrPart1</tt> and <tt>refStrPart2</tt>.
 	 * Pass <code>true</code> for 'A1' style and <code>false</code> for 'R1C1' style.
 	 * TODO - currently POI only supports 'A1' reference style
-	 * @return a {@link RefEval} or {@link AreaEval}
+	 * @return a {@link org.zkoss.poi.ss.formula.eval.RefEval} or {@link org.zkoss.poi.ss.formula.eval.AreaEval}
 	 */
 	public ValueEval getDynamicReference(String workbookName, String sheetName, String lastSheetName, String refStrPart1,
 			String refStrPart2, boolean isA1Style) {
@@ -292,7 +292,7 @@ public final class OperationEvaluationContext {
 	private static NameType classifyCellReference(String str, SpreadsheetVersion ssVersion) {
 		int len = str.length();
 		if (len < 1) {
-			return CellReference.NameType.BAD_CELL_OR_NAMED_RANGE;
+			return NameType.BAD_CELL_OR_NAMED_RANGE;
 		}
 		return CellReference.classifyCellReference(str, ssVersion);
 	}

@@ -127,7 +127,7 @@ public class Formula {
 	}
 
 	/**
-	 * Creates a {@link Formula} object from a supplied {@link Ptg} array.
+	 * Creates a {@link org.zkoss.poi.ss.formula.Formula} object from a supplied {@link org.zkoss.poi.ss.formula.ptg.Ptg} array.
 	 * Handles <code>null</code>s OK.
 	 * @param ptgs may be <code>null</code>
 	 * @return Never <code>null</code> (Possibly empty if the supplied <tt>ptgs</tt> is <code>null</code>)
@@ -143,7 +143,7 @@ public class Formula {
 		return new Formula(encodedData, encodedTokenLen);
 	}
 	/**
-	 * Gets the {@link Ptg} array from the supplied {@link Formula}.
+	 * Gets the {@link org.zkoss.poi.ss.formula.ptg.Ptg} array from the supplied {@link org.zkoss.poi.ss.formula.Formula}.
 	 * Handles <code>null</code>s OK.
 	 *
 	 * @param formula may be <code>null</code>
@@ -164,7 +164,7 @@ public class Formula {
 	/**
 	 * Gets the locator for the corresponding {@link org.zkoss.poi.hssf.record.SharedFormulaRecord},
      * {@link org.zkoss.poi.hssf.record.ArrayRecord} or {@link org.zkoss.poi.hssf.record.TableRecord}
-     * if this formula belongs to such a grouping.  The {@link CellReference}
+     * if this formula belongs to such a grouping.  The {@link org.zkoss.poi.ss.util.CellReference}
 	 * returned by this method will  match the top left corner of the range of that grouping.
 	 * The return value is usually not the same as the location of the cell containing this formula.
 	 *

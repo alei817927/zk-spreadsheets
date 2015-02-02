@@ -22,7 +22,7 @@ import org.zkoss.zss.model.SBook;
 import org.zkoss.zss.model.SSheet;
 
 /**
- * This interface provides the access to a sheet of a {@link Book}.
+ * This interface provides the access to a sheet of a {@link org.zkoss.zss.api.model.Book}.
  * @author dennis
  * @since 3.0.0
  */

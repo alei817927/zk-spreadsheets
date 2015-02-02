@@ -1236,7 +1236,7 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 	 * Sets the customized titles which split by ','. For example:
 	 * "name,title,age" or "name,,age" , an empty string means use default
 	 * column title. This method will split the input string to a Map with
-	 * sequence index from 0, then call {@link #setColumntitles(Map)}<br/>
+	 * sequence index from 0, then call {@link #setColumntitles(java.util.Map)}<br/>
 	 * 
 	 * <p/>
 	 * Note: this method will always invoke invalidate()
@@ -1281,7 +1281,7 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 	 * Sets the customized titles which split by ','. For example:
 	 * "name,title,age" or "name,,age" , an empty string means use default row
 	 * title. This method will split the input string to a Map with sequence
-	 * index from 0, then call {@link #setRowtitles(Map)}<br/>
+	 * index from 0, then call {@link #setRowtitles(java.util.Map)}<br/>
 	 * 
 	 * <p/>
 	 * Note: this method will always invoke invalidate()
@@ -1779,24 +1779,24 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 
 		// ZSS-423: create multiple "active range" data for every panel
 		JSONObject activeRange = spreadsheetCtrl.getRangeAttrs(sheet, SpreadsheetCtrl.Header.BOTH,
-				SpreadsheetCtrl.CellAttribute.ALL, 0, 0, columnCount, rowCount);
+				CellAttribute.ALL, 0, 0, columnCount, rowCount);
 		
 		int rowFreeze = getFreezeInfoLoader().getRowFreeze(sheet);
 		int colFreeze = getFreezeInfoLoader().getColumnFreeze(sheet);
 		
 		if(rowFreeze >= 0) {
 			activeRange.put("topFrozen", spreadsheetCtrl.getRangeAttrs(sheet, SpreadsheetCtrl.Header.BOTH,
-					SpreadsheetCtrl.CellAttribute.ALL, 0, 0, columnCount, rowFreeze));
+					CellAttribute.ALL, 0, 0, columnCount, rowFreeze));
 		}
 		
 		if(colFreeze >= 0) {
 			activeRange.put("leftFrozen", spreadsheetCtrl.getRangeAttrs(sheet, SpreadsheetCtrl.Header.BOTH,
-					SpreadsheetCtrl.CellAttribute.ALL, 0, 0, colFreeze, rowCount));
+					CellAttribute.ALL, 0, 0, colFreeze, rowCount));
 		}
 		
 		if(rowFreeze >= 0 && colFreeze >= 0) {
 			activeRange.put("cornerFrozen", spreadsheetCtrl.getRangeAttrs(sheet, SpreadsheetCtrl.Header.BOTH,
-					SpreadsheetCtrl.CellAttribute.ALL, 0, 0, colFreeze, rowFreeze));
+					CellAttribute.ALL, 0, 0, colFreeze, rowFreeze));
 		}
 
 		return activeRange;
@@ -4539,7 +4539,7 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 	}
 
 	/**
-	 * Sets the {@link AuxAction} disabled
+	 * Sets the {@link org.zkoss.zss.ui.AuxAction} disabled
 	 * 
 	 * @param disabled
 	 * @param action
@@ -4603,7 +4603,7 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 	}
 
 	/**
-	 * Add widget to the {@link WidgetHandler} of this spreadsheet,
+	 * Add widget to the {@link org.zkoss.zss.ui.sys.WidgetHandler} of this spreadsheet,
 	 * 
 	 * @param widget a widget
 	 * @return true if success to add a widget
@@ -4613,7 +4613,7 @@ public class Spreadsheet extends XulElement implements Serializable, AfterCompos
 	}
 
 	/**
-	 * Remove widget from the {@link WidgetHandler} of this spreadsheet,
+	 * Remove widget from the {@link org.zkoss.zss.ui.sys.WidgetHandler} of this spreadsheet,
 	 * 
 	 * @param widget
 	 * @return true if success to remove a widget

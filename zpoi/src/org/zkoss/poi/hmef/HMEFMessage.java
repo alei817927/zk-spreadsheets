@@ -101,7 +101,7 @@ public final class HMEFMessage {
    /**
     * Returns all HMEF/TNEF attributes of the message. 
     * Note - In a typical message, most of the interesting properties
-    *  are stored as {@link MAPIAttribute}s - see {@link #getMessageMAPIAttributes()} 
+    *  are stored as {@link org.zkoss.poi.hmef.attribute.MAPIAttribute}s - see {@link #getMessageMAPIAttributes()}
     */
    public List<TNEFAttribute> getMessageAttributes() {
       return messageAttributes;

@@ -19,7 +19,7 @@ package org.zkoss.poi.ss.formula.eval;
 
 
 /**
- * Represent many {@link ValueEval}s; used in 3d area or reference(e.g. Sheet1:Sheet3!A1:B1).
+ * Represent many {@link org.zkoss.poi.ss.formula.eval.ValueEval}s; used in 3d area or reference(e.g. Sheet1:Sheet3!A1:B1).
  * @author	Henri Chen (henrichen at zkoss dot org) - Sheet1:Sheet3!xxx 3d reference
  */
 public final class ValuesEval implements ValueEval {

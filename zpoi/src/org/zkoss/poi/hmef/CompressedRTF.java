@@ -28,7 +28,7 @@ import org.zkoss.poi.util.LittleEndian;
 
 
 /**
- * Within a {@link HMEFMessage}, the content is often
+ * Within a {@link org.zkoss.poi.hmef.HMEFMessage}, the content is often
  *  stored in as RTF, but LZW compressed. This class
  *  handles decompressing it for you.
  */

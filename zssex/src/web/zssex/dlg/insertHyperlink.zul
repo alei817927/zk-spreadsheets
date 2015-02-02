@@ -1,0 +1,55 @@
+<zk>
+	<window id="_insertHyperlinkDialog" title="${labels.zssex.dlg.hyperlink.insert}" border="normal" 
+		mode="modal" height="300px"
+		width="580px" apply="org.zkoss.zssex.ui.dialog.InsertHyperlinkCtrl">
+		<vlayout hflex="1" vflex="1">
+		<borderlayout hflex="1" vflex="1">
+			<west width="130px" border="none">
+				<vbox align="center" spacing="0.4em">
+					<hbox style="margin: 15px 0px 3px 0px;">
+						<label value="${labels.zssex.dlg.hyperlink.linkTo}" />
+					</hbox>
+					<button id="webBtn" label="${labels.zssex.dlg.hyperlink.web}" width="110px" 
+						height="60px" image="~./zssex/image/document-globe.png" orient="vertical">
+					</button>
+					<!-- not implement
+					<button id="docBtn" label="${labels.zssex.dlg.hyperlink.document}" width="110px" 
+						 height="60px" image="~./zssex/image/blue-document-table.png"
+						orient="vertical">
+					</button>
+					 -->
+					<button id="mailBtn" label="${labels.zssex.dlg.hyperlink.mail}" width="110px" 
+						height="60px" image="~./zssex/image/mail.png" orient="vertical">
+					</button>
+				</vbox>
+			</west>
+			<center border="none" >
+				<vlayout spacing="0.4em" hflex="1" vflex="1">
+					<hbox align="center" spacing="0.5em" style="margin: 15px 0px 3px 0px;">
+						<label value="${labels.zssex.dlg.hyperlink.display}"></label>
+						<textbox id="displayBox" width="300px"></textbox>
+					</hbox>	
+					<div style="border-width: 1px 0 0 0;padding-top: 10px;" height="40px">
+						<vlayout id="mailContent" spacing="0.6em" visible="false">
+							<label value="${labels.zssex.dlg.hyperlink.mail}" />
+							<textbox id="mailAddr" cols="75"/>
+							<label value="${labels.zssex.dlg.hyperlink.subject}"  />
+							<textbox id="mailSubject"  cols="75"/>
+						</vlayout>
+						<vlayout id="webContent" spacing="0.6em">
+							<label value="${labels.zssex.dlg.hyperlink.address}" />
+							<combobox id="addrCombobox" hflex="true" >
+								<comboitem label="http://www.zkoss.org/"></comboitem>
+							</combobox>
+						</vlayout>
+					</div>
+				</vlayout>
+			</center>
+		</borderlayout>
+		<hbox hflex="1" pack="center" align="center" style="padding-top:5px;">
+			<button id="okBtn" label="${labels.zssex.dlg.btn.OK}"/>
+			<button id="cancelBtn" label="${labels.zssex.dlg.btn.Cancel}"/>
+		</hbox>
+		</vlayout>
+	</window>
+</zk>

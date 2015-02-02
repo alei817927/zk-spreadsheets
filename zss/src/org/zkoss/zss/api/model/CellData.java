@@ -51,7 +51,7 @@ public interface CellData {
 	
 	/**
 	 * Gets the cell type.<br/>
-	 * If the cell is a formula then you are possible getting the {@link CellType#FORMULA} or {@link CellType#ERROR}.<br/>
+	 * If the cell is a formula then you are possible getting the {@link org.zkoss.zss.api.model.CellData.CellType#FORMULA} or {@link org.zkoss.zss.api.model.CellData.CellType#ERROR}.<br/>
 	 * You could use {@link #getResultType()} to get result type for a cell or a formula-cell. 
 	 * @return cell type
 	 */

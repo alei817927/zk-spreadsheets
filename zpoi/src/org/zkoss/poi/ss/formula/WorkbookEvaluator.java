@@ -286,7 +286,7 @@ public final class WorkbookEvaluator {
 		}
 
 	/**
-	 * @return never <code>null</code>, never {@link BlankEval}
+	 * @return never <code>null</code>, never {@link org.zkoss.poi.ss.formula.eval.BlankEval}
 	 */
 	private ValueEval evaluateAny(EvaluationCell srcCell, int sheetIndex,
 				int rowIndex, int columnIndex, EvaluationTracker tracker, Object ref) {
@@ -400,7 +400,7 @@ public final class WorkbookEvaluator {
 	/**
 	 * Gets the value from a non-formula cell.
 	 * @param cell may be <code>null</code>
-	 * @return {@link BlankEval} if cell is <code>null</code> or blank, never <code>null</code>
+	 * @return {@link org.zkoss.poi.ss.formula.eval.BlankEval} if cell is <code>null</code> or blank, never <code>null</code>
 	 */
 	/* package */ static ValueEval getValueFromNonFormulaCell(EvaluationCell cell) {
 		if (cell == null) {
@@ -647,9 +647,9 @@ public final class WorkbookEvaluator {
 	 * result. If the supplied evaluationResult is just a plain value, it is
 	 * returned as-is.
 	 *
-	 * @return a {@link NumberEval}, {@link StringEval}, {@link BoolEval}, or
-	 *         {@link ErrorEval}. Never <code>null</code>. {@link BlankEval} is
-	 *         converted to {@link NumberEval#ZERO}
+	 * @return a {@link org.zkoss.poi.ss.formula.eval.NumberEval}, {@link org.zkoss.poi.ss.formula.eval.StringEval}, {@link org.zkoss.poi.ss.formula.eval.BoolEval}, or
+	 *         {@link org.zkoss.poi.ss.formula.eval.ErrorEval}. Never <code>null</code>. {@link org.zkoss.poi.ss.formula.eval.BlankEval} is
+	 *         converted to {@link org.zkoss.poi.ss.formula.eval.NumberEval#ZERO}
 	 */
 	public static ValueEval dereferenceResult(ValueEval evaluationResult, int srcRowNum, int srcColNum) {
 		ValueEval value;
@@ -884,7 +884,7 @@ public final class WorkbookEvaluator {
 
 	//20111124, henrichen@zkoss.org: given sheet index
 	/**
-	 * @return never <code>null</code>, never {@link BlankEval}
+	 * @return never <code>null</code>, never {@link org.zkoss.poi.ss.formula.eval.BlankEval}
 	 */
 	private ValueEval evaluateAny(String formula, int sheetIndex,
 				int rowIndex, int columnIndex, EvaluationTracker tracker, boolean ignoreDeference, Object ref) {
@@ -994,7 +994,7 @@ public final class WorkbookEvaluator {
     //ZSS-759
 	//20140829, henrichen@zkoss.org: evaluate Ptgs[] directly
 	/**
-	 * @return never <code>null</code>, never {@link BlankEval}
+	 * @return never <code>null</code>, never {@link org.zkoss.poi.ss.formula.eval.BlankEval}
 	 */
 	private ValueEval evaluateAnyPtgs(Ptg[] ptgs, int sheetIndex,
 				int rowIndex, int columnIndex, EvaluationTracker tracker, boolean ignoreDeference, Object ref) {

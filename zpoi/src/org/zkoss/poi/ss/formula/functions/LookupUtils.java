@@ -393,7 +393,7 @@ final class LookupUtils {
 	 *
 	 * Note - out of range errors (result index too high) are handled by the caller.
 	 * @return column or row index as a zero-based value, never negative.
-	 * @throws EvaluationException when the specified arg cannot be coerced to a non-negative integer
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException when the specified arg cannot be coerced to a non-negative integer
 	 */
 	public static int resolveRowOrColIndexArg(ValueEval rowColIndexArg, int srcCellRow, int srcCellCol) throws EvaluationException {
 		if(rowColIndexArg == null) {

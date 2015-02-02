@@ -22,7 +22,7 @@ import org.zkoss.poi.util.HexDump;
 import org.zkoss.poi.util.LittleEndian;
 
 /**
- * Common abstract class for {@link EscherOptRecord} and
+ * Common abstract class for {@link org.zkoss.poi.ddf.EscherOptRecord} and
  * {@link EscherTertiaryOptRecord}
  * 
  * @author Sergey Vladimirov (vlsergey {at} gmail {dot} com)

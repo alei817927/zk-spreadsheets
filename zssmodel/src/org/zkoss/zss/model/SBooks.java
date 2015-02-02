@@ -19,7 +19,7 @@ package org.zkoss.zss.model;
 import org.zkoss.zss.model.impl.BookImpl;
 
 /**
- * Contains factory methods to create a {@link SBook}.
+ * Contains factory methods to create a {@link org.zkoss.zss.model.SBook}.
  * @author dennis
  * @since 3.5.0
  */

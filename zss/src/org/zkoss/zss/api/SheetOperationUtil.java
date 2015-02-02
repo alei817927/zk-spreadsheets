@@ -30,7 +30,7 @@ import org.zkoss.zss.model.SSheet;
 
 /**
  * The utility to help UI to deal with user's sheet operation of a Range.
- * This utility is the default implementation for handling a spreadsheet, it is also the example for calling {@link Range} APIs 
+ * This utility is the default implementation for handling a spreadsheet, it is also the example for calling {@link org.zkoss.zss.api.Range} APIs
  * @author dennis
  * @since 3.0.0
  */
@@ -437,13 +437,13 @@ public class SheetOperationUtil {
 	}
 
 	/**
-	 * return a {@link SheetAnchor} based on a cell and a picture width and height
+	 * return a {@link org.zkoss.zss.api.SheetAnchor} based on a cell and a picture width and height
 	 * @param sheet target sheet where the anchor locates
 	 * @param row 0-based row index
 	 * @param column 0-base column index
 	 * @param widthPx a picture's width in pixel
 	 * @param heightPx a picture's height in pixel
-	 * @return a {@link SheetAnchor}
+	 * @return a {@link org.zkoss.zss.api.SheetAnchor}
 	 */
 	public static SheetAnchor toFilledAnchor(Sheet sheet,int row, int column, int widthPx, int heightPx){
 		int lRow = 0;

@@ -39,7 +39,7 @@ public interface PivotCache {
 	public long getCacheId();
 	
 	/**
-	 * Returns {@link SheetSource}
+	 * Returns {@link org.zkoss.poi.ss.usermodel.PivotCache.SheetSource}
 	 * 
 	 * @return
 	 */

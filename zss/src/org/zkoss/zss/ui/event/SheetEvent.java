@@ -7,9 +7,9 @@ import org.zkoss.zss.api.model.Sheet;
 /**
  * The event to notify a sheet's updated
  * @author dennis
- * @see Events#ON_SHEET_NAME_CHANGE
- * @see Events#ON_SHEET_ORDER_CHANGE
- * @see Events#ON_SHEET_CREATE
+ * @see org.zkoss.zss.ui.event.Events#ON_SHEET_NAME_CHANGE
+ * @see org.zkoss.zss.ui.event.Events#ON_SHEET_ORDER_CHANGE
+ * @see org.zkoss.zss.ui.event.Events#ON_SHEET_CREATE
  */
 public class SheetEvent extends Event{
 	private static final long serialVersionUID = 1L;

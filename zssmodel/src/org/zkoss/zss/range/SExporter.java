@@ -35,7 +35,7 @@ public interface SExporter {
 	 * Export a book
 	 * @param book the book to export
 	 * @param fos the output stream to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public void export(SBook book, OutputStream fos) throws IOException;
 	
@@ -43,7 +43,7 @@ public interface SExporter {
 	 * Export a book
 	 * @param book the book to export
 	 * @param fos the output file to store data
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public void export(SBook book, File file) throws IOException;
 

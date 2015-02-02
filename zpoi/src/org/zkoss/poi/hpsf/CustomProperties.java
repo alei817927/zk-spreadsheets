@@ -26,9 +26,9 @@ import java.util.Set;
 import org.zkoss.poi.hpsf.wellknown.PropertyIDMap;
 
 /**
- * <p>Maintains the instances of {@link CustomProperty} that belong to a
+ * <p>Maintains the instances of {@link org.zkoss.poi.hpsf.CustomProperty} that belong to a
  * {@link DocumentSummaryInformation}. The class maintains the names of the
- * custom properties in a dictionary. It implements the {@link Map} interface
+ * custom properties in a dictionary. It implements the {@link java.util.Map} interface
  * and by this provides a simplified view on custom properties: A property's
  * name is the key that maps to a typed value. This implementation hides
  * property IDs from the developer and regards the property names as keys to
@@ -43,7 +43,7 @@ import org.zkoss.poi.hpsf.wellknown.PropertyIDMap;
  * such property sets, use HPSF's low-level access methods.</p>
  *
  * <p>An application can call the {@link #isPure} method to check whether a
- * property set parsed by {@link CustomProperties} is still pure (i.e.
+ * property set parsed by {@link org.zkoss.poi.hpsf.CustomProperties} is still pure (i.e.
  * unmodified) or whether one or more properties have been dropped.</p>
  *
  * <p>This class is not thread-safe; concurrent access to instances of this
@@ -77,9 +77,9 @@ public class CustomProperties extends HashMap<Object,CustomProperty>
 
 
     /**
-     * <p>Puts a {@link CustomProperty} into this map. It is assumed that the
-     * {@link CustomProperty} already has a valid ID. Otherwise use
-     * {@link #put(CustomProperty)}.</p>
+     * <p>Puts a {@link org.zkoss.poi.hpsf.CustomProperty} into this map. It is assumed that the
+     * {@link org.zkoss.poi.hpsf.CustomProperty} already has a valid ID. Otherwise use
+     * {@link #put(org.zkoss.poi.hpsf.CustomProperty)}.</p>
      */
     public CustomProperty put(final String name, final CustomProperty cp)
     {
@@ -110,7 +110,7 @@ public class CustomProperties extends HashMap<Object,CustomProperty>
 
 
     /**
-     * <p>Puts a {@link CustomProperty} that has not yet a valid ID into this
+     * <p>Puts a {@link org.zkoss.poi.hpsf.CustomProperty} that has not yet a valid ID into this
      * map. The method will allocate a suitable ID for the custom property:</p>
      *
      * <ul>
@@ -155,7 +155,7 @@ public class CustomProperties extends HashMap<Object,CustomProperty>
      * @param name The name of the custom property to remove
      * @return The removed property or <code>null</code> if the specified property was not found.
      *
-     * @see java.util.HashSet#remove(java.lang.Object)
+     * @see java.util.HashSet#remove(Object)
      */
     public Object remove(final String name)
     {
@@ -397,11 +397,11 @@ public class CustomProperties extends HashMap<Object,CustomProperty>
 
 
     /**
-     * <p>Tells whether this {@link CustomProperties} instance is pure or one or
+     * <p>Tells whether this {@link org.zkoss.poi.hpsf.CustomProperties} instance is pure or one or
      * more properties of the underlying low-level property set has been
      * dropped.</p>
      *
-     * @return <code>true</code> if the {@link CustomProperties} is pure, else
+     * @return <code>true</code> if the {@link org.zkoss.poi.hpsf.CustomProperties} is pure, else
      *         <code>false</code>.
      */
     public boolean isPure()

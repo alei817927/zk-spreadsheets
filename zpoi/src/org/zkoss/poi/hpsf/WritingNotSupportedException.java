@@ -21,7 +21,7 @@ package org.zkoss.poi.hpsf;
  * <p>This exception is thrown when trying to write a (yet) unsupported variant
  * type.</p>
  * 
- * @see ReadingNotSupportedException
+ * @see org.zkoss.poi.hpsf.ReadingNotSupportedException
  * @see UnsupportedVariantTypeException
  *
  * @author Rainer Klute <a

@@ -385,7 +385,7 @@ public class FormulaEngineImpl implements FormulaEngine {
 			synchronized(bookSeries) {
 				evalCtxMap = getEvalCtxMap0(bookSeries);
 				if (evalCtxMap == null) {
-					evalCtxMap = new LinkedHashMap<String, FormulaEngineImpl.EvalContext>();
+					evalCtxMap = new LinkedHashMap<String, EvalContext>();
 					List<String> bookNames = new ArrayList<String>();
 					List<WorkbookEvaluator> evaluators = new ArrayList<WorkbookEvaluator>();
 					for(SBook nb : bookSeries.getBooks()) {

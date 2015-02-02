@@ -118,7 +118,7 @@ public class WorkdayCalculator {
      * 
      * @param start start date.
      * @param end end date.
-     * @param dayOfWeek a day of week as represented by {@link Calendar} constants.
+     * @param dayOfWeek a day of week as represented by {@link java.util.Calendar} constants.
      * @return how many days of week past in this interval.
      */
     protected int pastDaysOfWeek(double start, double end, int dayOfWeek) {

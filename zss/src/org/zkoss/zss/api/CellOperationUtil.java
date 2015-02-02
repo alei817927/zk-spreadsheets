@@ -47,8 +47,8 @@ import org.zkoss.zss.ui.impl.undo.CellRichTextAction;
 import org.zkoss.zss.ui.sys.UndoableAction;
 
 /**
- * The utility to help UI to deal with user's cell operation of a {@link Range}.
- * This utility is the default implementation for handling user operations for cells, it is also the example for calling {@link Range} APIs 
+ * The utility to help UI to deal with user's cell operation of a {@link org.zkoss.zss.api.Range}.
+ * This utility is the default implementation for handling user operations for cells, it is also the example for calling {@link org.zkoss.zss.api.Range} APIs
  * @author dennis
  * @since 3.0.0
  */
@@ -172,7 +172,7 @@ public class CellOperationUtil {
 	}
 	
 	/**
-	 * @deprecated use {@link #applyFontHeightPoints(Range, int)}
+	 * @deprecated use {@link #applyFontHeightPoints(org.zkoss.zss.api.Range, int)}
 	 */
 	public static CellStyleApplier getFontHeightApplier(final int fontHeight) {
 		//fontHeightPoints = pt;
@@ -183,7 +183,7 @@ public class CellOperationUtil {
 	 * Apply font height to cells in the range, it will also enlarge the row height if row height is smaller than font height 
 	 * @param range range to be applied
 	 * @param fontHeight the font height in twpi (1/20 point)
-	 * @deprecated use {@link #applyFontHeightPoints(Range, int)}
+	 * @deprecated use {@link #applyFontHeightPoints(org.zkoss.zss.api.Range, int)}
 	 * 
 	 */
 	public static void applyFontHeight(Range range, final int fontHeight) {
@@ -194,7 +194,7 @@ public class CellOperationUtil {
 	 * Apply the font size to cells in the range, it will also enlarge the row height if row height is smaller than font size 
 	 * @param range range to be applied
 	 * @param point the font size in point
-	 * @deprecated use {@link #applyFontHeightPoints(Range, int)}
+	 * @deprecated use {@link #applyFontHeightPoints(org.zkoss.zss.api.Range, int)}
 	 */
 	public static void applyFontSize(Range range, final int point) {
 		//fontSize = fontHeightInPoints = fontHeight/20
@@ -475,7 +475,7 @@ public class CellOperationUtil {
 	 * Apply backgound-color to cells in the range
 	 * @param range the range to be applied
 	 * @param htmlColor the color by html color syntax(#rgb-hex-code, e.x #FF00FF)
-	 * @Deprecated since 3.5.0 use {@link #applyFillColor(Range, String)}
+	 * @Deprecated since 3.5.0 use {@link #applyFillColor(org.zkoss.zss.api.Range, String)}
 	 */
 	@Deprecated
 	public static void applyBackgroundColor(Range range, final String htmlColor) {
@@ -757,7 +757,7 @@ public class CellOperationUtil {
 	}
 
 	/**
-	 * Insert cells to the range. To insert a row, you have to call {@link Range#toRowRange()} first, to insert a column, you have to call {@link Range#toColumnRange()} first. 
+	 * Insert cells to the range. To insert a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to insert a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()} first.
 	 * @param range the range to insert new cells
 	 * @param shift the shift direction of original cells
 	 * @param copyOrigin copy the format from nearby cells when inserting new cells 
@@ -792,7 +792,7 @@ public class CellOperationUtil {
 	}
 	
 	/**
-	 * Delete cells of the range. To delete a row, you have to call {@link Range#toRowRange()} first, to delete a column, you have to call {@link Range#toColumnRange()} first.
+	 * Delete cells of the range. To delete a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to delete a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()} first.
 	 * @param range the range to delete
 	 * @param shift the shift direction when deleting.
 	 */
@@ -855,7 +855,7 @@ public class CellOperationUtil {
 	}
 
 	/**
-	 * Hide the range. To hide a row, you have to call {@link Range#toRowRange()} first, to hide a column, you have to call {@link Range#toColumnRange()}
+	 * Hide the range. To hide a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to hide a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()}
 	 * @param range the range to hide
 	 */
 	public static void hide(Range range) {
@@ -868,7 +868,7 @@ public class CellOperationUtil {
 		range.setHidden(true);
 	}
 	/**
-	 * Unhide the range. To unhide a row, you have to call {@link Range#toRowRange()} first, to unhide a column, you have to call {@link Range#toColumnRange()}
+	 * Unhide the range. To unhide a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to unhide a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()}
 	 * @param range the range to un-hide
 	 */
 	public static void unhide(Range range) {

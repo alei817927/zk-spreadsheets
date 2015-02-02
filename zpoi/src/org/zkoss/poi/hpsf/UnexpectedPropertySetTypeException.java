@@ -32,7 +32,7 @@ public class UnexpectedPropertySetTypeException extends HPSFException
 {
 
     /**
-     * <p>Creates an {@link UnexpectedPropertySetTypeException}.</p>
+     * <p>Creates an {@link org.zkoss.poi.hpsf.UnexpectedPropertySetTypeException}.</p>
      */
     public UnexpectedPropertySetTypeException()
     {
@@ -41,7 +41,7 @@ public class UnexpectedPropertySetTypeException extends HPSFException
 
 
     /**
-     * <p>Creates an {@link UnexpectedPropertySetTypeException} with a message
+     * <p>Creates an {@link org.zkoss.poi.hpsf.UnexpectedPropertySetTypeException} with a message
      * string.</p>
      *
      * @param msg The message string.
@@ -53,7 +53,7 @@ public class UnexpectedPropertySetTypeException extends HPSFException
 
 
     /**
-     * <p>Creates a new {@link UnexpectedPropertySetTypeException} with a
+     * <p>Creates a new {@link org.zkoss.poi.hpsf.UnexpectedPropertySetTypeException} with a
      * reason.</p>
      *
      * @param reason The reason, i.e. a throwable that indirectly
@@ -66,7 +66,7 @@ public class UnexpectedPropertySetTypeException extends HPSFException
 
 
     /**
-     * <p>Creates an {@link UnexpectedPropertySetTypeException} with a message
+     * <p>Creates an {@link org.zkoss.poi.hpsf.UnexpectedPropertySetTypeException} with a message
      * string and a reason.</p>
      *
      * @param msg The message string.

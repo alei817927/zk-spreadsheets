@@ -192,7 +192,7 @@ public final class Sumproduct implements Function {
 	/**
 	 * Determines a <code>double</code> value for the specified <code>ValueEval</code>.
 	 * @param isScalarProduct <code>false</code> for SUMPRODUCTs over area refs.
-	 * @throws EvaluationException if <code>ve</code> represents an error value.
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException if <code>ve</code> represents an error value.
 	 * <p/>
 	 * Note - string values and empty cells are interpreted differently depending on
 	 * <code>isScalarProduct</code>.  For scalar products, if any term is blank or a string, the

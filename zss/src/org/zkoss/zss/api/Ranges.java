@@ -22,40 +22,40 @@ import org.zkoss.zss.api.model.impl.SheetImpl;
 import org.zkoss.zss.range.SRanges;
 
 /**
- * The facade class provides you multiple ways to get a {@link Range}.
+ * The facade class provides you multiple ways to get a {@link org.zkoss.zss.api.Range}.
  * 
  * @author dennis
- * @see Range 
+ * @see org.zkoss.zss.api.Range
  * @since 3.0.0
  */
 public class Ranges {
 
 	/** 
-	 * Returns the associated {@link Range} of the whole specified {@link Sheet}. 
+	 * Returns the associated {@link org.zkoss.zss.api.Range} of the whole specified {@link org.zkoss.zss.api.model.Sheet}.
 	 *  
-	 * @param sheet the {@link Sheet} the Range will refer to.
-	 * @return the associated {@link Range} of the whole specified {@link Sheet}. 
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
+	 * @return the associated {@link org.zkoss.zss.api.Range} of the whole specified {@link org.zkoss.zss.api.model.Sheet}.
 	 */
 	public static Range range(Sheet sheet){
 		return new RangeImpl(SRanges.range(((SheetImpl)sheet).getNative()),sheet);
 	}
 	
-	/** Returns the associated {@link Range} of the specified {@link Sheet} and area reference string (e.g. "A1:D4" or "Sheet2!A1:D4")
+	/** Returns the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and area reference string (e.g. "A1:D4" or "Sheet2!A1:D4")
 	 * note that if reference string contains sheet name, the returned range will refer to the named sheet. 
 	 *  
-	 * @param sheet the {@link Sheet} the Range will refer to.
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
 	 * @param reference the area the Range will refer to (e.g. "A1:D4").
-	 * @return the associated {@link Range} of the specified {@link Sheet} and area reference string (e.g. "A1:D4"). 
+	 * @return the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and area reference string (e.g. "A1:D4").
 	 */
 	public static Range range(Sheet sheet, String areaReference){
 		return new RangeImpl(SRanges.range(((SheetImpl)sheet).getNative(),areaReference),sheet);
 	}
 	
-	/** Returns the associated {@link Range} of the specified name of a NamedRange (e.g. "MyRange");
+	/** Returns the associated {@link org.zkoss.zss.api.Range} of the specified name of a NamedRange (e.g. "MyRange");
 	 * 
-	 * @param sheet the {@link Sheet} the Range will refer to.
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
 	 * @param name the name of NamedRange  (e.g. "MyRange"); .
-	 * @return the associated {@link Range} of the specified name 
+	 * @return the associated {@link org.zkoss.zss.api.Range} of the specified name
 	 */
 	public static Range rangeByName(Sheet sheet, String name){
 		return new RangeImpl(SRanges.rangeByName(((SheetImpl)sheet).getNative(),name),sheet);
@@ -63,31 +63,31 @@ public class Ranges {
 	
 	/** Returns the associated {@link XRange} of the specified {@link XSheet} and area. 
 	 *  
-	 * @param sheet the {@link Sheet} the Range will refer to.
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
 	 * @param tRow top row index of the area the Range will refer to.
 	 * @param lCol left column index of the area the Range will refer to.
 	 * @param bRow bottom row index of the area the Range will refer to.
 	 * @param rCol right column index fo the area the Range will refer to.
-	 * @return the associated {@link Range} of the specified {@link Sheet} and area.
+	 * @return the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and area.
 	 */
 	public static Range range(Sheet sheet, int tRow, int lCol, int bRow, int rCol){
 		return new RangeImpl(SRanges.range(((SheetImpl)sheet).getNative(),tRow,lCol,bRow,rCol),sheet);
 	}
 	
-	/** Returns the associated {@link Range} of the specified {@link Sheet} and cell row and column. 
+	/** Returns the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and cell row and column.
 	 *  
-	 * @param sheet the {@link Sheet} the Range will refer to.
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
 	 * @param row row index of the cell the Range will refer to.
 	 * @param col column index of the cell the Range will refer to.
-	 * @return the associated {@link Range} of the specified {@link Sheet} and cell . 
+	 * @return the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and cell .
 	 */
 	public static Range range(Sheet sheet, int row, int col){	
 		return new RangeImpl(SRanges.range(((SheetImpl)sheet).getNative(),row,col),sheet);
 	}
 	
-	/** Returns the associated {@link Range} of the specified {@link Sheet} and cell row and column. 
+	/** Returns the associated {@link org.zkoss.zss.api.Range} of the specified {@link org.zkoss.zss.api.model.Sheet} and cell row and column.
 	 *  
-	 * @param sheet the {@link Sheet} the Range will refer to.
+	 * @param sheet the {@link org.zkoss.zss.api.model.Sheet} the Range will refer to.
 	 * @param selection the selection of spreadsheet
 	 */
 	public static Range range(Sheet sheet, AreaRef selection){	

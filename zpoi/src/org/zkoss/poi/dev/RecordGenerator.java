@@ -120,8 +120,8 @@ public class RecordGenerator {
      * @param in the XML input file
      * @param out the text output file
      * @param xslt the XSLT specification, i.e. an XSL style sheet
-     * @throws FileNotFoundException 
-     * @throws TransformerException 
+     * @throws java.io.FileNotFoundException
+     * @throws javax.xml.transform.TransformerException
      */
     private static void transform(final File in, final File out, final File xslt)
     throws FileNotFoundException, TransformerException

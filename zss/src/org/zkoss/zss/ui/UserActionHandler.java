@@ -32,7 +32,7 @@ public interface UserActionHandler {
 	 * @param sheet current sheet, null if no sheet selected 
 	 * @return
 	 */
-	public boolean isEnabled(Book book,Sheet sheet);
+	public boolean isEnabled(Book book, Sheet sheet);
 	
 
 	/**

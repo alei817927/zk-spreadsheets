@@ -70,7 +70,7 @@ public final class Vlookup extends Var3or4ArgFunction {
 	 *
 	 * @param colIndex assumed to be non-negative
 	 *
-	 * @throws EvaluationException (#REF!) if colIndex is too high
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException (#REF!) if colIndex is too high
 	 */
 	private ValueVector createResultColumnVector(TwoDEval tableArray, int colIndex) throws EvaluationException {
 		if(colIndex >= tableArray.getWidth()) {

@@ -125,12 +125,12 @@ public interface Cell {
      * Return the cell type.
      *
      * @return the cell type
-     * @see Cell#CELL_TYPE_BLANK
-     * @see Cell#CELL_TYPE_NUMERIC
-     * @see Cell#CELL_TYPE_STRING
-     * @see Cell#CELL_TYPE_FORMULA
-     * @see Cell#CELL_TYPE_BOOLEAN
-     * @see Cell#CELL_TYPE_ERROR
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_BLANK
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_NUMERIC
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_STRING
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_FORMULA
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_BOOLEAN
+     * @see org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_ERROR
      */
     int getCellType();
 
@@ -158,7 +158,7 @@ public interface Cell {
      * <b>Note</b> - There is actually no 'DATE' cell type in Excel. In many
      * cases (when entering date values), Excel automatically adjusts the
      * <i>cell style</i> to some date format, creating the illusion that the cell
-     * data type is now something besides {@link Cell#CELL_TYPE_NUMERIC}.  POI
+     * data type is now something besides {@link org.zkoss.poi.ss.usermodel.Cell#CELL_TYPE_NUMERIC}.  POI
      * does not attempt to replicate this behaviour.  To make a numeric cell
      * display as a date, use {@link #setCellStyle(CellStyle)} etc.
      *
@@ -216,7 +216,7 @@ public interface Cell {
      *
      * @param formula the formula to set, e.g. <code>"SUM(C4:E4)"</code>.
      *  If the argument is <code>null</code> then the current formula is removed.
-     * @throws FormulaParseException if the formula has incorrect syntax or is otherwise invalid
+     * @throws org.zkoss.poi.ss.formula.FormulaParseException if the formula has incorrect syntax or is otherwise invalid
      */
     void setCellFormula(String formula) throws FormulaParseException;
 

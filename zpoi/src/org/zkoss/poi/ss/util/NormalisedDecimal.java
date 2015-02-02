@@ -33,7 +33,7 @@ import java.math.BigInteger;
  * <p/>
  * This class does not handle negative numbers or zero.
  * <p/>
- * The value of a {@link NormalisedDecimal} is given by<br/>
+ * The value of a {@link org.zkoss.poi.ss.util.NormalisedDecimal} is given by<br/>
  * <tt> significand &times; 10<sup>decimalExponent</sup></tt>
  * <br/>
  * where:<br/>
@@ -164,14 +164,14 @@ final class NormalisedDecimal {
 
 
 	/**
-	 * Convert to an equivalent {@link ExpandedDouble} representation (binary frac and exponent).
+	 * Convert to an equivalent {@link org.zkoss.poi.ss.util.ExpandedDouble} representation (binary frac and exponent).
 	 * The resulting transformed object is easily converted to a 64 bit IEEE double:
 	 * <ul>
 	 * <li>bits 2-53 of the {@link #getSignificand()} become the 52 bit 'fraction'.</li>
 	 * <li>{@link #getBinaryExponent()} is biased by 1023 to give the 'exponent'.</li>
 	 * </ul>
 	 * The sign bit must be obtained from somewhere else.
-	 * @return a new {@link NormalisedDecimal} normalised to base 2 representation.
+	 * @return a new {@link org.zkoss.poi.ss.util.NormalisedDecimal} normalised to base 2 representation.
 	 */
 	public ExpandedDouble normaliseBaseTwo() {
 		MutableFPNumber cc = new MutableFPNumber(composeFrac(), 39);

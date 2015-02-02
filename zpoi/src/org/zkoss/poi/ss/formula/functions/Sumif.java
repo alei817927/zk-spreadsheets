@@ -102,7 +102,7 @@ public final class Sumif extends Var2or3ArgFunction {
 
 	/**
 	 * @return a range of the same dimensions as aeRange using eval to define the top left corner.
-	 * @throws EvaluationException if eval is not a reference
+	 * @throws org.zkoss.poi.ss.formula.eval.EvaluationException if eval is not a reference
 	 */
 	private static AreaEval createSumRange(ValueEval eval, AreaEval aeRange) throws EvaluationException {
 		if (eval instanceof AreaEval) {

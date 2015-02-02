@@ -34,10 +34,10 @@ import org.zkoss.poi.util.LittleEndian;
 import org.zkoss.poi.util.LittleEndianConsts;
 
 /**
- * <p>Adds writing support to the {@link PropertySet} class.</p>
+ * <p>Adds writing support to the {@link org.zkoss.poi.hpsf.PropertySet} class.</p>
  *
  * <p>Please be aware that this class' functionality will be merged into the
- * {@link PropertySet} class at a later time, so the API will change.</p>
+ * {@link org.zkoss.poi.hpsf.PropertySet} class at a later time, so the API will change.</p>
  *
  * @author Rainer Klute <a
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
@@ -153,7 +153,7 @@ public class MutablePropertySet extends PropertySet
      *
      * @param classID The property set stream's low-level "class ID" field.
      *
-     * @see PropertySet#getClassID()
+     * @see org.zkoss.poi.hpsf.PropertySet#getClassID()
      */
     public void setClassID(final ClassID classID)
     {
@@ -175,7 +175,7 @@ public class MutablePropertySet extends PropertySet
     /**
      * <p>Adds a section to this property set.</p>
      *
-     * @param section The {@link Section} to add. It will be appended
+     * @param section The {@link org.zkoss.poi.hpsf.Section} to add. It will be appended
      * after any sections that are already present in the property set
      * and thus become the last section.
      */
@@ -192,7 +192,7 @@ public class MutablePropertySet extends PropertySet
      * <p>Writes the property set to an output stream.</p>
      *
      * @param out the output stream to write the section to
-     * @exception IOException if an error when writing to the output stream
+     * @exception java.io.IOException if an error when writing to the output stream
      * occurs
      * @exception WritingNotSupportedException if HPSF does not yet support
      * writing a property's variant type.
@@ -256,13 +256,13 @@ public class MutablePropertySet extends PropertySet
      * document. The input stream represents a snapshot of the property set.
      * If the latter is modified while the input stream is still being
      * read, the modifications will not be reflected in the input stream but in
-     * the {@link MutablePropertySet} only.</p>
+     * the {@link org.zkoss.poi.hpsf.MutablePropertySet} only.</p>
      *
      * @return the contents of this property set stream
      *
      * @throws WritingNotSupportedException if HPSF does not yet support writing
      * of a property's variant type.
-     * @throws IOException if an I/O exception occurs.
+     * @throws java.io.IOException if an I/O exception occurs.
      */
     public InputStream toInputStream()
         throws IOException, WritingNotSupportedException
@@ -282,7 +282,7 @@ public class MutablePropertySet extends PropertySet
      * same name in the directory the latter will be overwritten.
      *
      * @throws WritingNotSupportedException
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public void write(final DirectoryEntry dir, final String name)
     throws WritingNotSupportedException, IOException

@@ -37,22 +37,22 @@ import org.zkoss.poi.util.LittleEndian;
  * the information its needs by calling appropriate methods.</p>
  *
  * <p>{@link PropertySetFactory#create} does its work by calling one
- * of the constructors {@link PropertySet#PropertySet(InputStream)} or
- * {@link PropertySet#PropertySet(byte[])}. If the constructor's
+ * of the constructors {@link org.zkoss.poi.hpsf.PropertySet#PropertySet(java.io.InputStream)} or
+ * {@link org.zkoss.poi.hpsf.PropertySet#PropertySet(byte[])}. If the constructor's
  * argument is not in the Horrible Property Set Format, i.e. not a
  * property set stream, or if any other error occurs, an appropriate
  * exception is thrown.</p>
  *
- * <p>A {@link PropertySet} has a list of {@link Section}s, and each
- * {@link Section} has a {@link Property} array. Use {@link
- * #getSections} to retrieve the {@link Section}s, then call {@link
- * Section#getProperties} for each {@link Section} to get hold of the
- * {@link Property} arrays.</p> Since the vast majority of {@link
- * PropertySet}s contains only a single {@link Section}, the
+ * <p>A {@link org.zkoss.poi.hpsf.PropertySet} has a list of {@link org.zkoss.poi.hpsf.Section}s, and each
+ * {@link org.zkoss.poi.hpsf.Section} has a {@link org.zkoss.poi.hpsf.Property} array. Use {@link
+ * #getSections} to retrieve the {@link org.zkoss.poi.hpsf.Section}s, then call {@link
+ * org.zkoss.poi.hpsf.Section#getProperties} for each {@link org.zkoss.poi.hpsf.Section} to get hold of the
+ * {@link org.zkoss.poi.hpsf.Property} arrays.</p> Since the vast majority of {@link
+ * org.zkoss.poi.hpsf.PropertySet}s contains only a single {@link org.zkoss.poi.hpsf.Section}, the
  * convenience method {@link #getProperties} returns the properties of
- * a {@link PropertySet}'s {@link Section} (throwing a {@link
- * NoSingleSectionException} if the {@link PropertySet} contains more
- * (or less) than exactly one {@link Section}).</p>
+ * a {@link org.zkoss.poi.hpsf.PropertySet}'s {@link org.zkoss.poi.hpsf.Section} (throwing a {@link
+ * NoSingleSectionException} if the {@link org.zkoss.poi.hpsf.PropertySet} contains more
+ * (or less) than exactly one {@link org.zkoss.poi.hpsf.Section}).</p>
  *
  * @author Rainer Klute <a
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
@@ -68,7 +68,7 @@ public class PropertySet
         new byte[] {(byte) 0xFE, (byte) 0xFF};
 
     /**
-     * <p>Specifies this {@link PropertySet}'s byte order. See the
+     * <p>Specifies this {@link org.zkoss.poi.hpsf.PropertySet}'s byte order. See the
      * HPFS documentation for details!</p>
      */
     protected int byteOrder;
@@ -93,7 +93,7 @@ public class PropertySet
         new byte[]{(byte) 0x00, (byte) 0x00};
 
     /**
-     * <p>Specifies this {@link PropertySet}'s format. See the HPFS
+     * <p>Specifies this {@link org.zkoss.poi.hpsf.PropertySet}'s format. See the HPFS
      * documentation for details!</p>
      */
     protected int format;
@@ -113,7 +113,7 @@ public class PropertySet
  
     /**
      * <p>Specifies the version of the operating system that created
-     * this {@link PropertySet}. See the HPFS documentation for
+     * this {@link org.zkoss.poi.hpsf.PropertySet}. See the HPFS documentation for
      * details!</p>
      */
     protected int osVersion;
@@ -151,7 +151,7 @@ public class PropertySet
 
 
     /**
-     * <p>Specifies this {@link PropertySet}'s "classID" field. See
+     * <p>Specifies this {@link org.zkoss.poi.hpsf.PropertySet}'s "classID" field. See
      * the HPFS documentation for details!</p>
      */
     protected ClassID classID;
@@ -170,10 +170,10 @@ public class PropertySet
 
 
     /**
-     * <p>Returns the number of {@link Section}s in the property
+     * <p>Returns the number of {@link org.zkoss.poi.hpsf.Section}s in the property
      * set.</p>
      *
-     * @return The number of {@link Section}s in the property set.
+     * @return The number of {@link org.zkoss.poi.hpsf.Section}s in the property set.
      */
     public int getSectionCount()
     {
@@ -183,14 +183,14 @@ public class PropertySet
 
 
     /**
-     * <p>The sections in this {@link PropertySet}.</p>
+     * <p>The sections in this {@link org.zkoss.poi.hpsf.PropertySet}.</p>
      */
     protected List<Section> sections;
 
     /**
-     * <p>Returns the {@link Section}s in the property set.</p>
+     * <p>Returns the {@link org.zkoss.poi.hpsf.Section}s in the property set.</p>
      *
-     * @return The {@link Section}s in the property set.
+     * @return The {@link org.zkoss.poi.hpsf.Section}s in the property set.
      */
     public List<Section> getSections()
     {
@@ -200,7 +200,7 @@ public class PropertySet
 
 
     /**
-     * <p>Creates an empty (uninitialized) {@link PropertySet}.</p>
+     * <p>Creates an empty (uninitialized) {@link org.zkoss.poi.hpsf.PropertySet}.</p>
      *
      * <p><strong>Please note:</strong> For the time being this
      * constructor is protected since it is used for internal purposes
@@ -213,8 +213,8 @@ public class PropertySet
 
 
     /**
-     * <p>Creates a {@link PropertySet} instance from an {@link
-     * InputStream} in the Horrible Property Set Format.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.PropertySet} instance from an {@link
+     * java.io.InputStream} in the Horrible Property Set Format.</p>
      *
      * <p>The constructor reads the first few bytes from the stream
      * and determines whether it is really a property set stream. If
@@ -226,12 +226,12 @@ public class PropertySet
      * @param stream Holds the data making out the property set
      * stream.
      * @throws MarkUnsupportedException if the stream does not support
-     * the {@link InputStream#markSupported} method.
-     * @throws IOException if the {@link InputStream} cannot not be
+     * the {@link java.io.InputStream#markSupported} method.
+     * @throws java.io.IOException if the {@link java.io.InputStream} cannot not be
      * accessed as needed.
      * @exception NoPropertySetStreamException if the input stream does not
      * contain a property set.
-     * @exception UnsupportedEncodingException if a character encoding is not
+     * @exception java.io.UnsupportedEncodingException if a character encoding is not
      * supported.
      */
     public PropertySet(final InputStream stream)
@@ -252,7 +252,7 @@ public class PropertySet
 
 
     /**
-     * <p>Creates a {@link PropertySet} instance from a byte array
+     * <p>Creates a {@link org.zkoss.poi.hpsf.PropertySet} instance from a byte array
      * that represents a stream in the Horrible Property Set
      * Format.</p>
      *
@@ -264,7 +264,7 @@ public class PropertySet
      * @throws NoPropertySetStreamException if the byte array is not a
      * property set stream.
      * 
-     * @exception UnsupportedEncodingException if the codepage is not supported.
+     * @exception java.io.UnsupportedEncodingException if the codepage is not supported.
      */
     public PropertySet(final byte[] stream, final int offset, final int length)
         throws NoPropertySetStreamException, UnsupportedEncodingException
@@ -278,7 +278,7 @@ public class PropertySet
 
 
     /**
-     * <p>Creates a {@link PropertySet} instance from a byte array
+     * <p>Creates a {@link org.zkoss.poi.hpsf.PropertySet} instance from a byte array
      * that represents a stream in the Horrible Property Set
      * Format.</p>
      *
@@ -287,7 +287,7 @@ public class PropertySet
      * @throws NoPropertySetStreamException if the byte array is not a
      * property set stream.
      * 
-     * @exception UnsupportedEncodingException if the codepage is not supported.
+     * @exception java.io.UnsupportedEncodingException if the codepage is not supported.
      */
     public PropertySet(final byte[] stream)
     throws NoPropertySetStreamException, UnsupportedEncodingException
@@ -298,19 +298,19 @@ public class PropertySet
 
 
     /**
-     * <p>Checks whether an {@link InputStream} is in the Horrible
+     * <p>Checks whether an {@link java.io.InputStream} is in the Horrible
      * Property Set Format.</p>
      *
-     * @param stream The {@link InputStream} to check. In order to
+     * @param stream The {@link java.io.InputStream} to check. In order to
      * perform the check, the method reads the first bytes from the
      * stream. After reading, the stream is reset to the position it
-     * had before reading. The {@link InputStream} must support the
-     * {@link InputStream#mark} method.
+     * had before reading. The {@link java.io.InputStream} must support the
+     * {@link java.io.InputStream#mark} method.
      * @return <code>true</code> if the stream is a property set
      * stream, else <code>false</code>.
-     * @throws MarkUnsupportedException if the {@link InputStream}
-     * does not support the {@link InputStream#mark} method.
-     * @exception IOException if an I/O error occurs
+     * @throws MarkUnsupportedException if the {@link java.io.InputStream}
+     * does not support the {@link java.io.InputStream#mark} method.
+     * @exception java.io.IOException if an I/O error occurs
      */
     public static boolean isPropertySetStream(final InputStream stream)
         throws MarkUnsupportedException, IOException
@@ -392,7 +392,7 @@ public class PropertySet
 
 
     /**
-     * <p>Initializes this {@link PropertySet} instance from a byte
+     * <p>Initializes this {@link org.zkoss.poi.hpsf.PropertySet} instance from a byte
      * array. The method assumes that it has been checked already that
      * the byte array indeed represents a property set stream. It does
      * no more checks on its own.</p>
@@ -401,7 +401,7 @@ public class PropertySet
      * @param offset The property set stream starts at this offset
      * from the beginning of <var>src</var>
      * @param length Length of the property set stream.
-     * @throws UnsupportedEncodingException if HPSF does not (yet) support the
+     * @throws java.io.UnsupportedEncodingException if HPSF does not (yet) support the
      * property set's character encoding.
      */
     private void init(final byte[] src, final int offset, final int length)
@@ -457,10 +457,10 @@ public class PropertySet
 
 
     /**
-     * <p>Checks whether this {@link PropertySet} represents a Summary
+     * <p>Checks whether this {@link org.zkoss.poi.hpsf.PropertySet} represents a Summary
      * Information.</p>
      *
-     * @return <code>true</code> if this {@link PropertySet}
+     * @return <code>true</code> if this {@link org.zkoss.poi.hpsf.PropertySet}
      * represents a Summary Information, else <code>false</code>.
      */
     public boolean isSummaryInformation()
@@ -474,10 +474,10 @@ public class PropertySet
 
 
     /**
-     * <p>Checks whether this {@link PropertySet} is a Document
+     * <p>Checks whether this {@link org.zkoss.poi.hpsf.PropertySet} is a Document
      * Summary Information.</p>
      *
-     * @return <code>true</code> if this {@link PropertySet}
+     * @return <code>true</code> if this {@link org.zkoss.poi.hpsf.PropertySet}
      * represents a Document Summary Information, else <code>false</code>.
      */
     public boolean isDocumentSummaryInformation()
@@ -491,16 +491,16 @@ public class PropertySet
 
 
     /**
-     * <p>Convenience method returning the {@link Property} array
+     * <p>Convenience method returning the {@link org.zkoss.poi.hpsf.Property} array
      * contained in this property set. It is a shortcut for getting
-     * the {@link PropertySet}'s {@link Section}s list and then
-     * getting the {@link Property} array from the first {@link
-     * Section}.</p>
+     * the {@link org.zkoss.poi.hpsf.PropertySet}'s {@link org.zkoss.poi.hpsf.Section}s list and then
+     * getting the {@link org.zkoss.poi.hpsf.Property} array from the first {@link
+     * org.zkoss.poi.hpsf.Section}.</p>
      *
-     * @return The properties of the only {@link Section} of this
-     * {@link PropertySet}.
-     * @throws NoSingleSectionException if the {@link PropertySet} has
-     * more or less than one {@link Section}.
+     * @return The properties of the only {@link org.zkoss.poi.hpsf.Section} of this
+     * {@link org.zkoss.poi.hpsf.PropertySet}.
+     * @throws NoSingleSectionException if the {@link org.zkoss.poi.hpsf.PropertySet} has
+     * more or less than one {@link org.zkoss.poi.hpsf.Section}.
      */
     public Property[] getProperties()
         throws NoSingleSectionException
@@ -518,8 +518,8 @@ public class PropertySet
      *
      * @param id The property ID
      * @return The property value
-     * @throws NoSingleSectionException if the {@link PropertySet} has
-     * more or less than one {@link Section}.
+     * @throws NoSingleSectionException if the {@link org.zkoss.poi.hpsf.PropertySet} has
+     * more or less than one {@link org.zkoss.poi.hpsf.Section}.
      */
     protected Object getProperty(final int id) throws NoSingleSectionException
     {
@@ -538,8 +538,8 @@ public class PropertySet
      *
      * @param id The property ID
      * @return The property value
-     * @throws NoSingleSectionException if the {@link PropertySet} has
-     * more or less than one {@link Section}.
+     * @throws NoSingleSectionException if the {@link org.zkoss.poi.hpsf.PropertySet} has
+     * more or less than one {@link org.zkoss.poi.hpsf.Section}.
      */
     protected boolean getPropertyBooleanValue(final int id)
         throws NoSingleSectionException
@@ -558,8 +558,8 @@ public class PropertySet
      *
      * @param id The property ID
      * @return The propertyIntValue value
-     * @throws NoSingleSectionException if the {@link PropertySet} has
-     * more or less than one {@link Section}.
+     * @throws NoSingleSectionException if the {@link org.zkoss.poi.hpsf.PropertySet} has
+     * more or less than one {@link org.zkoss.poi.hpsf.Section}.
      */
     protected int getPropertyIntValue(final int id)
         throws NoSingleSectionException
@@ -581,8 +581,8 @@ public class PropertySet
      * @return <code>true</code> if the last call to {@link
      * #getPropertyIntValue} or {@link #getProperty} tried to access a
      * property that was not available, else <code>false</code>.
-     * @throws NoSingleSectionException if the {@link PropertySet} has
-     * more than one {@link Section}.
+     * @throws NoSingleSectionException if the {@link org.zkoss.poi.hpsf.PropertySet} has
+     * more than one {@link org.zkoss.poi.hpsf.Section}.
      */
     public boolean wasNull() throws NoSingleSectionException
     {
@@ -592,9 +592,9 @@ public class PropertySet
 
 
     /**
-     * <p>Gets the {@link PropertySet}'s first section.</p>
+     * <p>Gets the {@link org.zkoss.poi.hpsf.PropertySet}'s first section.</p>
      *
-     * @return The {@link PropertySet}'s first section.
+     * @return The {@link org.zkoss.poi.hpsf.PropertySet}'s first section.
      */
     public Section getFirstSection()
     {
@@ -606,7 +606,7 @@ public class PropertySet
 
 
     /**
-     * <p>If the {@link PropertySet} has only a single section this
+     * <p>If the {@link org.zkoss.poi.hpsf.PropertySet} has only a single section this
      * method returns it.</p>
      *
      * @return The singleSection value

@@ -136,7 +136,7 @@ public class Util
 
 
     /**
-     * <p>Converts a Windows FILETIME into a {@link Date}. The Windows
+     * <p>Converts a Windows FILETIME into a {@link java.util.Date}. The Windows
      * FILETIME structure holds a date and time associated with a
      * file. The structure identifies a 64-bit integer specifying the
      * number of 100-nanosecond intervals which have passed since
@@ -145,7 +145,7 @@ public class Util
      *
      * @param high The higher double word of the FILETIME structure.
      * @param low The lower double word of the FILETIME structure.
-     * @return The Windows FILETIME as a {@link Date}.
+     * @return The Windows FILETIME as a {@link java.util.Date}.
      */
     public static Date filetimeToDate(final int high, final int low)
     {
@@ -154,14 +154,14 @@ public class Util
     }
 
     /**
-     * <p>Converts a Windows FILETIME into a {@link Date}. The Windows
+     * <p>Converts a Windows FILETIME into a {@link java.util.Date}. The Windows
      * FILETIME structure holds a date and time associated with a
      * file. The structure identifies a 64-bit integer specifying the
      * number of 100-nanosecond intervals which have passed since
      * January 1, 1601.</p>
      *
      * @param filetime The filetime to convert.
-     * @return The Windows FILETIME as a {@link Date}.
+     * @return The Windows FILETIME as a {@link java.util.Date}.
      */
     public static Date filetimeToDate(final long filetime)
     {
@@ -173,7 +173,7 @@ public class Util
 
 
     /**
-     * <p>Converts a {@link Date} into a filetime.</p>
+     * <p>Converts a {@link java.util.Date} into a filetime.</p>
      *
      * @param date The date to be converted
      * @return The filetime

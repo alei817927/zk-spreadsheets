@@ -26,7 +26,7 @@ import org.zkoss.poi.ss.formula.eval.ValueEval;
  */
 public interface Function1Arg extends Function {
 	/**
-	 * see {@link Function#evaluate(ValueEval[], int, int)}
+	 * see {@link org.zkoss.poi.ss.formula.functions.Function#evaluate(org.zkoss.poi.ss.formula.eval.ValueEval[], int, int)}
 	 */
 	ValueEval evaluate(int srcRowIndex, int srcColumnIndex, ValueEval arg0);
 }

@@ -20,12 +20,12 @@ import org.zkoss.zss.api.model.Chart;
 import org.zkoss.zss.api.model.Picture;
 
 /**
- * The anchor represents a position in a sheet for the objects ( {@link Picture} , or {@link Chart}) by row and column index.
+ * The anchor represents a position in a sheet for the objects ( {@link org.zkoss.zss.api.model.Picture} , or {@link org.zkoss.zss.api.model.Chart}) by row and column index.
  * @author dennis
- * @see Picture
- * @see Range#addPicture(SheetAnchor, byte[], org.zkoss.zss.api.model.Picture.Format)
- * @see Chart
- * @see Range#addChart(SheetAnchor, org.zkoss.zss.api.model.ChartData, org.zkoss.zss.api.model.Chart.Type, org.zkoss.zss.api.model.Chart.Grouping, org.zkoss.zss.api.model.Chart.LegendPosition)
+ * @see org.zkoss.zss.api.model.Picture
+ * @see org.zkoss.zss.api.Range#addPicture(org.zkoss.zss.api.SheetAnchor, byte[], org.zkoss.zss.api.model.Picture.Format)
+ * @see org.zkoss.zss.api.model.Chart
+ * @see org.zkoss.zss.api.Range#addChart(org.zkoss.zss.api.SheetAnchor, org.zkoss.zss.api.model.ChartData, org.zkoss.zss.api.model.Chart.Type, org.zkoss.zss.api.model.Chart.Grouping, org.zkoss.zss.api.model.Chart.LegendPosition)
  * @since 3.0.0
  */
 public class SheetAnchor {

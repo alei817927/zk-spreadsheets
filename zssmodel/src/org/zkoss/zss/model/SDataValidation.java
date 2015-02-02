@@ -16,6 +16,8 @@ Copyright (C) 2013 Potix Corporation. All Rights Reserved.
 */
 package org.zkoss.zss.model;
 
+import org.zkoss.zss.model.util.Validations;
+
 import java.util.List;
 import java.util.Set;
 
@@ -25,6 +27,22 @@ import java.util.Set;
  * @since 3.5.0
  */
 public interface SDataValidation extends FormulaContent{
+	/**
+	 * @since 3.5.0
+	 */
+	public enum ErrorStyle {
+		STOP((byte)0x00), WARNING((byte)0x01), INFO((byte)0x02);
+
+		private byte value;
+		ErrorStyle(byte value){
+			this.value = value;
+		}
+
+		public byte getValue(){
+			return value;
+		}
+	}
+
 	/**
 	 * @since 3.5.0
 	 */
@@ -139,4 +157,27 @@ public interface SDataValidation extends FormulaContent{
 	 * @since 3.7.0
 	 */
 	public List<SCell> getReferToCellList(int row, int col);
+//////////////
+	public boolean isShowErrorBox();
+	public void setShowErrorBox(boolean show);
+	public void setErrorBox(String title, String text);
+	public String getErrorBoxTitle();
+	public String getErrorBoxText();
+	public CellRegion getRegion();
+	public ErrorStyle getErrorStyle();
+	public void setShowPromptBox(boolean show);
+	public boolean isShowPromptBox();
+
+	public void setPromptBox(String title, String text);
+	public String getPromptBoxTitle();
+	public String getPromptBoxText();
+	public void setShowDropDownArrow(boolean show);
+	public boolean isShowDropDownArrow();
+
+	public void setErrorStyle(ErrorStyle errorStyle) ;
+
+	public void setEmptyCellAllowed(boolean allowed) ;
+
+	void setRegion(CellRegion region);
+	public boolean isEmptyCellAllowed();
 }

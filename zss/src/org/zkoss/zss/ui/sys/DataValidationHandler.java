@@ -31,6 +31,6 @@ public interface DataValidationHandler {
 	public List<Map<String, Object>> loadDataValidtionJASON(Sheet sheet);
 	
 	public boolean validate(Sheet sheet, final int row, final int col,
-			final String editText, final EventListener callback);
+							final String editText, final EventListener callback);
 
 }

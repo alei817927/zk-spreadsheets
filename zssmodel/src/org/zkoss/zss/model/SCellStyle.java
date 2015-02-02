@@ -190,16 +190,16 @@ public interface SCellStyle {
 	public void setWrapText(boolean wrapText);
 
 	public void setBorderLeft(BorderType borderLeft);
-	public void setBorderLeft(BorderType borderLeft,SColor color);
+	public void setBorderLeft(BorderType borderLeft, SColor color);
 
 	public void setBorderTop(BorderType borderTop);
-	public void setBorderTop(BorderType borderTop,SColor color);
+	public void setBorderTop(BorderType borderTop, SColor color);
 
 	public void setBorderRight(BorderType borderRight);
-	public void setBorderRight(BorderType borderRight,SColor color);
+	public void setBorderRight(BorderType borderRight, SColor color);
 
 	public void setBorderBottom(BorderType borderBottom);
-	public void setBorderBottom(BorderType borderBottom,SColor color);
+	public void setBorderBottom(BorderType borderBottom, SColor color);
 
 	public void setBorderTopColor(SColor borderTopColor);
 

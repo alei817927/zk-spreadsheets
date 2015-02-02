@@ -1,7 +1,7 @@
 package org.zkoss.zss.model.sys.formula;
 
 /**
- * To contain {@link EvaluationContributor}
+ * To contain {@link org.zkoss.zss.model.sys.formula.EvaluationContributor}
  * 
  * @author dennis
  * @since 3.5.0

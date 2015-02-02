@@ -26,7 +26,7 @@ import org.zkoss.poi.hpsf.wellknown.SectionIDMap;
 
 /**
  * <p>Factory class to create instances of {@link SummaryInformation},
- * {@link DocumentSummaryInformation} and {@link PropertySet}.</p>
+ * {@link DocumentSummaryInformation} and {@link org.zkoss.poi.hpsf.PropertySet}.</p>
  *
  * @author Rainer Klute <a
  * href="mailto:klute@rainer-klute.de">&lt;klute@rainer-klute.de&gt;</a>
@@ -35,21 +35,21 @@ public class PropertySetFactory
 {
 
     /**
-     * <p>Creates the most specific {@link PropertySet} from an {@link
-     * InputStream}. This is preferrably a {@link
+     * <p>Creates the most specific {@link org.zkoss.poi.hpsf.PropertySet} from an {@link
+     * java.io.InputStream}. This is preferrably a {@link
      * DocumentSummaryInformation} or a {@link SummaryInformation}. If
-     * the specified {@link InputStream} does not contain a property
-     * set stream, an exception is thrown and the {@link InputStream}
+     * the specified {@link java.io.InputStream} does not contain a property
+     * set stream, an exception is thrown and the {@link java.io.InputStream}
      * is repositioned at its beginning.</p>
      *
      * @param stream Contains the property set stream's data.
-     * @return The created {@link PropertySet}.
+     * @return The created {@link org.zkoss.poi.hpsf.PropertySet}.
      * @throws NoPropertySetStreamException if the stream does not
      * contain a property set.
      * @throws MarkUnsupportedException if the stream does not support
      * the <code>mark</code> operation.
-     * @throws IOException if some I/O problem occurs.
-     * @exception UnsupportedEncodingException if the specified codepage is not
+     * @throws java.io.IOException if some I/O problem occurs.
+     * @exception java.io.UnsupportedEncodingException if the specified codepage is not
      * supported.
      */
     public static PropertySet create(final InputStream stream)

@@ -29,7 +29,7 @@ import org.zkoss.poi.util.LittleEndian;
  * @author Glen Stampoultzis
  * @author Nick Burch   (nick at torchbox . com)
  *
- * @see EscherRecordFactory
+ * @see org.zkoss.poi.ddf.EscherRecordFactory
  */
 public class DefaultEscherRecordFactory implements EscherRecordFactory {
     private static Class<?>[] escherRecordClasses = { EscherBSERecord.class,

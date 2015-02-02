@@ -27,7 +27,7 @@ import java.util.Map;
  *
  * <p>The methods {@link #getSummaryInformationProperties} and {@link
  * #getDocumentSummaryInformationProperties} return singleton {@link
- * PropertyIDMap}s. An application that wants to extend these maps
+ * org.zkoss.poi.hpsf.wellknown.PropertyIDMap}s. An application that wants to extend these maps
  * should treat them as unmodifiable, copy them and modifiy the
  * copies.</p>
  *
@@ -253,11 +253,11 @@ public class PropertyIDMap extends HashMap {
 
 
     /**
-     * <p>Creates a {@link PropertyIDMap}.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.wellknown.PropertyIDMap}.</p>
      *
      * @param initialCapacity The initial capacity as defined for
-     * {@link HashMap}
-     * @param loadFactor The load factor as defined for {@link HashMap}
+     * {@link java.util.HashMap}
+     * @param loadFactor The load factor as defined for {@link java.util.HashMap}
      */
     public PropertyIDMap(final int initialCapacity, final float loadFactor)
     {
@@ -267,7 +267,7 @@ public class PropertyIDMap extends HashMap {
 
 
     /**
-     * <p>Creates a {@link PropertyIDMap} backed by another map.</p>
+     * <p>Creates a {@link org.zkoss.poi.hpsf.wellknown.PropertyIDMap} backed by another map.</p>
      *
      * @param map The instance to be created is backed by this map.
      */
@@ -280,7 +280,7 @@ public class PropertyIDMap extends HashMap {
 
     /**
      * <p>Puts a ID string for an ID into the {@link
-     * PropertyIDMap}.</p>
+     * org.zkoss.poi.hpsf.wellknown.PropertyIDMap}.</p>
      *
      * @param id The ID.
      * @param idString The ID string.
@@ -298,7 +298,7 @@ public class PropertyIDMap extends HashMap {
 
     /**
      * <p>Gets the ID string for an ID from the {@link
-     * PropertyIDMap}.</p>
+     * org.zkoss.poi.hpsf.wellknown.PropertyIDMap}.</p>
      *
      * @param id The ID.
      * @return The ID string associated with <var>id</var>.

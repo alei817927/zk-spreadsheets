@@ -51,7 +51,7 @@ public abstract class LogicalFunction extends Fixed1ArgFunction implements Opera
 
 	}
 	/**
-	 * @param arg any {@link ValueEval}, potentially {@link BlankEval} or {@link ErrorEval}.
+	 * @param arg any {@link org.zkoss.poi.ss.formula.eval.ValueEval}, potentially {@link org.zkoss.poi.ss.formula.eval.BlankEval} or {@link org.zkoss.poi.ss.formula.eval.ErrorEval}.
 	 */
 	protected abstract boolean evaluate(ValueEval arg);
 

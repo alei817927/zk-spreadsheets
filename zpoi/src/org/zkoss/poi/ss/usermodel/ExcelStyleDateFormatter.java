@@ -21,9 +21,9 @@ import java.math.RoundingMode;
 import java.text.*;
 
 /**
- * A wrapper around a {@link SimpleDateFormat} instance,
+ * A wrapper around a {@link java.text.SimpleDateFormat} instance,
  * which handles a few Excel-style extensions that
- * are not supported by {@link SimpleDateFormat}.
+ * are not supported by {@link java.text.SimpleDateFormat}.
  * Currently, the extensions are around the handling
  * of elapsed time, eg rendering 1 day 2 hours
  * as 26 hours.

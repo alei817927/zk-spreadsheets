@@ -21,7 +21,7 @@ import java.util.Date;
 import org.zkoss.poi.ss.usermodel.CellStyle;
 import org.zkoss.zss.model.SHyperlink.HyperlinkType;
 /**
- * Represent a cell of a sheet in a Spreadsheet. A cell contains value and style ({@link CellStyle}), and its type is one of {@link CellType}.
+ * Represent a cell of a sheet in a Spreadsheet. A cell contains value and style ({@link CellStyle}), and its type is one of {@link org.zkoss.zss.model.SCell.CellType}.
  * @author dennis
  * @since 3.5.0
  */
@@ -93,7 +93,7 @@ public interface SCell extends CellStyleHolder,FormulaContent{
 	public void setHyperlink(SHyperlink hyperlink);
 	
 	/** setup a hyperlink*/
-	public SHyperlink setupHyperlink(HyperlinkType type,String address,String label);
+	public SHyperlink setupHyperlink(HyperlinkType type, String address, String label);
 
 //	boolean isReadonly();
 //	

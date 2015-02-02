@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 
 /**
- * Represents a rectangular region of a {@link Sheet}
+ * Represents a rectangular region of a {@link org.zkoss.poi.ss.usermodel.Sheet}
  *
  * @author Josh Micich
  */
@@ -48,18 +48,18 @@ public interface CellRange<C extends Cell> extends Iterable<C> {
 	 */
 	C getCell(int relativeRowIndex, int relativeColumnIndex);
 	/**
-	 * @return a flattened array of all the cells in this {@link CellRange}
+	 * @return a flattened array of all the cells in this {@link org.zkoss.poi.ss.usermodel.CellRange}
 	 */
 	C[] getFlattenedCells();
 	/**
-	 * @return a 2-D array of all the cells in this {@link CellRange}.  The first
+	 * @return a 2-D array of all the cells in this {@link org.zkoss.poi.ss.usermodel.CellRange}.  The first
 	 * array dimension is the row index (values <tt>0...height-1</tt>)
 	 * and the second dimension is the column index (values <tt>0...width-1</tt>)
 	 */
 	C[][] getCells();
 
 	/**
-	 * @return an {@link Iterator} over all cells in this range.  Iteration starts
+	 * @return an {@link java.util.Iterator} over all cells in this range.  Iteration starts
 	 * with all cells in the first row followed by all cells in the next row, etc.
 	 */
 	Iterator<C> iterator();

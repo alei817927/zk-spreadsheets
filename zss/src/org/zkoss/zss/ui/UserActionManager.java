@@ -28,7 +28,7 @@ public interface UserActionManager {
 	 * @param action the action of the handler
 	 * @param handler the handler
 	 */
-	public void registerHandler(String category,String action, UserActionHandler handler);
+	public void registerHandler(String category, String action, UserActionHandler handler);
 	
 	/**
 	 * set a handler to the handler list of category/action, it will remove all other handlers in same category/action
@@ -36,5 +36,5 @@ public interface UserActionManager {
 	 * @param action the action of the handler
 	 * @param handler the handler
 	 */
-	public void setHandler(String category,String action, UserActionHandler handler);
+	public void setHandler(String category, String action, UserActionHandler handler);
 }

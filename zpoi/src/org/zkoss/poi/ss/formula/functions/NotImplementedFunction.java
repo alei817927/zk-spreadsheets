@@ -25,7 +25,7 @@ import org.zkoss.poi.ss.formula.eval.ValueEval;
  * @author Amol S. Deshmukh &lt; amolweb at ya hoo dot com &gt;
  * This is the default implementation of a Function class.
  * The default behaviour is to raise a POI internal error
- * ({@link NotImplementedException}). This error should alert
+ * ({@link org.zkoss.poi.ss.formula.eval.NotImplementedException}). This error should alert
  * the user that the formula contained a function that is not
  * yet implemented.
  */

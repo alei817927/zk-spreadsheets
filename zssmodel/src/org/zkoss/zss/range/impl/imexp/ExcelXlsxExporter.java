@@ -441,7 +441,7 @@ public class ExcelXlsxExporter extends AbstractExcelExporter {
 	}
 	
 	/**
-	 * According to {@link ValidationType}, FORMULA means custom validation.
+	 * According to {@link org.zkoss.zss.model.SDataValidation.ValidationType}, FORMULA means custom validation.
 	 */
 	@Override
 	protected void exportValidation(SSheet sheet, Sheet poiSheet) {

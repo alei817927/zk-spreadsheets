@@ -2,9 +2,9 @@
 
 {{IS_NOTE
 	Purpose:
-		
+
 	Description:
-		
+
 	History:
 		2013/12/01 , Created by Hawk
 }}IS_NOTE
@@ -40,7 +40,7 @@ import org.zkoss.zss.model.impl.ChartAxisImpl;
 import org.zkoss.zss.model.sys.formula.FormulaEngine;
 /**
  * Specific importing behavior for XLSX.
- * 
+ *
  * @author Hawk
  * @since 3.5.0
  */
@@ -51,7 +51,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	protected Workbook createPoiBook(InputStream is) throws IOException {
 		return new XSSFWorkbook(is);
 	}
-	
+
 	@Override
 	protected void importExternalBookLinks() {
 		try {
@@ -86,7 +86,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	 *   <x:col min="1" max="1" width="11.28515625" customWidth="1" />
 	 *   <x:col min="2" max="4" width="11.28515625" hidden="1" customWidth="1" />
 	 *   <x:col min="5" max="5" width="11.28515625" customWidth="1" />
-	 * </x:cols> 
+	 * </x:cols>
 	 */
 	@Override
 	protected void importColumn(Sheet poiSheet, SSheet sheet) {
@@ -94,21 +94,21 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		if(worksheet.sizeOfColsArray()<=0){
 			return;
 		}
-		
+
 		int defaultWidth = UnitUtil.defaultColumnWidthToPx(poiSheet.getDefaultColumnWidth(), CHRACTER_WIDTH);
 		CTCols colsArray = worksheet.getColsArray(0);
 		for (int i = 0; i < colsArray.sizeOfColArray(); i++) {
 			CTCol ctCol = colsArray.getColArray(i);
 			//max is 16384
-			
+
 			SColumnArray columnArray = sheet.setupColumnArray((int)ctCol.getMin()-1, (int)ctCol.getMax()-1);
-			
+
 			boolean hidden = ctCol.getHidden();
 			int columnIndex = (int)ctCol.getMin()-1;
 			columnArray.setHidden(hidden);
 			int width = ImExpUtils.getWidthAny(poiSheet, columnIndex, CHRACTER_WIDTH);
 			if (!(hidden || width == defaultWidth)){
-				//when CT_Col is hidden with default width, We don't import the width for it's 0.  
+				//when CT_Col is hidden with default width, We don't import the width for it's 0.
 				columnArray.setWidth(width);
 			}
 			columnArray.setCustomWidth(ctCol.getCustomWidth() || width != defaultWidth); //ZSS-896
@@ -121,11 +121,11 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	}
 
 	/**
-	 * Not import X & Y axis title because {@link XSSFCategoryAxis} doesn't provide API to get title. 
+	 * Not import X & Y axis title because {@link XSSFCategoryAxis} doesn't provide API to get title.
 	 * Reference ChartHelper.drawXSSFChart()
 	 */
 	private void importChart(List<ZssChartX> poiCharts, Sheet poiSheet, SSheet sheet) {
-		
+
 		for (ZssChartX zssChart : poiCharts){
 			XSSFChart xssfChart = (XSSFChart)zssChart.getChart();
 			ViewAnchor viewAnchor = toViewAnchor(poiSheet, xssfChart.getPreferredSize());
@@ -159,7 +159,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 					break;
 				case Bubble:
 					chart = sheet.addChart(ChartType.BUBBLE, viewAnchor);
-					
+
 					XYZData xyzData = new XSSFBubbleChartData(xssfChart);
 					importXyzSeries(xyzData.getSeries(), (SGeneralChartData)chart.getData());
 					break;
@@ -200,7 +200,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 					break;
 				case Scatter:
 					chart = sheet.addChart(ChartType.SCATTER, viewAnchor);
-					
+
 					XYData xyData =  new XSSFScatChartData(xssfChart);
 					importXySeries(xyData.getSeries(), (SGeneralChartData)chart.getData());
 					break;
@@ -212,7 +212,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 					//TODO ignore unsupported charts
 					continue;
 			}
-			
+
 			if (xssfChart.getTitle()!=null){
 				chart.setTitle(xssfChart.getTitle().getString());
 			}
@@ -262,7 +262,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	}
 
 	/**
-	 * reference ChartHepler.prepareCategoryModel() 
+	 * reference ChartHepler.prepareCategoryModel()
 	 * Category normally indicates the values show on X axis.
 	 * Tile indicates the name for each series.
 	 * @param seriesList source chart data
@@ -275,25 +275,25 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		}
 		for (int i =0 ;  i< seriesList.size() ; i++){
 			CategoryDataSerie sourceSeries = seriesList.get(i);
-			String nameExpression = getTitleFormula(sourceSeries.getTitle(), i);			
+			String nameExpression = getTitleFormula(sourceSeries.getTitle(), i);
 			String xValueExpression = getValueFormula(sourceSeries.getValues());
 			SSeries series = chartData.addSeries();
 			series.setFormula(nameExpression, xValueExpression);
 		}
 	}
-	
+
 	private void importXySeries(List<? extends XYDataSerie> seriesList, SGeneralChartData chartData) {
 		for (int i =0 ;  i< seriesList.size() ; i++){
 			XYDataSerie sourceSeries = seriesList.get(i);
 			SSeries series = chartData.addSeries();
-			series.setXYFormula(getTitleFormula(sourceSeries.getTitle(), i), 
-								getValueFormula(sourceSeries.getXs()), 
+			series.setXYFormula(getTitleFormula(sourceSeries.getTitle(), i),
+								getValueFormula(sourceSeries.getXs()),
 								getValueFormula(sourceSeries.getYs()));
 		}
 	}
 
 	/**
-	 * reference ChartHepler.prepareXYZModel() 
+	 * reference ChartHepler.prepareXYZModel()
 	 * @param seriesList
 	 * @param chart
 	 */
@@ -301,16 +301,16 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		for (int i =0 ;  i< seriesList.size() ; i++){
 			XYZDataSerie sourceSeries = seriesList.get(i);
 			//reference to ChartHelper.prepareTitle()
-			String nameExpression = getTitleFormula(sourceSeries.getTitle(), i);			
+			String nameExpression = getTitleFormula(sourceSeries.getTitle(), i);
 			String xValueExpression = getValueFormula(sourceSeries.getXs());
 			String yValueExpression = getValueFormula(sourceSeries.getYs());
-			String zValueExpression = getValueFormula(sourceSeries.getZs());	
-			
+			String zValueExpression = getValueFormula(sourceSeries.getZs());
+
 			SSeries series = chartData.addSeries();
 			series.setXYZFormula(nameExpression, xValueExpression, yValueExpression, zValueExpression);
 		}
 	}
-	
+
 	/**
 	 * return a formula or generate a default title ("Series[N]")if title doesn't exist.
 	 * reference ChartHelper.prepareTitle()
@@ -328,7 +328,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			}
 		}
 	}
-	
+
 	/**
 	 * reference ChartHelper.prepareValues()
 	 * @param dataSource
@@ -367,8 +367,8 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			return expression.toString();
 		}
 	}
-	
-	
+
+
 	/*
 	 * import drawings which include charts and pictures.
 	 * reference DrawingManagerImpl.initXSSFDrawings()
@@ -380,7 +380,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		 */
 		List<ZssChartX> poiCharts = new ArrayList<ZssChartX>();
 		List<Picture> poiPictures = new ArrayList<Picture>();
-		
+
 		XSSFDrawing patriarch = null;
 		for(POIXMLDocumentPart dr : ((XSSFSheet)poiSheet).getRelations()){
 			if(dr instanceof XSSFDrawing){
@@ -388,24 +388,24 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 				break;
 			}
 		}
-		if (patriarch != null) {			
+		if (patriarch != null) {
 			final CTDrawing ctdrawing = patriarch.getCTDrawing();
 			for (CTTwoCellAnchor anchor: ctdrawing.getTwoCellAnchorArray()) {
 				final CTMarker from = anchor.getFrom();
 				final CTMarker to = anchor.getTo();
 				XSSFClientAnchor clientAnchor = null;
 				if (from != null && to != null){
-					clientAnchor = new XSSFClientAnchor((int)from.getColOff(), (int)from.getRowOff(), (int)to.getColOff(), (int)to.getRowOff(), 
+					clientAnchor = new XSSFClientAnchor((int)from.getColOff(), (int)from.getRowOff(), (int)to.getColOff(), (int)to.getRowOff(),
 							from.getCol(), from.getRow(), to.getCol(), to.getRow());
 				}
 				CTPicture ctPicture = anchor.getPic();
-				if (ctPicture == null){ 
+				if (ctPicture == null){
 					final CTGraphicalObjectFrame gfrm = anchor.getGraphicFrame();
 					if (gfrm != null) {
 						final XSSFChartX chartX = createXSSFChartX(patriarch, gfrm , clientAnchor);
 						poiCharts.add(chartX);
 					}
-				}else{ 
+				}else{
 					poiPictures.add(XSSFPictureHelper.newXSSFPicture(patriarch, clientAnchor, ctPicture));
 				}
 			}
@@ -413,7 +413,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		importChart(poiCharts, poiSheet, sheet);
 		importPicture(poiPictures, poiSheet, sheet);
 	}
-	
+
 	private XSSFChartX createXSSFChartX(XSSFDrawing patriarch, CTGraphicalObjectFrame gfrm , XSSFClientAnchor xanchor) {
 		//chart
 		final String name = gfrm.getNvGraphicFramePr().getCNvPr().getName();
@@ -432,7 +432,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		final XSSFChartX chartX = new XSSFChartX(patriarch, xanchor, name, chartId);
 		return chartX;
 	}
-	
+
 	/**
 	 * Reference DefaultBookWidgetLoader.getXSSFWidthInPx()
 	 */
@@ -442,21 +442,21 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	    final int firstColumnWidth = ImExpUtils.getWidthAny(poiSheet,firstColumn, AbstractExcelImporter.CHRACTER_WIDTH);
 	    int offsetInFirstColumn = UnitUtil.emuToPx(anchor.getDx1());
 
-	    final int anchorWidthInFirstColumn = firstColumnWidth - offsetInFirstColumn;  
+	    final int anchorWidthInFirstColumn = firstColumnWidth - offsetInFirstColumn;
 		int anchorWidthInLastColumn = UnitUtil.emuToPx(anchor.getDx2());
-	    
+
 		final int lastColumn = anchor.getCol2();
 	    //in between
 	    int width = firstColumn == lastColumn ? anchorWidthInLastColumn - offsetInFirstColumn : anchorWidthInFirstColumn + anchorWidthInLastColumn;
 	    width = Math.abs(width); // just in case
-	    
+
 	    for (int j = firstColumn+1; j < lastColumn; ++j) {
 	    	width += ImExpUtils.getWidthAny(poiSheet,j, AbstractExcelImporter.CHRACTER_WIDTH);
 	    }
-	    
+
 	    return width;
 	}
-	
+
 	/**
 	 * DefaultBookWidgetLoader.getXSSFHeightInPx()
 	 */
@@ -466,19 +466,19 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	    int offsetInFirstRow = UnitUtil.emuToPx(anchor.getDy1());
 	    //first row
 	    final int firstRowHeight = ImExpUtils.getHeightAny(poiSheet,firstRow);
-		final int anchorHeightInFirstRow = firstRowHeight - offsetInFirstRow;  
-	    
+		final int anchorHeightInFirstRow = firstRowHeight - offsetInFirstRow;
+
 	    //last row
 		final int lastRow = anchor.getRow2();
 		int anchorHeightInLastRow = UnitUtil.emuToPx(anchor.getDy2());
 		int height = lastRow == firstRow ? anchorHeightInLastRow - offsetInFirstRow : anchorHeightInFirstRow + anchorHeightInLastRow ;
 		height = Math.abs(height); // just in case
-	    
+
 	    //add inter-row height
 	    for (int row = firstRow+1; row < lastRow; ++row) {
 	    	height += ImExpUtils.getHeightAny(poiSheet,row);
 	    }
-	    
+
 	    return height;
 	}
 
@@ -499,7 +499,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	@Override
 	protected void importValidation(Sheet poiSheet, SSheet sheet) {
 		for (DataValidation poiValidation : poiSheet.getDataValidations()){
-			
+
 			SDataValidation dataValidation = sheet.addDataValidation(null, null);
 			CellRangeAddress[] cellRangeAddresses = poiValidation.getRegions().getCellRangeAddresses();
 			DataValidationConstraint poiConstraint = poiValidation.getValidationConstraint();
@@ -507,7 +507,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			dataValidation.setOperatorType(PoiEnumConversion.toOperatorType(poiConstraint.getOperator()));
 			dataValidation.setValidationType(PoiEnumConversion.toValidationType(poiConstraint.getValidationType()));
 			((AbstractDataValidationAdv)dataValidation).setEscapedFormulas(poiConstraint.getFormula1(), poiConstraint.getFormula2());
-			
+
 			dataValidation.setIgnoreBlank(poiValidation.getEmptyCellAllowed());
 			dataValidation.setErrorTitle(poiValidation.getErrorBoxTitle());
 			dataValidation.setErrorMessage(poiValidation.getErrorBoxText());
@@ -515,9 +515,9 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			dataValidation.setInputTitle(poiValidation.getPromptBoxTitle());
 			dataValidation.setInputMessage(poiValidation.getPromptBoxText());
 			if (poiConstraint.getValidationType() == DataValidationConstraint.ValidationType.LIST){
-				/* 
-				 * According to ISO/IEC 29500-1 \ 18.3.1.32  dataValidation (Data Validation) 
-				 * Excel file contains reversed value against format specification . If not showing drop down, file contains 1 (true). If showing, 
+				/*
+				 * According to ISO/IEC 29500-1 \ 18.3.1.32  dataValidation (Data Validation)
+				 * Excel file contains reversed value against format specification . If not showing drop down, file contains 1 (true). If showing,
 				 * attribute "showDropDown" won't exist and POI get false. But POI's API reverse its value again.
 				 * So we just directly accept the POI returned value.
 				 */
@@ -526,8 +526,8 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			dataValidation.setShowError(poiValidation.getShowErrorBox());
 			dataValidation.setShowInput(poiValidation.getShowPromptBox());
 			/*
-			 * According to ISO/IEC 29500-1 \ 18.18.76  ST_Sqref (Reference Sequence) and A.2 
-			 * Its XML Schema indicates it's a required attribute, so CellRangeAddresses must have at least one address. 
+			 * According to ISO/IEC 29500-1 \ 18.18.76  ST_Sqref (Reference Sequence) and A.2
+			 * Its XML Schema indicates it's a required attribute, so CellRangeAddresses must have at least one address.
 			 */
 			Set<CellRegion> regions = new HashSet<CellRegion>();
 			for(CellRangeAddress cellRangeAddr:cellRangeAddresses){
@@ -536,7 +536,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 			dataValidation.setRegions(regions);
 		}
 	}
-	
+
 	@Override
 	protected boolean skipName(Name definedName) {
 		boolean r = super.skipName(definedName);
@@ -547,7 +547,7 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 		}
 		return false;
 	}
-	
+
 	@Override
 	protected void setBookType(SBook book){
 		book.setAttribute(BOOK_TYPE_KEY, "xlsx");
@@ -555,15 +555,15 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 
 	@Override
 	protected void importPassword(Sheet poiSheet, SSheet sheet) {
-		short hashpass = ((XSSFSheet)poiSheet).getPasswordHash(); 
+		short hashpass = ((XSSFSheet)poiSheet).getPasswordHash();
 		sheet.setHashedPassword(hashpass);
 	}
-	
+
 	@Override
 	protected void importSheetProtection(Sheet poiSheet, SSheet sheet) { //ZSS-576
 		SheetProtection sp = poiSheet.getOrCreateSheetProtection();
 		SSheetProtection ssp = sheet.getSheetProtection();
-		
+
 	    ssp.setAutoFilter(sp.isAutoFilter());
 	    ssp.setDeleteColumns(sp.isDeleteColumns());
 	    ssp.setDeleteRows(sp.isDeleteRows());
@@ -582,4 +582,4 @@ public class ExcelXlsxImporter extends AbstractExcelImporter{
 	}
 
 }
- 
+

@@ -57,7 +57,7 @@ public final class Value extends Fixed1ArgFunction implements Operator {
 	}
 
 	/**
-	 * TODO see if the same functionality is needed in {@link OperandResolver#parseDouble(String)}
+	 * TODO see if the same functionality is needed in {@link org.zkoss.poi.ss.formula.eval.OperandResolver#parseDouble(String)}
 	 *
 	 * @return <code>null</code> if there is any problem converting the text
 	 */

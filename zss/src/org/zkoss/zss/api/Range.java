@@ -49,8 +49,8 @@ import org.zkoss.zss.range.SRange;
 /**
  * Range can represent a cell, a row, a column, a selection of cells containing one or 
  * more contiguous blocks of cells, or a 3-D blocks of cells. <br/>
- * You have to use this class's API to do any operation of the {@link Sheet}, then the upload will sync to the UI automatically.<br/>
- * To get the instance of a {@link Range}, please use the {@link Ranges} API.
+ * You have to use this class's API to do any operation of the {@link org.zkoss.zss.api.model.Sheet}, then the upload will sync to the UI automatically.<br/>
+ * To get the instance of a {@link org.zkoss.zss.api.Range}, please use the {@link Ranges} API.
  * 
  * <br/>
  * Note : the range API doesn't check the sheet protection, if you care it, you have to check it by calling {@link #isProtected()} before you do any operation.
@@ -229,14 +229,14 @@ public interface Range {
 	/**
 	 * Runs runer under synchronization protection
 	 * @param run the runner
-	 * @see #setSyncLevel(SyncLevel)
+	 * @see #setSyncLevel(org.zkoss.zss.api.Range.SyncLevel)
 	 */
 	public void sync(RangeRunner run);
 	/**
 	 * Visits all cells in this range with synchronization protection, make sure you call this in a limited range, 
 	 * don't use it for all row/column selection, it will spend much time to iterate the cell 
 	 * @param visitor the cell visitor 
-	 * @see #setSyncLevel(SyncLevel)
+	 * @see #setSyncLevel(org.zkoss.zss.api.Range.SyncLevel)
 	 */
 	public void visit(final CellVisitor visitor);
 
@@ -246,7 +246,7 @@ public interface Range {
 	 * @param colOffset column offset of the new range, zero base
 	 * @return the new range
 	 */
-	public Range toShiftedRange(int rowOffset,int colOffset);
+	public Range toShiftedRange(int rowOffset, int colOffset);
 	
 	/**
 	 * Returns a new range having on cell according to the offset 
@@ -254,7 +254,7 @@ public interface Range {
 	 * @param colOffset column offset of the cell, zero base
 	 * @return the new range of the cell
 	 */
-	public Range toCellRange(int rowOffset,int colOffset);
+	public Range toCellRange(int rowOffset, int colOffset);
 	
 	/**
 	 *  Return a range that represents all columns and between the first-row and last-row of this range.
@@ -325,7 +325,7 @@ public interface Range {
 	 * @return a Range contains the final pasted range. paste to a protected sheet will always cause paste return null.
 	 * @throws IllegalOpArgumentException 
 	 */
-	public Range pasteSpecial(Range dest,PasteType type,PasteOperation op,boolean skipBlanks,boolean transpose);
+	public Range pasteSpecial(Range dest, PasteType type, PasteOperation op, boolean skipBlanks, boolean transpose);
 	
 	/**
 	 * apply borders
@@ -333,7 +333,7 @@ public interface Range {
 	 * @param borderType the border type
 	 * @param htmlColor the color (#rgb-hex-code, e.x #FF00FF)
 	 */
-	public void applyBorders(ApplyBorderType applyType,BorderType borderType,String htmlColor);
+	public void applyBorders(ApplyBorderType applyType, BorderType borderType, String htmlColor);
 
 	/**
 	 * @return true if any merged cell inside (fully contains or overlaps) this range
@@ -358,15 +358,15 @@ public interface Range {
 	
 	/**
 	 * Insert new cells to the area of this range.<br/> 
-	 * To insert a row, you have to call {@link Range#toRowRange()} first, to insert a column, you have to call {@link Range#toColumnRange()} first.
+	 * To insert a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to insert a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()} first.
 	 * @param shift the shift direction of original cells
 	 * @param copyOrigin copy the format from nearby cells when inserting new cells 
 	 */
-	public void insert(InsertShift shift,InsertCopyOrigin copyOrigin);
+	public void insert(InsertShift shift, InsertCopyOrigin copyOrigin);
 	
 	/**
 	 * Delete cells of the range. <br/>
-	 * To delete a row, you have to call {@link Range#toRowRange()} first, to delete a column, you have to call {@link Range#toColumnRange()} first.
+	 * To delete a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to delete a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()} first.
 	 * @param shift the shift direction when deleting.
 	 */
 	public void delete(DeleteShift shift);
@@ -386,10 +386,10 @@ public interface Range {
 	 * @param dataOption data option for sort
 	 */
 	public void sort(boolean desc,
-			boolean header, 
-			boolean matchCase, 
-			boolean sortByRows, 
-			SortDataOption dataOption);
+					 boolean header,
+					 boolean matchCase,
+					 boolean sortByRows,
+					 SortDataOption dataOption);
 	
 	/**
 	 * Sort range
@@ -406,22 +406,22 @@ public interface Range {
 	 * @param desc3 true for descent, false for ascent of index 3
 	 * @param dataOption3 data option31 for sort
 	 */
-	public void sort(Range index1,boolean desc1,SortDataOption dataOption1,
-			Range index2,boolean desc2,SortDataOption dataOption2,
-			Range index3,boolean desc3,SortDataOption dataOption3,
-			boolean header,
+	public void sort(Range index1, boolean desc1, SortDataOption dataOption1,
+					 Range index2, boolean desc2, SortDataOption dataOption2,
+					 Range index3, boolean desc3, SortDataOption dataOption3,
+					 boolean header,
 			/*int orderCustom, //not implement*/
-			boolean matchCase, 
-			boolean sortByRows 
+					 boolean matchCase,
+					 boolean sortByRows
 			/*int sortMethod, //not implement*/
-			);
+	);
 	
 	/**
 	 * According to current range, fills data to destination range automatically
 	 * @param dest the destination range
 	 * @param fillType the fill type
 	 */
-	public void autoFill(Range dest,AutoFillType fillType);
+	public void autoFill(Range dest, AutoFillType fillType);
 	
 	/**
 	 * Fills cells by copying from first/top row data
@@ -444,7 +444,7 @@ public interface Range {
 	public void fillRight();
 	
 	/** Shifts/moves cells with a offset row and column**/
-	public void shift(int rowOffset,int colOffset);
+	public void shift(int rowOffset, int colOffset);
 	
 	/**
 	 * Sets the width(in pixel) of column in this range, it effect to whole column. 
@@ -498,11 +498,11 @@ public interface Range {
 	 * @param address the address, e.x http://www.zkoss.org
 	 * @param label the label to display
 	 */
-	public void setCellHyperlink(HyperlinkType type,String address,String label);
+	public void setCellHyperlink(HyperlinkType type, String address, String label);
 	
 	
 	/**
-	 * Gets the first cell(top-left) {@link Hyperlink} object of this range.
+	 * Gets the first cell(top-left) {@link org.zkoss.zss.api.model.Hyperlink} object of this range.
 	 * @return
 	 */
 	public Hyperlink getCellHyperlink();
@@ -523,14 +523,14 @@ public interface Range {
 	/**
 	 * Gets the first cell(top-left) edit text of this range
 	 * @return edit text
-	 * @see CellData#getEditText()
+	 * @see org.zkoss.zss.api.model.CellData#getEditText()
 	 */
 	public String getCellEditText();
 	
 	/**
 	 * Gets the first cell(top-left) formatted text of this range
 	 * @return format text
-	 * @see CellData#getFormatText()
+	 * @see org.zkoss.zss.api.model.CellData#getFormatText()
 	 */
 	public String getCellFormatText();
 	
@@ -544,7 +544,7 @@ public interface Range {
 	/**
 	 * Gets the first cell(top-left) value of this this range
 	 * @return value object
-	 * @see CellData#getValue()
+	 * @see org.zkoss.zss.api.model.CellData#getValue()
 	 */
 	public Object getCellValue();
 	
@@ -579,7 +579,7 @@ public interface Range {
 	
 	/**
 	 * Hide or unhide rows or columns.<br/> 
-	 * To hide/unhide a row, you have to call {@link Range#toRowRange()} first, to hide/un-hide a column, you have to call {@link Range#toColumnRange()} 
+	 * To hide/unhide a row, you have to call {@link org.zkoss.zss.api.Range#toRowRange()} first, to hide/un-hide a column, you have to call {@link org.zkoss.zss.api.Range#toColumnRange()}
 	 * or a whole column range. 
 	 * @param hidden hide or not
 	 */
@@ -662,7 +662,7 @@ public interface Range {
 	 * @param format the image format
 	 * @return the new added picture
 	 */
-	public Picture addPicture(SheetAnchor anchor,byte[] image,Format format);
+	public Picture addPicture(SheetAnchor anchor, byte[] image, Format format);
 	
 	/**
 	 * Deletes picture that in sheet
@@ -675,7 +675,7 @@ public interface Range {
 	 * @param anchor the anchor to re-allocate
 	 * @param picture the picture to re-allocate
 	 */
-	public void movePicture(SheetAnchor anchor,Picture picture);
+	public void movePicture(SheetAnchor anchor, Picture picture);
 	
 	/**
 	 * Adds chart to sheet
@@ -686,7 +686,7 @@ public interface Range {
 	 * @return the new added chart
 	 */
 	//currently, we only support to modify chart in XSSF
-	public Chart addChart(SheetAnchor anchor,Type type, Grouping grouping, LegendPosition pos);
+	public Chart addChart(SheetAnchor anchor, Type type, Grouping grouping, LegendPosition pos);
 	
 	/**
 	 * Deletes chart
@@ -701,7 +701,7 @@ public interface Range {
 	 * @param chart the chart to move
 	 */
 	//currently, we only support to modify chart in XSSF
-	public void moveChart(SheetAnchor anchor,Chart chart);
+	public void moveChart(SheetAnchor anchor, Chart chart);
 	
 	/**
 	 * Creates a new sheet
@@ -724,7 +724,7 @@ public interface Range {
 	 * @param rowfreeze the number of row to freeze, 0 means no freeze
 	 * @param columnfreeze the number of column to freeze, 0 means no freeze
 	 */
-	public void setFreezePanel(int rowfreeze,int columnfreeze);
+	public void setFreezePanel(int rowfreeze, int columnfreeze);
 
 	
 	/**
@@ -794,8 +794,8 @@ public interface Range {
 		 * @return null if not found
 		 */
 		public Font findFont(Boldweight boldweight, Color color,
-				int fontHeight, String fontName, boolean italic,
-				boolean strikeout, TypeOffset typeOffset, Underline underline);
+							 int fontHeight, String fontName, boolean italic,
+							 boolean strikeout, TypeOffset typeOffset, Underline underline);
 
 		/**
 		 * Check if this style still available
@@ -831,7 +831,7 @@ public interface Range {
 	public boolean isSheetProtected();
 	
 	/**
-	 * Protect a {@link Sheet} so that it cannot be modified. You can call 
+	 * Protect a {@link org.zkoss.zss.api.model.Sheet} so that it cannot be modified. You can call
 	 * this method on a protected sheet to change its allowed options if the 
 	 * same password is supplied; otherwise, it is ignored. A protected sheet
 	 * can be unprotected by calling {@link #unprotectSheet(String password)}.
@@ -858,13 +858,13 @@ public interface Range {
 	 * @see #isProtected()
 	 * @since 3.5.0
 	 */
-	public void protectSheet(String password,  
-			boolean allowSelectingLockedCells, boolean allowSelectingUnlockedCells,  
-			boolean allowFormattingCells, boolean allowFormattingColumns, boolean allowFormattingRows, 
-			boolean allowInsertColumns, boolean allowInsertRows, boolean allowInsertingHyperlinks,
-			boolean allowDeletingColumns, boolean allowDeletingRows, 
-			boolean allowSorting, boolean allowFiltering, 
-			boolean allowUsingPivotTables, boolean drawingObjects, boolean scenarios);
+	public void protectSheet(String password,
+							 boolean allowSelectingLockedCells, boolean allowSelectingUnlockedCells,
+							 boolean allowFormattingCells, boolean allowFormattingColumns, boolean allowFormattingRows,
+							 boolean allowInsertColumns, boolean allowInsertRows, boolean allowInsertingHyperlinks,
+							 boolean allowDeletingColumns, boolean allowDeletingRows,
+							 boolean allowSorting, boolean allowFiltering,
+							 boolean allowUsingPivotTables, boolean drawingObjects, boolean scenarios);
 	
 	/**
 	 * Removes protection from a sheet. This method has no effect if the sheet 
@@ -878,7 +878,7 @@ public interface Range {
 	public boolean unprotectSheet(String password);
 	
 	/**
-	 * Gets {@link SheetProtection} which tells what are allowed operations for 
+	 * Gets {@link org.zkoss.zss.api.model.SheetProtection} which tells what are allowed operations for
 	 * a protected sheet of this range.
 	 * @return
 	 * @since 3.5.0
@@ -893,7 +893,7 @@ public interface Range {
 	public Validation validate(final String editText);
 
 	/**
-	 * Add if not exist or modify an existing {@link Validation} to this range.
+	 * Add if not exist or modify an existing {@link org.zkoss.zss.api.model.Validation} to this range.
 	 * @param validationType the type of this validation  
 	 * @param ignoreBlank true if blank values are permitted. 
 	 * @param operatorType the operator for this validation
@@ -918,11 +918,11 @@ public interface Range {
 			boolean inCellDropDown,
 			String formula1,
 			String formula2,
-			
+
 			boolean showInput,
 			String inputTitle,
 			String inputMessage,
-			
+
 			boolean showError,
 			AlertStyle alertStyle,
 			String errorTitle,
@@ -930,16 +930,16 @@ public interface Range {
 	
 	
 	/**
-	 * Gets read only {@link Validation} associated with the left-top cell 
+	 * Gets read only {@link org.zkoss.zss.api.model.Validation} associated with the left-top cell
 	 * of this range; return null if no associated validation.
 	 * 
-	 * @see #setValidation(ValidationType, boolean, OperatorType, boolean, String, String, boolean, String, String, boolean, AlertStyle, String, String)
+	 * @see #setValidation(org.zkoss.zss.api.model.Validation.ValidationType, boolean, org.zkoss.zss.api.model.Validation.OperatorType, boolean, String, String, boolean, String, String, boolean, org.zkoss.zss.api.model.Validation.AlertStyle, String, String)
 	 * @since 3.5.0
 	 */
 	public List<Validation> getValidations();
 	
 	/**
-	 * Delete the {@link Validation} associated in the specified range.
+	 * Delete the {@link org.zkoss.zss.api.model.Validation} associated in the specified range.
 	 * @since 3.5.0 
 	 */
 	public void deleteValidation();
@@ -967,13 +967,13 @@ public interface Range {
 	 * @since 3.6.0
 	 */
 	public Font getOrCreateFont(Boldweight boldweight, Color color,
-			int fontHeight, String fontName, boolean italic, boolean strikeout,
-			TypeOffset typeOffset, Underline underline);
+								int fontHeight, String fontName, boolean italic, boolean strikeout,
+								TypeOffset typeOffset, Underline underline);
 
 	/**
 	 * Enforce evaluation(if not cached) and refresh UI of this range and its 
 	 * dependent cells if the includeDependents is true. This method is equal
-	 * to {@link Range#refresh(boolean includeDependents, boolean false, boolean true)}. 
+	 * to {@link org.zkoss.zss.api.Range#refresh(boolean includeDependents, boolean false, boolean true)}.
 	 * @since 3.6.0
 	 */
 	public void refresh(boolean includeDependants);
@@ -1011,7 +1011,7 @@ public interface Range {
 	 *  <li>VERY_HIDDEN: the sheet is hidden but can be unhidden only via this API.</li>
 	 * </ul>
 	 * @param visible
-	 * @see SheetVisible
+	 * @see org.zkoss.zss.api.Range.SheetVisible
 	 * @since 3.7.0
 	 */
 	public void setSheetVisible(SheetVisible visible);

@@ -58,7 +58,7 @@ public interface SSheet {
 	 * @param lastColumnIdx index of the end column
 	 * @return the new created column array
 	 */
-	public SColumnArray setupColumnArray(int colunmIdx,int lastColumnIdx);	
+	public SColumnArray setupColumnArray(int colunmIdx, int lastColumnIdx);
 	public Iterator<SCell> getCellIterator(int row);
 	
 	/**
@@ -92,7 +92,7 @@ public interface SSheet {
 	
 	/**
 	 * 
-	 * This method always returns not-null cell object. Use {@link SCell#isNull()} to know it's null (blank) or not.
+	 * This method always returns not-null cell object. Use {@link org.zkoss.zss.model.SCell#isNull()} to know it's null (blank) or not.
 	 */
 	public SCell getCell(int rowIdx, int columnIdx);
 	
@@ -121,7 +121,7 @@ public interface SSheet {
 	/**
 	 * @see #clearCell(CellRegion)
 	 */
-	public void clearCell(int rowIdx, int columnIdx,int lastRowIdx,int lastColumnIdx);
+	public void clearCell(int rowIdx, int columnIdx, int lastRowIdx, int lastColumnIdx);
 	
 	/**
 	 * Clear cells in specified region
@@ -132,7 +132,7 @@ public interface SSheet {
 	 * Move a region of cells specified by 4 indexes.
 	 * @see #moveCell(CellRegion, int, int)
 	 */
-	public void moveCell(int rowIdx, int columnIdx,int lastRowIdx,int lastColumnIdx, int rowOffset, int columnOffset);
+	public void moveCell(int rowIdx, int columnIdx, int lastRowIdx, int lastColumnIdx, int rowOffset, int columnOffset);
 	
 	/**
 	 * Move one or more cells.
@@ -165,26 +165,26 @@ public interface SSheet {
 	/**
 	 * @see #insertCell(CellRegion, boolean)
 	 */
-	public void insertCell(int rowIdx,int columnIdx,int lastRowIndex, int lastColumnIndex,boolean horizontal);
+	public void insertCell(int rowIdx, int columnIdx, int lastRowIndex, int lastColumnIndex, boolean horizontal);
 	
 	/**
 	 * Insert a region of cells and shift existing cells.
 	 * @param region the region of cells to insert
 	 * @param horizontal TRUE for shifting right, FALSE for shifting down
 	 */
-	public void insertCell(CellRegion region,boolean horizontal);
+	public void insertCell(CellRegion region, boolean horizontal);
 	
 	/**
 	 * Delete a region of cells and shift existing cells.
 	 * @param region the region of cells to delete
 	 * @param horizontal TRUE for shifting left, FALSE for shifting up
 	 */
-	public void deleteCell(CellRegion region,boolean horizontal);
+	public void deleteCell(CellRegion region, boolean horizontal);
 	
 	/**
 	 * @see #deleteCell(CellRegion, boolean) 
 	 */
-	public void deleteCell(int rowIdx,int columnIdx,int lastRowIndex, int lastColumnIndex,boolean horizontal);
+	public void deleteCell(int rowIdx, int columnIdx, int lastRowIndex, int lastColumnIndex, boolean horizontal);
 	
 	/** Add a picture into this sheet with raw picture data and format.
 	 * @param format picture format as specified in {@link SPicture.Format}
@@ -223,7 +223,7 @@ public interface SSheet {
 	 * @param region
 	 * @param removeOverlpas true if you want to remove the merged areas that are just overlapped.
 	 */
-	public void removeMergedRegion(CellRegion region,boolean removeOverlaps);
+	public void removeMergedRegion(CellRegion region, boolean removeOverlaps);
 	/**
 	 * Add a merged area, you can't assign a area that overlaps existed merged area.
 	 * @param region
@@ -243,11 +243,11 @@ public interface SSheet {
 	 * @return the regions that are contained
 	 */
 	public List<CellRegion> getContainsMergedRegions(CellRegion region);
-	public CellRegion getMergedRegion(int row,int column);
+	public CellRegion getMergedRegion(int row, int column);
 	public CellRegion getMergedRegion(String cellRefString);
 	
 	public SDataValidation addDataValidation(CellRegion region);
-	public SDataValidation addDataValidation(CellRegion region,SDataValidation src);
+	public SDataValidation addDataValidation(CellRegion region, SDataValidation src);
 	public SDataValidation getDataValidation(String id);
 	public void deleteDataValidation(SDataValidation validation);
 	public int getNumOfDataValidation();
@@ -283,7 +283,7 @@ public interface SSheet {
 	 * @param name name the attribute name
 	 * @param value the attribute value
 	 */
-	public Object setAttribute(String name,Object value);
+	public Object setAttribute(String name, Object value);
 	
 	/**
 	 * Get the unmodifiable runtime attributes map
@@ -345,7 +345,7 @@ public interface SSheet {
 	 * @param option the copy option
 	 * @return the final effected region
 	 */
-	public CellRegion pasteCell(SheetRegion src,CellRegion dest,PasteOption option);
+	public CellRegion pasteCell(SheetRegion src, CellRegion dest, PasteOption option);
 	
 	/**
 	 * Gets enhanced protection.

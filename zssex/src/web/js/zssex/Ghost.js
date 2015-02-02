@@ -1,0 +1,1 @@
+zssex.Ghost=zk.$extends(zk.Widget,{ghost:true,domClass_:function(a){return"zssexghost"},getPosition:zk.$void});

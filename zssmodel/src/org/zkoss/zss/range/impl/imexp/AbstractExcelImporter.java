@@ -48,7 +48,7 @@ import org.zkoss.zss.model.sys.formula.FormulaExpression;
 
 /**
  * Contains common importing behavior for both XLSX and XLS. Spreadsheet
- * {@link SBook} model including following information: Book: name Sheet: name,
+ * {@link org.zkoss.zss.model.SBook} model including following information: Book: name Sheet: name,
  * (default) column width, (default) row height, hidden row (column), row
  * (column) style, freeze, merge, protection, named range , gridline display
  * Cell: type, value, font with color and style, type offset(normal or
@@ -71,11 +71,11 @@ abstract public class AbstractExcelImporter extends AbstractImporter {
 	 */
 	public static final int CHRACTER_WIDTH = 7;
 	/**
-	 * <poi CellStyle index, {@link SCellStyle} object> Keep track of imported
+	 * <poi CellStyle index, {@link org.zkoss.zss.model.SCellStyle} object> Keep track of imported
 	 * style during importing to avoid creating duplicated style objects.
 	 */
 	protected Map<CellStyle, SCellStyle> importedStyle = new HashMap<CellStyle, SCellStyle>(); 	//ZSS-685
-	/** <poi Font index, {@link SFont} object> **/
+	/** <poi Font index, {@link org.zkoss.zss.model.SFont} object> **/
 	protected Map<Short, SFont> importedFont = new HashMap<Short, SFont>();
 	/** target book model */
 	protected SBook book;

@@ -40,7 +40,7 @@ public interface FormulaEngine {
 	 * @param context
 	 * @return
 	 */
-	public FormulaExpression shift(String formula, int rowOffset,int columnOffset, FormulaParseContext context);
+	public FormulaExpression shift(String formula, int rowOffset, int columnOffset, FormulaParseContext context);
 	
 	/**
 	 * Transpose the formula base one the origin
@@ -50,7 +50,7 @@ public interface FormulaEngine {
 	 * @param context
 	 * @return
 	 */
-	public FormulaExpression transpose(String formula, int rowOrigin,int columnOrigin, FormulaParseContext context);
+	public FormulaExpression transpose(String formula, int rowOrigin, int columnOrigin, FormulaParseContext context);
 	/**
 	 * Shift the formula that care on sheet and region.
 	 * @param formula
@@ -60,20 +60,20 @@ public interface FormulaEngine {
 	 * @param context
 	 * @return
 	 */
-	public FormulaExpression move(String formula, SheetRegion srcRegion, int rowOffset,int columnOffset,
-			FormulaParseContext context);
+	public FormulaExpression move(String formula, SheetRegion srcRegion, int rowOffset, int columnOffset,
+								  FormulaParseContext context);
 	
 	public FormulaExpression shrink(String formula, SheetRegion srcRegion, boolean hrizontal,
-			FormulaParseContext context);
+									FormulaParseContext context);
 	
 	public FormulaExpression extend(String formula, SheetRegion srcRegion, boolean hrizontal,
-			FormulaParseContext context);
+									FormulaParseContext context);
 	
-	public FormulaExpression renameSheet(String formula, SBook book, String oldName,String newName,
-			FormulaParseContext context);
+	public FormulaExpression renameSheet(String formula, SBook book, String oldName, String newName,
+										 FormulaParseContext context);
 	
-	public FormulaExpression renameName(String formula, SBook book, String oldName,String newName,
-			FormulaParseContext context);
+	public FormulaExpression renameName(String formula, SBook book, String oldName, String newName,
+										FormulaParseContext context);
 	
 	public EvaluationResult evaluate(FormulaExpression expr, FormulaEvaluationContext context);
 
@@ -89,7 +89,7 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression shiftPtgs(FormulaExpression fexpr, int rowOffset,int columnOffset, FormulaParseContext context);
+	public FormulaExpression shiftPtgs(FormulaExpression fexpr, int rowOffset, int columnOffset, FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -101,7 +101,7 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression transposePtgs(FormulaExpression fexpr, int rowOrigin,int columnOrigin, FormulaParseContext context);
+	public FormulaExpression transposePtgs(FormulaExpression fexpr, int rowOrigin, int columnOrigin, FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -114,8 +114,8 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression movePtgs(FormulaExpression fexpr, SheetRegion srcRegion, int rowOffset,int columnOffset,
-			FormulaParseContext context);
+	public FormulaExpression movePtgs(FormulaExpression fexpr, SheetRegion srcRegion, int rowOffset, int columnOffset,
+									  FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -128,7 +128,7 @@ public interface FormulaEngine {
 	 * @since 3.6.0
 	 */
 	public FormulaExpression shrinkPtgs(FormulaExpression fexpr, SheetRegion srcRegion, boolean hrizontal,
-			FormulaParseContext context);
+										FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -141,7 +141,7 @@ public interface FormulaEngine {
 	 * @since 3.6.0
 	 */
 	public FormulaExpression extendPtgs(FormulaExpression fexpr, SheetRegion srcRegion, boolean hrizontal,
-			FormulaParseContext context);
+										FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -154,8 +154,8 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression renameSheetPtgs(FormulaExpression fexpr, SBook book, String oldName,String newName,
-			FormulaParseContext context);
+	public FormulaExpression renameSheetPtgs(FormulaExpression fexpr, SBook book, String oldName, String newName,
+											 FormulaParseContext context);
 	
 	//ZSS-747
 	/**
@@ -168,8 +168,8 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression renameNamePtgs(FormulaExpression fexpr, SBook book, int sheetIndex, String oldName,String newName,
-			FormulaParseContext context);
+	public FormulaExpression renameNamePtgs(FormulaExpression fexpr, SBook book, int sheetIndex, String oldName, String newName,
+											FormulaParseContext context);
 	//ZSS-790
 	/**
 	 * 
@@ -182,8 +182,8 @@ public interface FormulaEngine {
 	 * @return
 	 * @since 3.6.0
 	 */
-	public FormulaExpression renameName(String formula, SBook book, int sheetIndex, String oldName,String newName,
-			FormulaParseContext context);
+	public FormulaExpression renameName(String formula, SBook book, int sheetIndex, String oldName, String newName,
+										FormulaParseContext context);
 
 
 	//ZSS-747
@@ -205,6 +205,6 @@ public interface FormulaEngine {
 	 * @param context
 	 * @since 3.7.0
 	 */
-	public FormulaExpression reorderSheetPtgs(FormulaExpression fexpr, SBook book, 
-			int oldIndex, int newIndex, FormulaParseContext context);
+	public FormulaExpression reorderSheetPtgs(FormulaExpression fexpr, SBook book,
+											  int oldIndex, int newIndex, FormulaParseContext context);
 }

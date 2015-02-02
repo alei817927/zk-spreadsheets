@@ -34,7 +34,7 @@ public interface SImporter {
 	 * @param is the input stream
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public SBook imports(InputStream is, String bookName) throws IOException;
 	
@@ -43,7 +43,7 @@ public interface SImporter {
 	 * @param file the file
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public SBook imports(File file, String bookName) throws IOException;
 	
@@ -52,7 +52,7 @@ public interface SImporter {
 	 * @param url the url
 	 * @param bookName the book name for imported book
 	 * @return the book instance
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	public SBook imports(URL url, String bookName) throws IOException;
 }

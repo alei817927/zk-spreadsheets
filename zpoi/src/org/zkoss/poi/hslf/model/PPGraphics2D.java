@@ -82,7 +82,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * Gets the current font.
      * @return    this graphics context's current font.
      * @see       java.awt.Font
-     * @see       java.awt.Graphics#setFont(Font)
+     * @see       java.awt.Graphics#setFont(java.awt.Font)
      */
     public Font getFont(){
         return _font;
@@ -94,7 +94,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * use this font.
      * @param  font   the font.
      * @see     java.awt.Graphics#getFont
-     * @see     java.awt.Graphics#drawString(java.lang.String, int, int)
+     * @see     java.awt.Graphics#drawString(String, int, int)
      * @see     java.awt.Graphics#drawBytes(byte[], int, int, int, int)
      * @see     java.awt.Graphics#drawChars(char[], int, int, int, int)
     */
@@ -191,7 +191,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param Tx the <code>AffineTransform</code> object to be used in the
      * rendering process
      * @see #_transform
-     * @see AffineTransform
+     * @see java.awt.geom.AffineTransform
      */
     public void setTransform(AffineTransform Tx) {
         _transform = new AffineTransform(Tx);
@@ -352,7 +352,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * The <i>user clip</i> modified by this method is independent of the
      * clipping associated with device bounds and visibility.  If no clip has
      * previously been set, or if the clip has been cleared using
-     * {@link java.awt.Graphics#setClip(Shape) setClip} with a
+     * {@link java.awt.Graphics#setClip(java.awt.Shape) setClip} with a
      * <code>null</code> argument, the specified <code>Shape</code> becomes
      * the new user clip.
      * @param s the <code>Shape</code> to be intersected with the current
@@ -376,7 +376,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @see         java.awt.Graphics#getClipBounds()
      * @see         java.awt.Graphics#clipRect
      * @see         java.awt.Graphics#setClip(int, int, int, int)
-     * @see         java.awt.Graphics#setClip(Shape)
+     * @see         java.awt.Graphics#setClip(java.awt.Shape)
      * @since       JDK1.1
      */
     public Shape getClip(){
@@ -1014,7 +1014,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param width the width of the rectangle to intersect the clip with
      * @param height the height of the rectangle to intersect the clip with
      * @see #setClip(int, int, int, int)
-     * @see #setClip(Shape)
+     * @see #setClip(java.awt.Shape)
      */
     public void clipRect(int x, int y, int width, int height){
         clip(new Rectangle(x, y, width, height));
@@ -1054,7 +1054,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @see         java.awt.Graphics#getClip
      * @see         java.awt.Graphics#clipRect
      * @see         java.awt.Graphics#setClip(int, int, int, int)
-     * @see         java.awt.Graphics#setClip(Shape)
+     * @see         java.awt.Graphics#setClip(java.awt.Shape)
      * @since       JDK1.1
      */
     public Rectangle getClipBounds(){
@@ -1123,7 +1123,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param       width the width of the new clip rectangle.
      * @param       height the height of the new clip rectangle.
      * @see         java.awt.Graphics#clipRect
-     * @see         java.awt.Graphics#setClip(Shape)
+     * @see         java.awt.Graphics#setClip(java.awt.Shape)
      * @since       JDK1.1
      */
     public void setClip(int x, int y, int width, int height){
@@ -1198,7 +1198,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
     /**
      * Get the rendering context of the <code>Font</code> within this
      * <code>Graphics2D</code> context.
-     * The {@link FontRenderContext}
+     * The {@link java.awt.font.FontRenderContext}
      * encapsulates application hints such as anti-aliasing and
      * fractional metrics, as well as target device specific information
      * such as dots-per-inch.  This information should be provided by the
@@ -1212,7 +1212,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      *
      * @return a reference to an instance of FontRenderContext.
      * @see java.awt.font.FontRenderContext
-     * @see java.awt.Font#createGlyphVector(FontRenderContext,char[])
+     * @see java.awt.Font#createGlyphVector(java.awt.font.FontRenderContext,char[])
      * @see java.awt.font.TextLayout
      * @since     JDK1.2
      */
@@ -1241,7 +1241,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param Tx the <code>AffineTransform</code> object to be composed with
      * the current <code>Transform</code>
      * @see #setTransform
-     * @see AffineTransform
+     * @see java.awt.geom.AffineTransform
      */
     public void transform(AffineTransform Tx) {
         _transform.concatenate(Tx);
@@ -1250,7 +1250,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
     /**
      * Renders a <code>BufferedImage</code> that is
      * filtered with a
-     * {@link BufferedImageOp}.
+     * {@link java.awt.image.BufferedImageOp}.
      * The rendering attributes applied include the <code>Clip</code>,
      * <code>Transform</code>
      * and <code>Composite</code> attributes.  This is equivalent to:
@@ -1266,7 +1266,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @see #setTransform
      * @see #setComposite
      * @see #clip
-     * @see #setClip(Shape)
+     * @see #setClip(java.awt.Shape)
      */
     public void drawImage(BufferedImage img,
                           BufferedImageOp op,
@@ -1360,7 +1360,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @return an object representing the value for the specified hint key.
      * Some of the keys and their associated values are defined in the
      * <code>RenderingHints</code> class.
-     * @see RenderingHints
+     * @see java.awt.RenderingHints
      */
     public Object getRenderingHint(RenderingHints.Key hintKey){
         return _hints.get(hintKey);
@@ -1375,7 +1375,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param hintKey the key of the hint to be set.
      * @param hintValue the value indicating preferences for the specified
      * hint category.
-     * @see RenderingHints
+     * @see java.awt.RenderingHints
      */
     public void setRenderingHint(RenderingHints.Key hintKey, Object hintValue){
         _hints.put(hintKey, hintValue);
@@ -1384,12 +1384,12 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
 
     /**
      * Renders the text of the specified
-     * {@link GlyphVector} using
+     * {@link java.awt.font.GlyphVector} using
      * the <code>Graphics2D</code> context's rendering attributes.
      * The rendering attributes applied include the <code>Clip</code>,
      * <code>Transform</code>, <code>Paint</code>, and
      * <code>Composite</code> attributes.  The <code>GlyphVector</code>
-     * specifies individual glyphs from a {@link Font}.
+     * specifies individual glyphs from a {@link java.awt.Font}.
      * The <code>GlyphVector</code> can also contain the glyph positions.
      * This is the fastest way to render a set of characters to the
      * screen.
@@ -1400,13 +1400,13 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @param y the y position in user space where the glyphs should be
      *        rendered
      *
-     * @see java.awt.Font#createGlyphVector(FontRenderContext, char[])
+     * @see java.awt.Font#createGlyphVector(java.awt.font.FontRenderContext, char[])
      * @see java.awt.font.GlyphVector
      * @see #setPaint
      * @see java.awt.Graphics#setColor
      * @see #setTransform
      * @see #setComposite
-     * @see #setClip(Shape)
+     * @see #setClip(java.awt.Shape)
      */
     public void drawGlyphVector(GlyphVector g, float x, float y) {
         Shape glyphOutline = g.getOutline(x, y);
@@ -1435,7 +1435,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * Refer to the <code>RenderingHints</code> class for definitions of
      * some common keys and values.
      * @param hints the rendering hints to be set
-     * @see RenderingHints
+     * @see java.awt.RenderingHints
      */
     public void addRenderingHints(Map hints){
         this._hints.putAll(hints);
@@ -1492,7 +1492,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
 
     /**
      * Checks whether or not the specified <code>Shape</code> intersects
-     * the specified {@link Rectangle}, which is in device
+     * the specified {@link java.awt.Rectangle}, which is in device
      * space. If <code>onStroke</code> is false, this method checks
      * whether or not the interior of the specified <code>Shape</code>
      * intersects the specified <code>Rectangle</code>.  If
@@ -1512,12 +1512,12 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @return <code>true</code> if there is a hit; <code>false</code>
      * otherwise.
      * @see #setStroke
-     * @see #fill(Shape)
-     * @see #draw(Shape)
+     * @see #fill(java.awt.Shape)
+     * @see #draw(java.awt.Shape)
      * @see #_transform
      * @see #setTransform
      * @see #clip
-     * @see #setClip(Shape)
+     * @see #setClip(java.awt.Shape)
      */
     public boolean hit(Rectangle rect,
                        Shape s,
@@ -1541,7 +1541,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * keys and values.
      * @return a reference to an instance of <code>RenderingHints</code>
      * that contains the current preferences.
-     * @see RenderingHints
+     * @see java.awt.RenderingHints
      */
     public RenderingHints getRenderingHints(){
         return _hints;
@@ -1552,13 +1552,13 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * algorithms with the specified <code>hints</code>.
      * The existing values for all rendering hints are discarded and
      * the new set of known hints and values are initialized from the
-     * specified {@link Map} object.
+     * specified {@link java.util.Map} object.
      * Hint categories include controls for rendering quality and
      * overall time/quality trade-off in the rendering process.
      * Refer to the <code>RenderingHints</code> class for definitions of
      * some common keys and values.
      * @param hints the rendering hints to be set
-     * @see RenderingHints
+     * @see java.awt.RenderingHints
      */
     public void setRenderingHints(Map hints){
         this._hints = new RenderingHints(hints);
@@ -1577,7 +1577,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * noninvertible.
      * @param img the <code>Image</code> to be rendered
      * @param xform the transformation from image space into user space
-     * @param obs the {@link ImageObserver}
+     * @param obs the {@link java.awt.image.ImageObserver}
      * to be notified as more of the <code>Image</code>
      * is converted
      * @return <code>true</code> if the <code>Image</code> is
@@ -1587,7 +1587,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * @see #setTransform
      * @see #setComposite
      * @see #clip
-     * @see #setClip(Shape)
+     * @see #setClip(java.awt.Shape)
      */
      public boolean drawImage(Image img, AffineTransform xform, ImageObserver obs) {
         log.log(POILogger.WARN, "Not implemented");
@@ -1696,7 +1696,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
 
     /**
      * Renders a
-     * {@link RenderableImage},
+     * {@link java.awt.image.renderable.RenderableImage},
      * applying a transform from image space into user space before drawing.
      * The transformation from user space into device space is done with
      * the current <code>Transform</code> in the <code>Graphics2D</code>.
@@ -1714,7 +1714,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
      * are used is required, then a <code>RenderedImage</code> should be
      * obtained directly from the <code>RenderableImage</code>
      * and rendered using
-     *{@link #drawRenderedImage(RenderedImage, AffineTransform) drawRenderedImage}.
+     *{@link #drawRenderedImage(java.awt.image.RenderedImage, java.awt.geom.AffineTransform) drawRenderedImage}.
      * @param img the image to be rendered. This method does
      *            nothing if <code>img</code> is null.
      * @param xform the transformation from image space into user space
@@ -1730,7 +1730,7 @@ public final class PPGraphics2D extends Graphics2D implements Cloneable {
     }
 
     /**
-     * Renders a {@link RenderedImage},
+     * Renders a {@link java.awt.image.RenderedImage},
      * applying a transform from image
      * space into user space before drawing.
      * The transformation from user space into device space is done with

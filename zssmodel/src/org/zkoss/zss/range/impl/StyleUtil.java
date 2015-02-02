@@ -122,7 +122,7 @@ public class StyleUtil {
 			return;
 		}
 		
-		SCellStyle.FillPattern pattern = orgStyle.getFillPattern();
+		FillPattern pattern = orgStyle.getFillPattern();
 		if (pattern == FillPattern.NONE && htmlColor != null) {
 			pattern = FillPattern.SOLID;
 		}

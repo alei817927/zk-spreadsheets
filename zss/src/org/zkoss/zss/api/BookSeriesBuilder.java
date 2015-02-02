@@ -27,7 +27,7 @@ import org.zkoss.zss.model.SBook;
 import org.zkoss.zss.model.SBookSeriesBuilder;
 
 /**
- * The book series builder which accepts multiple {@link Book} objects makes each of them can reference cells from other books.
+ * The book series builder which accepts multiple {@link org.zkoss.zss.api.model.Book} objects makes each of them can reference cells from other books.
  * @author dennis
  * @since 3.0.0
  */

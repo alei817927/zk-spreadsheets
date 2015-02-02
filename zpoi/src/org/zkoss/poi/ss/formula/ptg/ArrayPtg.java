@@ -229,8 +229,8 @@ public final class ArrayPtg extends Ptg {
 
 	/**
 	 * Represents the initial plain tArray token (without the constant data that trails the whole
-	 * formula).  Objects of this class are only temporary and cannot be used as {@link Ptg}s.
-	 * These temporary objects get converted to {@link ArrayPtg} by the
+	 * formula).  Objects of this class are only temporary and cannot be used as {@link org.zkoss.poi.ss.formula.ptg.Ptg}s.
+	 * These temporary objects get converted to {@link org.zkoss.poi.ss.formula.ptg.ArrayPtg} by the
 	 * {@link #finishReading(LittleEndianInput)} method.
 	 */
 	static final class Initial extends Ptg {
