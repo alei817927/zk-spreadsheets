@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+    <library-property>
+        <name>zssapp.bookrepostory.readonly</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.web.preferred.locale</name>
+        <value>zh_CN</value>
+    </library-property>
+    <session-config>
+        <max-desktops-per-session>2</max-desktops-per-session>
+        <timer-keep-alive>true</timer-keep-alive>
+        <!--<device-type>ajax</device-type>-->
+        <!--<timeout-uri>/login.html</timeout-uri>-->
+    </session-config>
+</zk>

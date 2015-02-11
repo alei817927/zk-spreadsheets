@@ -1,4 +1,4 @@
-package com.makenv.sheets.users;
+package com.makenv.sheets.user;
 
 /**
  * Created by alei on 2015/1/29.

@@ -2,8 +2,10 @@ package com.makenv.sheets.repository.impl;
 
 import com.makenv.sheets.repository.BookInfo;
 import com.makenv.sheets.repository.BookRepository;
+import com.makenv.sheets.user.UserService;
 import com.makenv.sheets.util.FileUtil;
 import com.makenv.sheets.util.UiUtil;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zss.api.Exporters;
 import org.zkoss.zss.api.Importers;
 import org.zkoss.zss.api.model.Book;
@@ -21,18 +23,22 @@ import java.util.Map;
  */
 public class MiRepository implements BookRepository {
     private static Map<String, BookInfo> templateBooks;
-    private final static String userId = "alei";
-    private final static String bookId = "4";
+//    private final static String userId = "alei";
+//    private final static String bookId = "4";
 
     public MiRepository() {
     }
 
     @Override
-    public BookInfo getTemplate() {
+    public Map<String,BookInfo> getAllTemplates(){
         if (templateBooks == null) {
             templateBooks = getTemplates();
         }
-        return templateBooks.get(bookId);
+        return templateBooks;
+    }
+    @Override
+    public BookInfo getTemplate(String bookId) {
+        return getAllTemplates().get(bookId);
     }
 
     private Map<String, BookInfo> getTemplates() {
@@ -60,7 +66,7 @@ public class MiRepository implements BookRepository {
 
     @Override
     public BookInfo getBookInfo() {
-        File bookFile = new File(FileUtil.getBookUserFilePath(userId, bookId));
+        File bookFile = new File(UserService.getInstance().getBookUserFilePath(Sessions.getCurrent()));
         if (!bookFile.exists()) {
             return null;
         }
@@ -80,8 +86,7 @@ public class MiRepository implements BookRepository {
         }
         FileOutputStream fos = null;
         try {
-            FileUtil.checkAndCreateDir(userId);
-            File f = new File(FileUtil.getBookUserFilePath(userId, bookId));
+            File f = new File(UserService.getInstance().getBookUserFilePath(Sessions.getCurrent()));
             //write to temp file first to avoid write error damage original file
             File temp = File.createTempFile("temp", f.getName());
             fos = new FileOutputStream(temp);

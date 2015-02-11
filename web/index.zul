@@ -1,3 +1,4 @@
 <zk>
+	<?init class="com.makenv.sheets.user.AuthenticationInit"?>
 	<include src="web/index.zul"/>
 </zk>

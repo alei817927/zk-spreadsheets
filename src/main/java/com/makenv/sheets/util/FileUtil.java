@@ -207,10 +207,6 @@ public class FileUtil {
         return getBookPath() + File.separator + "users";
     }
 
-    public static String getBookUserFilePath(String userId, String bookId) {
-        return String.format("%s%s%s%s%s.xlsx", FileUtil.getBookUserPath(), File.separator, userId, File.separator, bookId);
-    }
-
     public static void checkAndCreateDir(String userId) {
         String path = getBookUserPath() + File.separator + userId;
         File file = new File(path);

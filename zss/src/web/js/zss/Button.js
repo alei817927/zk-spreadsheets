@@ -1652,16 +1652,26 @@ zss.MenupopupFactory = zk.$extends(zk.Object, {
 
 zss.Buttons = zk.$extends(zk.Object, {
 }, {//static
-	HOME_DEFAULT: ['newBook', 'saveBook', 'exportPDF', 'separator',
-	          'paste', 'cut', 'copy', 'separator',
-	          'fontFamily', 'fontSize', 'fontBold', 'fontItalic', 'fontUnderline',
-	          'fontStrike', 'border', 'fontColor', 'backColor', 'separator',
-	          'verticalAlign', 'horizontalAlign', 'wrapText', 'mergeAndCenter', 'separator',
-	          'insert', 'del', 'format', 'separator',
-	          'autoSum', 'clear', 'sortAndFilter', 'separator',
-	          'protectSheet', 'gridlines', 'separator',
-	          'insertPicture', 'insertChart', 'hyperlink'
-	          ],
+	//TODO
+	HOME_DEFAULT: ['saveBook', 'exportPDF', 'separator',
+		'paste', 'cut', 'copy', 'separator',
+		'fontFamily', 'fontSize', 'fontBold', 'fontItalic', 'fontUnderline',
+		'fontStrike', 'border', 'fontColor', 'backColor', 'separator',
+		'verticalAlign', 'horizontalAlign', 'wrapText', 'mergeAndCenter', 'separator',
+		'insert', 'del', 'format', 'separator',
+		'autoSum', 'clear', 'sortAndFilter', 'separator',
+		'gridlines'
+	],
+	//HOME_DEFAULT: ['newBook', 'saveBook', 'exportPDF', 'separator',
+	//          'paste', 'cut', 'copy', 'separator',
+	//          'fontFamily', 'fontSize', 'fontBold', 'fontItalic', 'fontUnderline',
+	//          'fontStrike', 'border', 'fontColor', 'backColor', 'separator',
+	//          'verticalAlign', 'horizontalAlign', 'wrapText', 'mergeAndCenter', 'separator',
+	//          'insert', 'del', 'format', 'separator',
+	//          'autoSum', 'clear', 'sortAndFilter', 'separator',
+	//          'protectSheet', 'gridlines', 'separator',
+	//          'insertPicture', 'insertChart', 'hyperlink'
+	//          ],
 	 INSERT_DEFAULT: ['insertPicture', 'separator',
 	                  'columnChart', 'lineChart', 'pieChart',
 	                  'barChart', 'areaChart', 'scatterChart',

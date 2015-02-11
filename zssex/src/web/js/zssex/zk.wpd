@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- zk.wpd
-	Purpose:
-		
-	Description:
-		
-	History:
-		Fri May 15 15:41:31     2010, Created by sam
-
-Copyright (C) 2010 Potix Corporation. All Rights Reserved.
--->
 <package name="zssex" language="xul/html" depends="zss">
 	<widget name="Ghost" />
 	<widget name="Widget"/>

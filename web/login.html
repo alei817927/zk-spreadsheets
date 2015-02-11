@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <style type="text/css">
+        body, input, button, span {
+            font-family: "Microsoft YaHei", Times, serif;
+            color: #404040;
+            font-size: 30px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('/fonts/glyphicons-halflings-regular.eot');
+            src: url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+        }
+
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .glyphicon-user:before {
+            content: "\e008";
+        }
+
+        .glyphicon-lock:before {
+            content: "\e033";
+        }
+
+        .login {
+            width: 450px;
+            height: 350px;
+            position: absolute;
+            left: calc((100% - 450px) / 2);
+            top: calc((100% - 350px) / 2.5);
+            padding: 10px;
+        }
+
+        #sign-in .content {
+            border-bottom: 1px solid #404040;
+            width: 100%;
+            line-height: 70px;
+        }
+
+        #sign-in .content span {
+            width: 40px;
+            line-height: 70px;
+            float: left;
+        }
+
+        #sign-in .content input {
+            /*width: calc(100% - 40px);*/
+            border: 0;
+            border-radius: 0;
+            background: 0 0;
+            font-size: 30px;
+        }
+
+        #sign-in .submit {
+            width: 100%;
+            line-height: 50px;
+            margin-top: 20px;
+        }
+
+        #sign-in .submit button {
+            border: 0;
+            width: 100%;
+            line-height: 50px;
+            border-bottom: 3px solid #404040;
+            cursor: pointer;
+        }
+
+        #sign-in .submit button:hover {
+            background-color: #efefef;
+        }
+
+        .error {
+            width: 100%;
+            height: 50px;
+        }
+
+        .error .message {
+            padding: 5px 10px;
+            width: calc(100% - 20px);
+            border: 1px solid #dca7a7;
+            background-color: #efd7d7;
+            color: #a94446;
+            display: none;
+        }
+
+        .title {
+            line-height: 50px;
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        #loading {
+            width: 100%;
+            display: none;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #loading .progress {
+            width: 100%;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            height: 20px;
+            background-repeat: repeat-x;
+            background-image: linear-gradient(to bottom, #ebebeb 0, #f5f5f5 100%);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+            border-radius: 4px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        #loading .progress .progress-bar {
+            font-size: 12px;
+            line-height: 20px;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #428bca 0, #3071a9 100%);
+            background-repeat: repeat-x;
+            background-color: #428bca;
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            transition: width .6s ease;
+            border-radius: 4px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="application/javascript">
+        function showErrorMessage(msg) {
+            var container = $('.message');
+            container.text(msg);
+            container.fadeIn('normal', 'linear', function () {
+                setTimeout(function () {
+                    container.fadeOut('normal', 'linear');
+                }, 3000);
+            });
+        }
+        function login() {
+            var userName = $('#userName');
+            var password = $('#password');
+            if ($.isEmptyObject(userName.val())) {
+                showErrorMessage('请填写您的账号');
+                userName.focus();
+                return;
+            }
+            if ($.isEmptyObject(password.val())) {
+                showErrorMessage('请填写您的密码');
+                password.focus();
+                return;
+            }
+            $.ajax({
+                url: '/rest',
+                crossDomain: true,
+                contentType: 'application/json',
+                data: {method: 'login', userName: userName.val(), password: password.val()},
+//                data: JSON.stringify({method: 'login', userName: userName.val(), password: password.val()}),
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    if(data== undefined){
+                        showErrorMessage('登录失败');
+                        return;
+                    }
+                    if(data.status > 0){
+                        showErrorMessage(data.errorMessage);
+                        return;
+                    }
+                    window.location.href = '/';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="login">
+    <div class="title"></div>
+    <div id="sign-in">
+        <form onsubmit="login();return false;">
+            <div class="error">
+                <div class="message"></div>
+            </div>
+            <div class="content">
+                <span class="glyphicon glyphicon-user"></span>
+                <input type="text" placeholder="请输入账号" id="userName" value="test">
+            </div>
+            <div class="content">
+                <span class="glyphicon glyphicon-lock"></span>
+                <input type="password" placeholder="请输入密码" id="password" value="test">
+            </div>
+            <div class="submit">
+                <button type="submit" id="sign-in-submit">登陆</button>
+            </div>
+        </form>
+    </div>
+    <div id="loading">
+    </div>
+</div>
+</body>
+</html>

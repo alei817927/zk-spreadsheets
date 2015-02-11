@@ -10,7 +10,9 @@ import java.util.Map;
  */
 public interface BookRepository {
 
-    BookInfo getTemplate();
+    BookInfo getTemplate(String bookId);
+    Map<String,BookInfo> getAllTemplates();
+
     BookInfo getBookInfo();
 
     Book load(BookInfo info) throws IOException;

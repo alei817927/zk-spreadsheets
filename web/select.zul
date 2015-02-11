@@ -1,0 +1,34 @@
+<zk>
+	<?init class="com.makenv.sheets.user.AuthenticationInit"?>
+	<window id="mainWin" hflex="1" vflex="1" apply="com.makenv.sheets.contr.SelectController">
+    <borderlayout hflex="1" vflex="1">
+        <north height="200px" border="none" >
+            <grid hflex="1" vflex="1" id="yearList" style="background-color:#ccc">
+                <columns>XAXA
+                    <column  width="200"/>
+                </columns>
+                <rows/>
+            </grid>
+        </north>
+        <west border="none" collapsible="true"
+              splittable="true">
+            <grid hflex="1" vflex="1"
+                id="bookList">
+                <columns>
+                    <column  width="200"/>
+                </columns>
+                <rows/>
+            </grid>
+        </west>
+        <south height="200px" border="none">
+            <grid hflex="1" vflex="1"
+                id="regionList">
+                <columns>
+                    <column  width="200"/>
+                </columns>
+                <rows/>
+            </grid>
+        </south>
+    </borderlayout>
+	</window>
+</zk>
